@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketchbook — Hayden van Steyn</title>
+<meta name="description" content="Hayden van Steyn — mechanical engineer, artist and maker. Engineering projects, paintings, photography, merch and sketchbook.">
+<link rel="icon" href="/media/b2b4be51ec8370860146b30788778b07.webp">
+<link rel="stylesheet" href="/assets/site.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+*{cursor:url(/media/f54c90d29c5c29e7cf1a0c235a261d0f.png) 3 3, auto !important}
+.orn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border:1px solid #2B2722;outline:1px solid #2B2722;outline-offset:3px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2B2722;white-space:nowrap;transition:background .25s ease,color .25s ease;background:transparent;font-family:inherit}
+.orn:before,.orn:after{content:"";position:absolute;top:50%;width:7px;height:7px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg)}
+.orn:before{left:-9px}.orn:after{right:-9px}
+.orn:hover{background:#2B2722;color:#F2EADB}
+.dr{position:absolute;user-select:none;-webkit-user-select:none;touch-action:none;transition:filter .15s ease}
+.dr img{display:block;width:100%;height:auto;pointer-events:none}
+.dr:hover{filter:brightness(1.04)}
+.dr.dragging{filter:drop-shadow(0 14px 10px rgba(30,20,10,.35))}
+.dr img.pin{position:absolute;left:50%;top:-7px;width:var(--pw);height:auto;transform:translateX(-50%) rotate(var(--pr));z-index:2}
+.sensor{position:absolute;z-index:62;background:transparent;border:0;padding:0}
+.sensor:hover~.fzdoor .wd,.fzdoor .wd{transition:transform .2s ease}
+.wl.fr{filter:drop-shadow(2px 8px 7px rgba(30,20,10,.35)) !important}
+.arr{position:absolute;z-index:980;left:16px;top:8px;width:340px;background:#FBF8EF;border:1px solid #2B2722;padding:12px 14px;box-shadow:0 10px 24px -8px rgba(0,0,0,.4);font-size:14px;line-height:1.4}
+.arr textarea{width:100%;height:90px;font:11px/1.3 monospace;margin-top:8px;box-sizing:border-box}
+.arr button{margin-top:8px}
+.tp::after{content:"";position:absolute;left:50%;top:-8px;width:46px;height:16px;transform:translateX(-50%) rotate(-3deg);background:rgba(236,225,196,.78);box-shadow:0 1px 1px rgba(0,0,0,.12)}
+.hd .h2{position:absolute;inset:0;opacity:0}
+.hd:hover .h1,.hd.dragging .h1{opacity:0}
+.hd:hover .h2,.hd.dragging .h2{opacity:1}
+.wd{font-family:'EB Garamond',serif;font-size:13.5px;line-height:1;color:#1F1B17;background:#FFFDF7;padding:3px 6px 4px;white-space:nowrap;box-shadow:0 1px 0 rgba(0,0,0,.18),1px 3px 4px rgba(40,30,20,.28)}
+.ng{width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#FFF6D0 0 10%,#E9C266 32%,#C89A3A 62%,#7E5A1A 100%);box-shadow:0 2px 3px rgba(40,25,5,.45),inset 0 -1px 1px rgba(90,60,10,.4)}
+.dr.tp img{filter:drop-shadow(1px 3px 3px rgba(30,20,10,.3))}
+.dr.tp::after{z-index:2}
+.dr.pn img:not(.pin){filter:drop-shadow(1px 3px 3px rgba(30,20,10,.3))}
+.fzb{position:absolute;background:transparent;border:0;padding:0;transition:transform .2s ease}
+.fzb:hover{transform:translateY(-3px)}
+.fzb .cap{position:absolute;left:50%;top:100%;transform:translate(-50%,4px) rotate(-2deg);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:5}
+.fzb:hover .cap,.showcaps .fzb .cap{opacity:1}
+.wl{position:absolute;display:block;pointer-events:none}
+.wl img{display:block;width:100%;height:auto}
+.fzb img{display:block;width:100%;height:auto}
+@keyframes wob{0%,100%{transform:rotate(0)}30%{transform:rotate(-2deg)}70%{transform:rotate(2deg)}}
+.pull{animation:wob 1.6s ease-in-out infinite;transform-origin:50% 0}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.fadein{animation:fadein .3s ease both}
+</style>
+
+<style>
+/* art pages on phones */
+body.m #app > div > img[aria-hidden="true"] { display: none !important; }
+body.m #app > div { padding-top: 70px !important; padding-bottom: 30px !important; background-attachment: scroll !important; }
+body.m main { position: relative !important; left: 0 !important; top: 0 !important; margin: 0 10px !important; width: auto !important; }
+body.m main > img[aria-hidden="true"][data-o*="-16px"] { width: 46px !important; }
+body.m footer { flex-wrap: wrap; gap: 14px; justify-content: center !important; text-align: center; }
+body.m footer > div { flex-wrap: wrap; justify-content: center !important; gap: 14px !important; }
+
+/* lightboxes become full-screen sheets on phones */
+body.m .fadein[data-o*="z-index: 60"] { position: fixed !important; inset: 0 !important; z-index: 900 !important; }
+body.m .fadein[data-o*="z-index: 61"] { position: fixed !important; inset: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; overflow-y: auto !important; z-index: 901 !important; padding: 64px 16px 96px !important; box-sizing: border-box !important; display: flex; flex-direction: column; align-items: center; gap: 22px; pointer-events: auto; }
+body.m .fadein[data-o*="z-index: 61"] > div, body.m .fadein[data-o*="z-index: 61"] > div > div { position: relative !important; left: auto !important; right: auto !important; top: auto !important; width: 100% !important; height: auto !important; max-width: 100% !important; }
+body.m .fadein[data-o*="z-index: 61"] img { max-width: 100% !important; max-height: 62vh !important; width: auto !important; height: auto !important; margin: 0 auto; }
+body.m .fadein[data-o*="z-index: 61"] video { width: 100% !important; height: auto !important; aspect-ratio: 1; }
+body.m .fadein[data-o*="z-index: 61"] > button { position: fixed !important; top: 10px !important; right: 12px !important; z-index: 2; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 830px"], body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 772px"] { position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important; top: auto !important; padding: 14px 16px 18px; background: rgba(20,19,17,.92); box-sizing: border-box; gap: 10px; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 772px"] > a { width: auto !important; font-size: 11px !important; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 830px"] > a { font-size: 11px !important; letter-spacing: .14em !important; }
+body.m .fadein[data-o*="z-index: 61"] > div > div { box-sizing: border-box !important; }
+body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height: 440px"] { aspect-ratio: 1; height: auto !important; }
+body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height: 327px"] { aspect-ratio: 440 / 327; height: auto !important; }
+body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height:"] > video, body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height:"] > img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-height: none !important; object-fit: cover; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="left: 600px"] { order: -1; }
+
+</style>
+<style>
+body.m img[alt^="Ink drawing of a kitchen"] { display: none !important; }
+body.m main { overflow: hidden !important; }
+body.m .wl { display: none !important; }
+
+</style>
+
+</head>
+<body data-page="Fridge">
+<div id="stage"><div id="app"></div></div>
+<script src="/assets/preact.min.umd.js"></script>
+<script src="/assets/dc.js"></script>
+<script>
+(function(){
+const __h = preact.h, S = window.__S;
+
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const p = this.props;
+    const DATA = {"items": [{"k": "r_eyes", "kind": "rough", "src": "/media/d18b70b35d289a8d6399be910bb8e4d9.png", "x": 293, "y": 1124, "w": 170, "h": 84, "r": -3, "alt": "Charcoal study of eyes", "pin": "/media/2dbe8d6150eeb26810d734144b1bf2cd.png", "pinW": 19, "z": 581}, {"k": "r_flowers", "kind": "rough", "src": "/media/d0d69bc112762a2cbf97448db9f10755.png", "x": 500, "y": 324, "w": 190, "h": 86, "r": 3, "alt": "Ink studies of wildflowers", "pin": "/media/f6c06f36c4411b6da6a4894065696a0c.png", "pinW": 14, "z": 615}, {"k": "r_vases", "kind": "rough", "src": "/media/fc985bc14a3a8fabae917f438ec39290.png", "x": 333, "y": 638, "w": 150, "h": 120, "r": -4, "alt": "Charcoal studies of flowers in vases", "pin": "/media/5937fe4693129eb093075a9416d6f787.png", "pinW": 19, "z": 614}, {"k": "r_rock", "kind": "rough", "src": "/media/62b3968ec7c4f9f91cf254b4eefa0dd5.png", "x": 753, "y": 1148, "w": 88, "h": 101, "r": 4, "alt": "Journal drawing of a stacked rock cairn", "pin": "/media/abab72945831ff834e7c14d9bd922421.png", "pinW": 19, "z": 610}, {"k": "r_peak", "kind": "rough", "src": "/media/d19d96420948f86b9899285dacca0f9a.png", "x": 512, "y": 499, "w": 140, "h": 79, "r": -2, "alt": "Pencil drawing of a mountain peak", "pin": "/media/07c7288d5b57cf69f5640c7cf5485c4f.png", "pinW": 14, "z": 613}, {"k": "r_range", "kind": "rough", "src": "/media/b4c0a3bbb48c449f40531b700494c97b.png", "x": 533, "y": 613, "w": 165, "h": 88, "r": 2, "alt": "Labelled sketch of a mountain range", "pin": "/media/2dbe8d6150eeb26810d734144b1bf2cd.png", "pinW": 19, "z": 629}, {"k": "r_tube", "kind": "rough", "src": "/media/90c273fe4bd184fc01d97b0ee80471f9.png", "x": 698, "y": 787, "w": 36, "h": 52, "r": 7, "alt": "Drawing of a paint tube", "pin": "/media/f6c06f36c4411b6da6a4894065696a0c.png", "pinW": 14, "z": 579}, {"k": "mag_tiger", "kind": "mag", "src": "/media/5cf810bcf14b6f24fd1ba2f704840499.png", "x": 533, "y": 850, "w": 112, "h": 91, "r": -4, "alt": "Oil-pastel tiger magnet", "z": 608}, {"k": "mag_frog", "kind": "mag", "src": "/media/cde3362afb417ac6732bcf360ac79e4c.webp", "x": 357, "y": 713, "w": 76, "h": 112, "r": -6, "alt": "Oil-pastel tree frog magnet", "z": 625}, {"k": "mag_camel", "kind": "mag", "src": "/media/12690a5a88876633c0f4e7d3e7ba9a34.webp", "x": 343, "y": 1168, "w": 86, "h": 107, "r": 4, "alt": "Oil-pastel camel magnet", "z": 583}, {"k": "mag_m8", "kind": "mag", "src": "/media/06553c53358b1fe6ed2615883414294e.webp", "x": 586, "y": 379, "w": 74, "h": 90, "r": 3, "alt": "Clay figure in a striped shirt", "z": 632}, {"k": "mag_rock_fish", "kind": "mag", "src": "/media/676fde9136c6786d166292cd2afbd0d1.webp", "x": 783, "y": 514, "w": 82, "h": 72, "r": -6, "alt": "Painted rock: fish", "z": 566}, {"k": "mag_rock_gull", "kind": "mag", "src": "/media/19ecbafaa1ae5054448c4a81c2f1400f.webp", "x": 783, "y": 985, "w": 78, "h": 66, "r": 5, "alt": "Painted rock: seagull", "z": 584}, {"k": "mag_hottub", "kind": "mag", "src": "/media/5ac07f625adfe959e577714ae25bf387.webp", "x": 754, "y": 1052, "w": 92, "h": 86, "r": 3, "alt": "Ceramic hot-tub dish with two bathers", "z": 585}, {"k": "mag_mermaid", "kind": "mag", "src": "/media/d89e3350edfe83441b97a854572a4b26.png", "x": 513, "y": 646, "w": 92, "h": 86, "r": -4, "alt": "Clay mermaid", "z": 631}, {"k": "HEAD_ME", "kind": "head", "src": "", "x": 388, "y": 854, "w": 78, "h": 0, "r": 0, "alt": "Hayden", "me": true, "z": 524}, {"k": "top_yeti", "kind": "top", "src": "/media/dd9224dc12d702c7e9babd4f87468e8a.png", "x": 653, "y": 1025, "w": 90, "h": 104, "r": 0, "alt": "Yeti sweatshirt", "z": 527}, {"k": "bot_jorts", "kind": "bot", "src": "/media/139eb2705cf8a827c7199398473205af.png", "x": 387, "y": 992, "w": 81, "h": 118, "r": 0, "alt": "Star-patch jorts with yellow platforms", "z": 518}, {"k": "HEAD_DOG", "kind": "head", "src": "", "x": 466, "y": 1056, "w": 72, "h": 0, "r": -4, "alt": "Dog", "dog": true, "z": 611}, {"k": "head_chicken1", "kind": "head", "src": "/media/ccd2866b4b6061e9dce7d65646ffd005.png", "x": 666, "y": 952, "w": 52, "h": 70, "r": 5, "alt": "Chicken", "two": "/media/b98a92c506a8635e14dcd484ccf2aab7.png", "z": 528}, {"k": "top_tee", "kind": "top", "src": "/media/1ad71eb303a4e49f3a5afc4b1318be65.png", "x": 372, "y": 912, "w": 115, "h": 104, "r": 4, "alt": "GAZZilla tee", "z": 519}, {"k": "top_horse", "kind": "top", "src": "/media/a6707205ecdef911cf7bc48613e1763e.png", "x": 449, "y": 1110, "w": 105, "h": 104, "r": -3, "alt": "Skating horse hoodie", "z": 582}, {"k": "bot_gaucho", "kind": "bot", "src": "/media/01af0b7d7a326e6a18bd2b79dae8cc6f.png", "x": 467, "y": 1175, "w": 81, "h": 118, "r": 0, "alt": "Striped gauchos with chicken feet", "z": 529}, {"k": "bot_plaid", "kind": "bot", "src": "/media/24d8bbc84722835ee7f7e69a20229d44.png", "x": 657, "y": 1096, "w": 72, "h": 118, "r": 0, "alt": "Plaid skirt with charm Crocs", "z": 517}, {"k": "t_church", "kind": "tape", "src": "/media/aba935ae9a6d74e6c52bdcf54377c06e.png", "x": 631, "y": 378, "w": 80, "h": 101, "r": -3, "alt": "Pencil drawing of a gothic church", "z": 557}, {"k": "t_cross", "kind": "tape", "src": "/media/e20a8cdd7a5579fa4da671b9d2b6286f.png", "x": 563, "y": 743, "w": 70, "h": 103, "r": 4, "alt": "Pencil drawing of a statue with a cross", "z": 601}, {"k": "t_face2", "kind": "pinned", "src": "/media/34b04bef51ba44046e3ad5ddc0166f78.png", "x": 513, "y": 787, "w": 68, "h": 97, "r": -2, "alt": "Oil-pastel portrait in pinks and purples", "z": 602, "pin": "/media/abab72945831ff834e7c14d9bd922421.png", "pinW": 19}, {"k": "t_face1", "kind": "pinned", "src": "/media/443bcfd8ffc05b87d24cc68fa1b93fb7.png", "x": 723, "y": 472, "w": 68, "h": 89, "r": 4, "alt": "Oil-pastel portrait in blues and reds", "z": 558, "pin": "/media/5937fe4693129eb093075a9416d6f787.png", "pinW": 19}, {"k": "t_swan", "kind": "tape", "src": "/media/afdedcfa8a33feac09f8f3301f56bbdd.png", "x": 772, "y": 401, "w": 76, "h": 91, "r": 3, "alt": "Graphite drawing of a glass swan", "z": 559}, {"k": "t_jw2", "kind": "tape", "src": "/media/b8f86155d89e2af5c42f208d5ee05948.png", "x": 732, "y": 331, "w": 124, "h": 81, "r": -2, "alt": "Watercolor of hills and a village, Khati", "z": 560}, {"k": "t_teal", "kind": "tape", "src": "/media/ee4d133d26abe0bbf2b14c37f9ff4594.jpg", "x": 762, "y": 882, "w": 116, "h": 77, "r": 2, "alt": "Etching of a woman in the waves, printed in teal", "z": 577}, {"k": "t_fig", "kind": "tape", "src": "/media/443825ed01dfd98c04db364cc463004b.png", "x": 588, "y": 1127, "w": 60, "h": 91, "r": -3, "alt": "Charcoal figure drawing", "z": 537}, {"k": "t_jw1", "kind": "tape", "src": "/media/bb7c8860a3d57e817c734166aaf07dfb.png", "x": 417, "y": 719, "w": 88, "h": 56, "r": -3, "alt": "Watercolor of a rocky coast in a travel journal", "z": 623}, {"k": "t_redcollage", "kind": "tape", "src": "/media/e7145f10415731fab6b3696aa84ac4ec.jpg", "x": 748, "y": 810, "w": 120, "h": 81, "r": -3, "alt": "Etching with torn red, blue and green paper", "z": 578}], "wall": [{"src": "/media/b5b1bbbfed292e15ca8db32bb9e3abe7.jpg", "x": 22, "y": 500, "w": 172, "h": 122, "r": -1, "alt": "Framed hand-painted dolphin", "style": "frame"}, {"src": "/media/ca008182205a5395731f3fa5491c5413.jpg", "x": 898, "y": 82, "w": 140, "h": 177, "r": -1, "alt": "Framed print of animals on green", "style": "frame"}, {"src": "/media/eb5a8aeb84d854a34b996791ea4e68fd.jpg", "x": 1040, "y": 102, "w": 128, "h": 157, "r": 1, "alt": "Framed print of animals with a red stripe", "style": "frame"}, {"src": "/media/2bb54c72c862232400fd220d1534cea6.jpg", "x": 928, "y": 346, "w": 196, "h": 171, "r": -1, "alt": "Framed ink landscape drawing", "style": "frame"}], "hangers": [{"src": "/media/9e44a18993a0026c17545a70659cd3e3.png", "x": 63, "y": 8, "w": 110, "h": 53}, {"src": "/media/97fb919968f432e3f11475a14174bbe7.png", "x": 181, "y": 8, "w": 110, "h": 52}, {"src": "/media/fd285281e3395f1ce64d69c70bcd9dd9.png", "x": 299, "y": 8, "w": 110, "h": 54}, {"src": "/media/00263f597e4a86e9ce5388f8b7239dd9.png", "x": 413, "y": 8, "w": 110, "h": 50}], "fz": [{"k": "fz_jorts", "title": "Star patch jorts", "desc": "upcycled textile mosaic design", "src": "/media/d58f19ca670919c5f1736fac344d1bfd.png", "x": 54, "y": 30, "w": 128, "h": 112, "rot": 0, "where": "in"}, {"k": "fz_tee", "title": "GAZZilla tee", "desc": "upcycled textile mosaic design", "src": "/media/c863e6af823406d75626cf79b1ca7ed7.png", "x": 168, "y": 30, "w": 136, "h": 123, "rot": 0, "where": "in"}, {"k": "fz_yeti", "title": "Dunkin yeti sweatshirt", "desc": "upcycled textile mosaic design", "src": "/media/d7e821a1a9f3df2f8c1eb0548c590930.png", "x": 292, "y": 30, "w": 124, "h": 144, "rot": 0, "where": "in"}, {"k": "fz_bag", "title": "Charm beach bag", "desc": "felted charm beach bag", "src": "/media/ef734586b3a3da15dba51fe60d45cc8d.png", "x": 416, "y": 30, "w": 104, "h": 135, "rot": 0, "where": "in"}, {"k": "fz_neck_butterfly", "title": "Butterfly charm necklace", "desc": "statement necklaces", "src": "/media/2d382be275ad8064c6be6e7fb2a29c9c.png", "x": 150, "y": 214, "w": 58, "h": 93, "rot": -90, "where": "in"}, {"k": "fz_neck_shell", "title": "Shell charm necklace", "desc": "statement necklaces", "src": "/media/d564992154729bfea0510b08404d7388.png", "x": 330, "y": 222, "w": 40, "h": 97, "rot": -90, "where": "in"}, {"k": "fz_sculpt_moon", "title": "Moon relief", "desc": "plaster relief sculptures", "src": "/media/f7ac845a68b7bf625b66d707d8aad158.png", "x": 24, "y": 48, "w": 78, "h": 79, "rot": 0, "where": "door"}, {"k": "fz_sculpt_cloud", "title": "Cloud relief", "desc": "plaster relief sculptures", "src": "/media/69a9a249c727a368506c67126b5120bf.png", "x": 146, "y": 54, "w": 56, "h": 81, "rot": 0, "where": "door"}, {"k": "fz_wawa", "title": "Wawa lunchbox", "desc": "wawa takeout lunchbox", "src": "/media/254dfae08e8e4b429cb722ddc4d17099.png", "x": 66, "y": 146, "w": 90, "h": 91, "rot": 0, "where": "door"}], "hands": {"h1": {"src": "/media/6f7052ef8b68ac093ffd9e15b29de470.png", "w": 279, "h": 224}, "h3": {"src": "/media/a4e724c41c5cc32e5e6d3d438ef66eab.png", "w": 457, "h": 319}, "h5": {"src": "/media/a8e7aaec1cf6ea066c685aca5da3c772.png", "w": 441, "h": 194}, "h7": {"src": "/media/0bda4068eb94de93771ffa650e31846f.png", "w": 398, "h": 189}, "h8": {"src": "/media/6c2f4bb54ebbebb769b7413f59e47641.png", "w": 377, "h": 223}, "h9": {"src": "/media/e1146e8631ac49574c8264c78325896e.png", "w": 297, "h": 221}, "h2": {"src": "/media/ab09d418b3fa23220a4129ea5a64ab08.png", "w": 346, "h": 261}, "h4": {"src": "/media/773a4ac65d7abee7d07705ae51b55cae.png", "w": 425, "h": 235}, "h6": {"src": "/media/4a657eb341c413fb52ec266f92f2bc83.png", "w": 409, "h": 178}}, "heads": {"me": {"purple": ["/media/fc1cb3cb227d8e364a519363ccae7c34.png", "/media/0217a2213b2fcd40de14814751442833.png", -6], "gold": ["/media/a952f63e0871b40063104b43a1a28eeb.png", "/media/d0b4799431b491b99251913cedbf05c0.png", -20]}, "dog": {"A": ["/media/7b00ee980ef1850e566556154ebdf04f.png", "/media/ef7cd2a84cc9c68304c6da22c8a0b13e.png", [199, 216]], "B": ["/media/dd36e288937789d9f0215563a58598e4.png", "/media/5d68b66a3d2a13bdd2b6600e2d52bf18.png", [215, 171]], "C": ["/media/268471ee96e8dd1da06fc2de4e2f3f6a.png", "/media/389ad7962284dfebb463de2a9841a3a7.png", [213, 193]]}}, "scene": {"kitchen": "/media/41478c95a87ac4c18f898511ac5010b2.webp", "body": "/media/b5c0072dc061e60ce531550495dc2f01.webp", "door": "/media/f39e72f0e454efb1620362d52471699f.webp", "interior": "/media/3819c020dc93972171aa7f3374c98159.webp", "opendoor": "/media/a5174be720f3566315aeca3d2729309e.webp", "F": [282, 300, 600, 1067, 297], "OY": 0, "H": 1400}, "neck": [{"a": [636, 664], "b": [865, 646], "L": 272, "charms": [{"src": "/media/03a5ca2dd13497489bf30ef9d9cbddca.png", "w": 25, "h": 21}, {"src": "/media/a31add4426d5572666fad7408f341bfe.png", "w": 18, "h": 28}, {"src": "/media/192a1e1c038a3614a36c121f70e7cdd4.png", "w": 29, "h": 36}, {"src": "/media/d1065380d540f44c3df1839bacea5165.png", "w": 28, "h": 37}, {"src": "/media/2e118d655e9d36cf852705f9da4ad3f0.png", "w": 36, "h": 45}, {"src": "/media/d6b3b342a0bbdb1c6b25969593939584.png", "w": 31, "h": 26}, {"src": "/media/bfb48c2894c9d32e85d40b203f8fbfc1.png", "w": 19, "h": 31}, {"src": "/media/f0a5457c517278dd0a0dbe3cc4c6eeeb.png", "w": 30, "h": 36}, {"src": "/media/fd70e122ff5a12ae26e0a7efed15d23a.png", "w": 26, "h": 32}]}, {"a": [439, 975], "b": [670, 882], "L": 300, "charms": [{"src": "/media/da6b1c939fac59763ba7b7d60d392fa0.png", "w": 24, "h": 35}, {"src": "/media/30cf3e23967bb6a075d2a54f06db3fad.png", "w": 22, "h": 46}, {"src": "/media/d3efea824c0db40702bf93877287c729.png", "w": 22, "h": 42}, {"src": "/media/a8e594b0340c1731ec971d1ce7650129.png", "w": 30, "h": 42}, {"src": "/media/9c9a99cd4d9889d632631c9ae6be5481.png", "w": 22, "h": 37}, {"src": "/media/f59ead87cb4d912f2f12a77646851dd3.png", "w": 28, "h": 37}, {"src": "/media/2b7af0843512b02bb927a10f5228e38c.png", "w": 25, "h": 41}, {"src": "/media/43216968ff02de06cd5c35d4d8f20d96.png", "w": 29, "h": 38}, {"src": "/media/14e567ac34ff23bcf6b87ec1392a5bcc.png", "w": 18, "h": 47}]}], "nkEnd": "/media/07c7288d5b57cf69f5640c7cf5485c4f.png"};
+    const H = "'Cormorant Garamond', serif", B = "'EB Garamond', serif";
+    const BG = { 'idaho': '/media/6058ac16c7875b77707af7278f4d799a.jpg', 'misty-tents': '/media/38a947cb039a7e97dd2e58f5a5033ce8.jpg', 'alpine-lake': '/media/63f497b6a6e0ea83cf2745ca93cc0fbb.jpg', 'lakeside': '/media/488afe892e56cc3c4d69069a14a0662e.jpg', 'zion': '/media/185af213be782d22a3a60e336e6ea7f6.jpg' };
+    const bg = BG[p.backdrop] || BG.idaho;
+    const S = DATA.scene; const [FX, FY, FW, FH, FDH] = S.F; const SH = S.H;
+    this.F = S.F; this.NECK = DATA.neck; this.SH = SH;
+    const me = DATA.heads.me[p.crown] || DATA.heads.me.purple;
+    const dog = DATA.heads.dog[p.dog] || DATA.heads.dog.A;
+    if (!this.pos) { this.pos = {}; this.zs = {}; this.z = 500; DATA.items.forEach((it) => { this.pos[it.k] = [it.x, it.y + (it.me ? (me[2] || 0) : 0)]; if (it.z) this.zs[it.k] = it.z; }); DATA.neck.forEach((n, i) => { this.pos['nA' + i] = n.a; this.pos['nB' + i] = n.b; }); }
+    this.arr = p.arrange === 'on';
+    const MC = ['#C2462F', '#3A5A9C', '#575E35', '#E0892F', '#7A4E8C', '#2E8B7A'];
+    const base = { mag: 200, head: 260, top: 240, bot: 230, rough: 100, tape: 120, pinned: 120 };
+    const fz = s.fz || (p.freezer === 'open' ? 'open' : 'closed');
+    const open = fz === 'open';
+    const fA = (this.frames && this.frames[s.fr || 0]) ? (this.frames[s.fr || 0].a || 0) : 0;
+    const swinging = open || ((fz === 'anim' || fz === 'closing') && fA !== 0);
+    const items = DATA.items.map((it, i) => {
+      const [x, y] = this.pos[it.k];
+      let src = it.src, two = it.two || '', w = it.w;
+      if (it.me) { src = me[0]; two = me[1]; }
+      if (it.dog) { src = dog[0]; two = dog[1]; }
+      let cls = 'dr';
+      if (it.kind === 'rough') cls += ' pp';
+      if (it.kind === 'tape') cls += ' tp';
+      if (it.kind === 'pinned') cls += ' pn';
+      if (it.kind === 'head') cls += ' hd';
+      const onFz = (y + (it.h || it.w) / 2) < FY + FDH;
+      const hide = onFz && swinging;
+      const st = 'left: ' + x + 'px; top: ' + y + 'px; width: ' + w + 'px; transform: rotate(' + it.r + 'deg); z-index: ' + (this.zs[it.k] || (base[it.kind] + i)) + '; --mc: ' + MC[i % MC.length] + '; --pw: ' + (it.pinW || 14) + 'px; --pr: ' + (-it.r * 2 + (i % 3) * 14) + 'deg;' + (hide ? ' opacity: 0; pointer-events: none;' : '');
+      return { k: it.k, cls, style: st, src, two, alt: it.alt, isTwo: !!two, hasPin: !!it.pin, pin: it.pin || '' };
+    });
+    const wall = DATA.wall.map((t) => ({ src: t.src, alt: t.alt, cls: 'wl ' + (t.style === 'frame' ? 'fr' : 'tp'), style: 'left: ' + t.x + 'px; top: ' + t.y + 'px; width: ' + t.w + 'px; transform: rotate(' + t.r + 'deg); z-index: 3; filter: drop-shadow(1px 3px 3px rgba(30,20,10,.25));' }));
+    const E = (a) => FX + FW * (1 - Math.cos(-a * Math.PI / 180)) * 1.32;
+    const F = this.frames || (this.frames = [
+      { h: 'h1', x: FX + FW + 70, y: FY - 260 }, { h: 'h2', x: FX + FW - 70, y: FY - 250 }, { h: 'h3', x: FX + FW - 250, y: FY - 235 },
+      { h: 'h4', x: FX + 290, y: FY - 190 }, { h: 'h5', x: FX + 190, y: FY - 135 }, { h: 'h6', x: FX + 120, y: FY - 80 },
+      { h: 'h7', x: FX + 60, y: FY - 34 }, { h: 'h8', x: FX + 8, y: FY - 30 }, { h: 'h9', x: FX - 14, y: FY + 10, a: 0 },
+      { h: 'h9', a: -24 }, { h: 'h9', a: -48 }, { h: 'h9', a: -70 }, { h: 'h9', a: -84, fade: true }, { h: null, a: -90 }
+    ]);
+    this.swing0 = 8;
+    const fr = s.fr || 0;
+    let ang = 0, handShow = false, hand = { src: '', style: '' };
+    if (fz === 'anim' || fz === 'closing') {
+      const f = F[fr] || F[F.length - 1]; ang = f.a || 0;
+      if (fz === 'anim' && f.h) {
+        const H2 = DATA.hands[f.h]; let hx = f.x, hy = f.y;
+        if (hx === undefined) { hx = E(ang) - 26; hy = FY + 10; }
+        handShow = true; hand = { src: H2.src, style: 'position: absolute; left: ' + Math.round(hx) + 'px; top: ' + Math.round(hy) + 'px; width: ' + H2.w + 'px; height: ' + H2.h + 'px; z-index: 950; pointer-events: none; filter: drop-shadow(0 10px 8px rgba(30,20,10,.3)); opacity: ' + (f.fade ? 0.5 : 1) + ';' };
+      }
+    }
+    const jit = (fz === 'anim' || fz === 'closing') && ang ? ((fr * 37) % 5 - 2) * 0.35 : 0;
+    const doorStyle = 'position: absolute; left: ' + FX + 'px; top: ' + FY + 'px; width: ' + FW + 'px; height: ' + FDH + 'px; z-index: 60; pointer-events: none; transform-origin: 100% 50%; transform: perspective(1100px) rotateY(' + ang + 'deg) rotate(' + jit + 'deg); ' + (open ? 'visibility: hidden;' : '') + (ang ? ' box-shadow: -6px 10px 18px rgba(30,20,10,.35); outline: 2px solid #FBF6EA;' : '');
+    const doorWords = [['←', 58, 104, -4], ['pull', 86, 101, 2], ['open', 140, 105, -2], ['the', 62, 137, 3], ['freezer', 98, 134, -3], ['door', 172, 138, 4]].map(([t, x, y, r]) => ({ t, style: 'position: absolute; left: ' + x + 'px; top: ' + y + 'px; transform: rotate(' + r + 'deg); font-size: 18px; padding: 4px 8px 5px;' }));
+    const mk = (f) => ({ title: f.title, desc: f.desc, src: f.src,
+      style: 'left: ' + f.x + 'px; top: ' + f.y + 'px; width: ' + (f.rot ? f.h : f.w) + 'px; height: ' + (f.rot ? f.w : f.h) + 'px; z-index: 5;',
+      imgStyle: f.rot ? 'position: absolute; left: 50%; top: 50%; width: ' + f.w + 'px; height: ' + f.h + 'px; transform: translate(-50%,-50%) rotate(' + f.rot + 'deg);' : '',
+      open: (e) => { let top = 600; try { const r = e.currentTarget.getBoundingClientRect(), R = this._root.getBoundingClientRect(), k = R.width / 1440; top = (r.top - R.top) / k - 340; } catch (err) {} this.setState({ lb: f.k, lbTop: top }); } });
+    const fzIn = DATA.fz.filter((f) => f.where === 'in').map(mk);
+    const fzDoor = DATA.fz.filter((f) => f.where === 'door').map(mk);
+    const hangers = DATA.hangers.map((h) => ({ src: h.src, style: 'position: absolute; left: ' + h.x + 'px; top: ' + h.y + 'px; width: ' + h.w + 'px; height: auto; z-index: 4; pointer-events: none;' }));
+    const L = s.lb ? DATA.fz.find((f) => f.k === s.lb) : null;
+    const pageH = 2349;
+    const lbTop = Math.max(110, Math.min(pageH - 820, s.lbTop || 600));
+    const neckEnds = [];
+    DATA.neck.forEach((n, i) => { ['nA' + i, 'nB' + i].forEach((k) => { const q = this.pos[k]; neckEnds.push({ k, style: 'left: ' + q[0] + 'px; top: ' + q[1] + 'px; z-index: 450;' + (fz !== 'closed' && q[1] < FY + FDH ? ' opacity: 0;' : '') }); }); });
+    return {
+      rootRef: (el) => { if (el) this._root = el; },
+      rootStyle: 'width: 1440px; min-height: ' + pageH + 'px; position: relative; overflow: hidden; color: #2B2722; font-family: ' + B + '; background-color: #DCDCCB; background-image: url(' + bg + '); background-size: cover; background-position: center; background-attachment: fixed; padding: 124px 0 90px; box-sizing: border-box;',
+      eyebrow: 'font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: #C2462F; margin-top: 6px;',
+      h1: 'margin: 0; font-family: ' + H + '; font-weight: 600; font-size: 78px; line-height: .95; letter-spacing: -0.01em;',
+      lede: 'margin: 0; font-size: 21px; font-style: italic; color: #4A453E;',
+      hint: 'margin: 6px 0 0; max-width: 620px; font-size: 16px; line-height: 1.5; color: #6B655C;',
+      S, wall,
+      sceneStyle: 'position: relative; width: 1180px; height: ' + SH + 'px; margin-top: 10px;',
+      kitchenStyle: 'position: absolute; left: 0; top: ' + (S.OY || 0) + 'px; width: 1180px; height: 1400px; display: block; pointer-events: none;',
+      sensorStyle: 'left: ' + FX + 'px; top: ' + FY + 'px; width: ' + Math.round(FW / 3) + 'px; height: ' + FDH + 'px;' + (open || fz !== 'closed' ? ' pointer-events: none;' : ''),
+      canH: SH * 2, canStyle: 'position: absolute; left: 0; top: 0; width: 1180px; height: ' + SH + 'px; pointer-events: none; z-index: 400;',
+      arrange: this.arr,
+      taRef: (el) => { if (el) { this._ta = el; el.value = this.layoutJSON(); } },
+      copyLayout: (e) => { if (e && e.preventDefault) e.preventDefault(); const t = this.layoutJSON(); if (this._ta) { this._ta.value = t; this._ta.select(); } try { navigator.clipboard.writeText(t); } catch (err) {} try { document.execCommand('copy'); } catch (err) {} },
+      bodyStyle: 'position: absolute; left: ' + FX + 'px; top: ' + FY + 'px; width: ' + FW + 'px; height: ' + FH + 'px; display: block; z-index: 5; filter: drop-shadow(0 18px 18px rgba(40,30,20,.25)); pointer-events: none;',
+      fzShow: fz !== 'closed',
+      interiorBox: 'position: absolute; left: ' + (FX + 8) + 'px; top: ' + (FY + 6) + 'px; width: ' + (FW - 16) + 'px; height: ' + (FDH - 10) + 'px; background: linear-gradient(#EEF4F6, #DCE7EC); z-index: 40; box-shadow: inset 0 0 20px rgba(80,110,130,.35);',
+      hangers, fzIn, fzDoor, sceneCls: p.freezer === 'open' ? 'showcaps' : '',
+      openShow: open,
+      openDoorBox: 'position: absolute; left: ' + (FX + FW - 12) + 'px; top: ' + (FY - 14) + 'px; width: 340px; z-index: 55; filter: drop-shadow(0 12px 14px rgba(30,20,10,.25));',
+      doorStyle, doorWords,
+      toggle: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.run(open ? 'close' : 'open'); },
+      closeShow: open,
+      closeStyle: 'position: absolute; left: ' + (FX + FW + 60) + 'px; top: ' + (FY + 360) + 'px; z-index: 70; background: #F2EADB;',
+      items, handShow, hand, neckEnds,
+      neckRef: (el) => { if (el) { this._neck = el; this._fzHide = fz !== 'closed'; setTimeout(() => this.drawNeck(), 0); } },
+      sceneRef: (el) => { if (el && !el._dragInit) { el._dragInit = true; this.initDrag(el); } },
+      soc: 'width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid currentColor; outline: 1px solid currentColor; outline-offset: 2px;',
+      lbOpen: !!L,
+      lb: L ? { src: L.src, title: L.title, desc: L.desc, words: L.title.split(' ').map((t, i) => ({ t, style: 'font-size: 22px; padding: 5px 10px 6px; transform: rotate(' + [-3, 2, -1, 3][i % 4] + 'deg);' })) } : { src: '', title: '', desc: '', words: [] },
+      lbPanel: 'position: absolute; left: 0; top: ' + lbTop + 'px; width: 1440px; height: 700px; z-index: 901;',
+      lbClose: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ lb: null }); }
+    };
+  }
+  layoutJSON() {
+    const o = {}; Object.keys(this.pos).forEach((k) => { o[k] = [Math.round(this.pos[k][0]), Math.round(this.pos[k][1])].concat(this.zs[k] ? [this.zs[k]] : []); });
+    return JSON.stringify(o);
+  }
+  run(dir) {
+    clearTimeout(this._t);
+    const n = this.frames.length;
+    if (dir === 'open') {
+      let i = 0; const step = () => { if (i >= n - 1) { this.setState({ fz: 'open', fr: 0 }); return; } this.setState({ fz: 'anim', fr: i }); i++; this._t = setTimeout(step, i < 9 ? 105 : 120); };
+      step();
+    } else {
+      let i = n - 2; const step = () => { if (i < this.swing0) { this.setState({ fz: 'closed', fr: 0 }); return; } this.setState({ fz: 'closing', fr: i }); i--; this._t = setTimeout(step, 110); };
+      step();
+    }
+  }
+  drawNeck() {
+    const c = this._neck; if (!c || !c.getContext) return; const g = c.getContext('2d'); const SH = this.SH || 1400;
+    g.setTransform(2, 0, 0, 2, 0, 0); g.clearRect(0, 0, 1180, SH);
+    const NK = this.NECK || [];
+    if (!this._ci) { this._ci = NK.map((n) => n.charms.map((ch) => { const im = new Image(); im.onload = () => { clearTimeout(this._dn); this._dn = setTimeout(() => this.drawNeck(), 30); }; im.src = ch.src; return im; })); }
+    const [FX, FY, FW, FH, FDH] = this.F;
+    NK.forEach((nk, ni) => {
+      const pa = this.pos['nA' + ni], pb = this.pos['nB' + ni]; if (!pa || !pb) return;
+      if (this._fzHide && (pa[1] < FY + FDH || pb[1] < FY + FDH)) return;
+      const A = [pa[0] + 6.5, pa[1] + 6.5], B = [pb[0] + 6.5, pb[1] + 6.5];
+      const d = Math.hypot(B[0] - A[0], B[1] - A[1]), L = nk.L || 320; const sag = d < L ? Math.sqrt(L * L - d * d) * 0.56 : 1;
+      const C = [(A[0] + B[0]) / 2, (A[1] + B[1]) / 2 + sag * 2];
+      const P = []; for (let i = 0; i <= 160; i++) { const t = i / 160; P.push([(1 - t) * (1 - t) * A[0] + 2 * (1 - t) * t * C[0] + t * t * B[0], (1 - t) * (1 - t) * A[1] + 2 * (1 - t) * t * C[1] + t * t * B[1]]); }
+      const cum = [0]; for (let i = 1; i < P.length; i++) cum.push(cum[i - 1] + Math.hypot(P[i][0] - P[i - 1][0], P[i][1] - P[i - 1][1]));
+      const tot = cum[cum.length - 1];
+      const at = (sv) => { let i = 1; while (i < cum.length - 1 && cum[i] < sv) i++; const f = (sv - cum[i - 1]) / ((cum[i] - cum[i - 1]) || 1); return [P[i - 1][0] + (P[i][0] - P[i - 1][0]) * f, P[i - 1][1] + (P[i][1] - P[i - 1][1]) * f]; };
+      // paperclip links
+      const step = 8.5; let k = 0;
+      for (let sv = 0; sv + step <= tot; sv += step, k++) {
+        const p0 = at(sv), p1 = at(sv + step); const cx = (p0[0] + p1[0]) / 2, cy = (p0[1] + p1[1]) / 2, an = Math.atan2(p1[1] - p0[1], p1[0] - p0[0]);
+        const ry = k % 2 ? 2.3 : 1.0;
+        g.beginPath(); g.ellipse(cx + 0.6, cy + 1.4, step / 2 + 1.4, ry, an, 0, 7); g.strokeStyle = 'rgba(50,35,10,.22)'; g.lineWidth = 1.4; g.stroke();
+        g.beginPath(); g.ellipse(cx, cy, step / 2 + 1.4, ry, an, 0, 7); g.strokeStyle = k % 2 ? '#D8B04E' : '#B8892C'; g.lineWidth = 1.15; g.stroke();
+        if (k % 2) { g.beginPath(); g.ellipse(cx, cy - 0.4, step / 2, ry * 0.5, an, Math.PI * 1.1, Math.PI * 1.9); g.strokeStyle = 'rgba(255,240,190,.8)'; g.lineWidth = 0.6; g.stroke(); }
+      }
+      // charms hang straight down, spread through the middle of the chain
+      const imgs = this._ci[ni] || []; const nC = nk.charms.length;
+      nk.charms.forEach((ch, j) => {
+        const im = imgs[j]; if (!im || !im.complete || !im.naturalWidth) return;
+        const sv = tot * (0.17 + 0.66 * (nC === 1 ? 0.5 : j / (nC - 1)));
+        const q = at(sv); const sw = Math.sin((j * 1.7 + ni) * 2.1) * 0.06;
+        g.save(); g.translate(q[0], q[1] - 1.5); g.rotate(sw); g.shadowColor = 'rgba(30,20,10,.35)'; g.shadowBlur = 3; g.shadowOffsetY = 2;
+        g.drawImage(im, -ch.w / 2, 0, ch.w, ch.h); g.restore();
+      });
+    });
+  }
+  initDrag(scene) {
+    scene.addEventListener('pointerdown', (e) => {
+      const t = e.target.closest ? e.target.closest('.dr[data-k]') : null; if (!t || !scene.contains(t)) return;
+      e.preventDefault(); const k = t.getAttribute('data-k'); const R = scene.getBoundingClientRect(); const sc = R.width / 1180 || 1;
+      const ox = e.clientX, oy = e.clientY, p0 = this.pos[k] || [0, 0];
+      const [FX, FY, FW, FH, FDH] = this.F; const w = t.offsetWidth, h = t.offsetHeight; const isN = k[0] === 'n';
+      const x0 = FX + 4, x1 = FX + FW - w - 4, y0 = isN ? FY + FDH + 8 : FY + 6, y1 = FY + FH - 48 - h;
+      this.z = (this.z || 500) + 1; if (!isN) { this.zs[k] = this.z; t.style.zIndex = this.z; }
+      t.classList.add('dragging');
+      const mv = (ev) => { let nx = Math.round(p0[0] + (ev.clientX - ox) / sc), ny = Math.round(p0[1] + (ev.clientY - oy) / sc); nx = Math.max(x0, Math.min(x1, nx)); ny = Math.max(y0, Math.min(y1, ny)); this.pos[k] = [nx, ny]; t.style.left = nx + 'px'; t.style.top = ny + 'px'; if (isN) this.drawNeck(); };
+      const up = () => { t.classList.remove('dragging'); window.removeEventListener('pointermove', mv); window.removeEventListener('pointerup', up); if (this._ta) this._ta.value = this.layoutJSON(); };
+      window.addEventListener('pointermove', mv); window.addEventListener('pointerup', up);
+    });
+  }
+}
+
+const T = function(v){return [__h("div",{"ref":v["rootRef"],"style":v["rootStyle"]},"\n\n",__h("nav",{"style":"position: absolute; left: 0; top: 0; width: 1440px; height: 92px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; background: rgba(242,234,219,0.88); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(43,39,34,0.25); z-index: 20; color: #2B2722"},"\n",__h("a",{"href":"/","style":"display: flex; align-items: center; gap: 14px"},"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"Hayden van Steyn logo","style":"height: 54px; width: auto"}),"\n",__h("span",{"style":"font-size: 12px; letter-spacing: .2em; text-transform: uppercase; line-height: 1.5"},"Portfolio",__h("br",{}),"HVS"),"\n"),"\n",__h("div",{"style":"display: flex; align-items: center; gap: 34px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase"},"\n",__h("a",{"href":"/engineering/","style":"color: #3A5A9C"},"Engineering"),"\n",__h("a",{"href":"/art/","style":"border-bottom: 1px solid #2B2722; padding-bottom: 3px"},"Art"),"\n",__h("a",{"class":"orn","href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener"},"R\u00e9sum\u00e9 \u2726"),"\n"),"\n"),"\n\n",__h("img",{"aria-hidden":"true","src":"/media/b3d7897e1105358f7a60ed41affc491a.webp","alt":"","style":"position: absolute; left: 20px; top: 520px; width: 92px; z-index: 4"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/4e9e1c9851d903293c4ef0512e850a87.webp","alt":"","style":"position: absolute; left: 1322px; top: 1500px; width: 108px; z-index: 4"}),"\n\n\n\n",(v["lbOpen"]?["\n",__h("div",{"class":"fadein","onClick":v["lbClose"],"style":"position: absolute; inset: 0; background: rgba(24,30,36,0.9); z-index: 900"}),"\n",__h("div",{"class":"fadein","style":v["lbPanel"]},"\n",__h("button",{"onClick":v["lbClose"],"aria-label":"Close","style":"position: absolute; right: 40px; top: 0; width: 46px; height: 46px; border: 1px solid #F2EADB; background: transparent; color: #F2EADB; font-size: 22px; font-family: inherit"},"\u00d7"),"\n",__h("div",{"style":"position: absolute; left: 140px; top: 30px; width: 700px; height: 640px; display: flex; align-items: center; justify-content: center"},"\n",__h("img",{"src":v["lb"]?.["src"],"alt":v["lb"]?.["title"],"style":"max-width: 640px; max-height: 620px; width: auto; height: auto; display: block; filter: drop-shadow(0 30px 30px rgba(0,0,0,.5))"}),"\n"),"\n",__h("div",{"style":"position: absolute; left: 900px; top: 230px; width: 400px; display: flex; flex-direction: column; gap: 18px"},"\n",__h("div",{"style":"display: flex; flex-wrap: wrap; gap: 8px"},"\n",(v["lb"]?.["words"]||[]).map((w,$index)=>["\n",__h("span",{"class":"wd","style":w?.["style"]},(S(w?.["t"]))),"\n"]),"\n"),"\n",__h("div",{"style":"background: #FBF8EF; color: #2B2722; padding: 20px 22px 22px; background-image: repeating-linear-gradient(#FBF8EF 0 27px, #C9D6E3 27px 28px); border-top: 3px solid #D86A5A; box-shadow: 0 10px 20px -10px rgba(0,0,0,.5); transform: rotate(-1deg)"},"\n",__h("span",{"style":"font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #6B655C"},"From the freezer"),"\n",__h("p",{"style":"margin: 8px 0 0; font-size: 20px; line-height: 28px; font-style: italic"},(S(v["lb"]?.["desc"]))),"\n"),"\n"),"\n"),"\n"]:null),"\n\n",__h("main",{"style":"position: relative; margin-left: 130px; width: 1180px; background: #F2EADB; color: #2B2722; box-shadow: 0 30px 70px -30px rgba(31,28,26,0.55), 0 0 0 1px rgba(43,39,34,0.35); outline: 1px solid rgba(242,234,219,0.9); outline-offset: 6px"},"\n",__h("img",{"aria-hidden":"true","src":"/media/9a658ea6084666e51aba6d35d330605a.webp","alt":"","style":"position: absolute; left: -16px; top: -16px; width: 104px; z-index: 6"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/5436268ecac4b349962402d4477fd472.webp","alt":"","style":"position: absolute; right: -16px; top: -16px; width: 78px; z-index: 6"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/261a702de59a21042306289f512fde03.webp","alt":"","style":"position: absolute; left: -16px; bottom: -16px; width: 104px; z-index: 6"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/12c8df080e9368652df2ce6f2386f820.webp","alt":"","style":"position: absolute; right: -16px; bottom: -16px; width: 90px; z-index: 6"}),"\n\n",__h("header",{"style":"position: relative; padding: 46px 50px 10px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px"},"\n",__h("a",{"class":"orn","href":"/art/","style":"position: absolute; left: 50px; top: 48px"},"\u2190 Art studio"),"\n",__h("img",{"src":"/media/f14f4a1f44290e8f8f768dc873fa6d32.png","alt":"","aria-hidden":"true","style":"height: 58px; width: auto; display: block"}),"\n",__h("span",{"style":v["eyebrow"]},"On the Fridge \u00b7 No. 04"),"\n",__h("h1",{"style":v["h1"]},"Sketchbook"),"\n",__h("span",{"aria-hidden":"true","style":"width: 260px; height: 4px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722; margin: 6px 0 4px"}),"\n",__h("p",{"style":v["lede"]},"sketches, scraps & odds and ends"),"\n",__h("p",{"style":v["hint"]},"Feel free to move things around!"),"\n"),"\n\n",__h("div",{"ref":v["sceneRef"],"class":v["sceneCls"],"style":v["sceneStyle"]},"\n",__h("img",{"src":v["S"]?.["kitchen"],"alt":"Ink drawing of a kitchen: a cabinet with a coffee maker, plants on top of the fridge, shelves of pots and a stove","style":v["kitchenStyle"]}),"\n",(v["wall"]||[]).map((t,$index)=>["\n",__h("span",{"class":t?.["cls"],"style":t?.["style"]},__h("img",{"src":t?.["src"],"alt":t?.["alt"]})),"\n"]),"\n",__h("img",{"src":v["S"]?.["body"],"alt":"A vintage mustard-yellow refrigerator with an HVS nameplate","style":v["bodyStyle"]}),"\n\n",(v["fzShow"]?["\n",__h("div",{"style":v["interiorBox"]},"\n",__h("img",{"src":v["S"]?.["interior"],"alt":"Hand-drawn freezer interior","style":"position: absolute; inset: 0; width: 100%; height: 100%; display: block"}),"\n",(v["hangers"]||[]).map((h,$index)=>["\n",__h("img",{"src":h?.["src"],"alt":"","aria-hidden":"true","style":h?.["style"]}),"\n"]),"\n","\n",__h("div",{"class":"fzb","data-k":"fz_jorts","role":"img","aria-label":"Star patch jorts","style":"left: 54px; top: 30px; width: 128px; height: 112px; z-index: 5"},__h("img",{"src":"/media/d58f19ca670919c5f1736fac344d1bfd.png","alt":""}),__h("span",{"class":"cap wd"},"upcycled textile mosaic design")),"\n",__h("div",{"class":"fzb","data-k":"fz_tee","role":"img","aria-label":"GAZZilla tee","style":"left: 168px; top: 30px; width: 136px; height: 123px; z-index: 5"},__h("img",{"src":"/media/c863e6af823406d75626cf79b1ca7ed7.png","alt":""}),__h("span",{"class":"cap wd"},"upcycled textile mosaic design")),"\n",__h("div",{"class":"fzb","data-k":"fz_yeti","role":"img","aria-label":"Dunkin yeti sweatshirt","style":"left: 292px; top: 30px; width: 124px; height: 144px; z-index: 5"},__h("img",{"src":"/media/d7e821a1a9f3df2f8c1eb0548c590930.png","alt":""}),__h("span",{"class":"cap wd"},"upcycled textile mosaic design")),"\n",__h("div",{"class":"fzb","data-k":"fz_bag","role":"img","aria-label":"Charm beach bag","style":"left: 416px; top: 30px; width: 104px; height: 135px; z-index: 5"},__h("img",{"src":"/media/ef734586b3a3da15dba51fe60d45cc8d.png","alt":""}),__h("span",{"class":"cap wd"},"felted charm beach bag")),"\n",__h("div",{"class":"fzb","data-k":"fz_neck_butterfly","role":"img","aria-label":"Butterfly charm necklace","style":"left: 150px; top: 214px; width: 93px; height: 58px; z-index: 5"},__h("img",{"src":"/media/2d382be275ad8064c6be6e7fb2a29c9c.png","alt":"","style":"position: absolute; left: 50%; top: 50%; width: 58px; height: 93px; transform: translate(-50%,-50%) rotate(-90deg)"}),__h("span",{"class":"cap wd"},"statement necklaces")),"\n",__h("div",{"class":"fzb","data-k":"fz_neck_shell","role":"img","aria-label":"Shell charm necklace","style":"left: 330px; top: 222px; width: 97px; height: 40px; z-index: 5"},__h("img",{"src":"/media/d564992154729bfea0510b08404d7388.png","alt":"","style":"position: absolute; left: 50%; top: 50%; width: 40px; height: 97px; transform: translate(-50%,-50%) rotate(-90deg)"}),__h("span",{"class":"cap wd"},"statement necklaces")),"\n"),"\n"]:null),"\n\n",(v["openShow"]?["\n",__h("div",{"style":v["openDoorBox"]},"\n",__h("img",{"src":v["S"]?.["opendoor"],"alt":"Hand-drawn inside of the open freezer door","onClick":v["toggle"],"style":"width: 100%; height: auto; display: block"}),"\n","\n",__h("div",{"class":"fzb","data-k":"fz_sculpt_moon","role":"img","aria-label":"Moon relief","style":"left: 24px; top: 48px; width: 78px; height: 79px; z-index: 5"},__h("img",{"src":"/media/f7ac845a68b7bf625b66d707d8aad158.png","alt":""}),__h("span",{"class":"cap wd"},"plaster relief sculptures")),"\n",__h("div",{"class":"fzb","data-k":"fz_sculpt_cloud","role":"img","aria-label":"Cloud relief","style":"left: 146px; top: 54px; width: 56px; height: 81px; z-index: 5"},__h("img",{"src":"/media/69a9a249c727a368506c67126b5120bf.png","alt":""}),__h("span",{"class":"cap wd"},"plaster relief sculptures")),"\n",__h("div",{"class":"fzb","data-k":"fz_wawa","role":"img","aria-label":"Wawa lunchbox","style":"left: 66px; top: 146px; width: 90px; height: 91px; z-index: 5"},__h("img",{"src":"/media/254dfae08e8e4b429cb722ddc4d17099.png","alt":""}),__h("span",{"class":"cap wd"},"wawa takeout lunchbox")),"\n"),"\n"]:null),"\n\n",__h("button",{"class":"sensor","onClick":v["toggle"],"aria-label":"Pull the freezer door open","style":v["sensorStyle"]}),"\n",__h("div",{"class":"fzdoor","style":v["doorStyle"]},"\n",__h("img",{"src":v["S"]?.["door"],"alt":"","style":"position: absolute; inset: 0; width: 100%; height: 100%; display: block"}),"\n",(v["doorWords"]||[]).map((w,$index)=>["\n",__h("span",{"class":"wd","style":w?.["style"]},(S(w?.["t"]))),"\n"]),"\n"),"\n\n",(v["closeShow"]?["\n",__h("button",{"class":"orn","onClick":v["toggle"],"style":v["closeStyle"]},"close the freezer"),"\n"]:null),"\n\n",(v["items"]||[]).map((it,$index)=>["\n",__h("div",{"class":it?.["cls"],"data-k":it?.["k"],"style":it?.["style"]},"\n",__h("img",{"class":"h1","src":it?.["src"],"alt":it?.["alt"],"draggable":"false"}),"\n",(it?.["isTwo"]?[__h("img",{"class":"h2","src":it?.["two"],"alt":"","draggable":"false"})]:null),"\n",(it?.["hasPin"]?[__h("img",{"class":"pin","src":it?.["pin"],"alt":"","draggable":"false"})]:null),"\n"),"\n"]),"\n\n",__h("canvas",{"ref":v["neckRef"],"width":"2360","height":v["canH"],"aria-hidden":"true","style":v["canStyle"]}),"\n",(v["neckEnds"]||[]).map((n,$index)=>["\n",__h("div",{"class":"dr ng","data-k":n?.["k"],"aria-label":"Necklace clasp magnet","style":n?.["style"]}),"\n"]),"\n\n",(v["arrange"]?["\n",__h("div",{"class":"arr"},__h("b",{},"Arrange mode.")," Drag everything where you like it, then copy the layout and paste it to Claude to make it the default.\n",__h("textarea",{"ref":v["taRef"],"readonly":""}),"\n",__h("button",{"class":"orn","onClick":v["copyLayout"]},"Copy layout")),"\n"]:null),"\n",(v["handShow"]?["\n",__h("img",{"src":v["hand"]?.["src"],"alt":"","aria-hidden":"true","style":v["hand"]?.["style"]}),"\n"]:null),"\n\n",__h("div",{"style":"box-sizing: border-box; display: flex; flex-direction: column; width: 120px; height: 120px; background-color: #b6b0a7; border-radius: 8px; position: absolute; left: 468px; top: 983px; width: 120px; height: 120px"})),"\n\n",__h("div",{"style":"display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 50px 50px 50px"},"\n",__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-size: 30px; font-style: italic; font-weight: 500"},"Close the fridge door, please"),"\n",__h("a",{"href":"#top","style":"font-size: 12px; letter-spacing: .2em; text-transform: uppercase"},"Back to the top \u2191"),"\n"),"\n\n",__h("div",{"aria-hidden":"true","style":"height: 76px; background-color: #F2EADB; background-image: url(/media/5c68ad7f4666d3be5a7ec2e559e1f78a.webp); background-repeat: repeat-x; background-size: auto 56px; background-position: center; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"}),"\n\n",__h("footer",{"style":"position: relative; display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 34px 50px 34px; background: #F2EADB"},"\n",__h("img",{"src":"/media/a689dc99297f3262b2cb0c82672f3e35.webp","alt":"","aria-hidden":"true","style":"width: 460px; height: auto; display: block"}),"\n",__h("div",{"style":"width: 100%; display: flex; justify-content: space-between; align-items: center"},"\n",__h("a",{"class":"orn","href":"/art/"},"\u2190 Back to the art studio"),"\n",__h("span",{"style":"font-size: 15px; font-style: italic"},"Hayden van Steyn \u00b7 HVS"),"\n",__h("div",{"style":"display: flex; gap: 12px"},"\n",__h("a",{"href":"https://www.linkedin.com/in/hayden-van-steyn","target":"_blank","rel":"noopener","aria-label":"LinkedIn","style":v["soc"]},__h("span",{"style":"font-size: 15px; font-weight: 500"},"in")),"\n",__h("a",{"href":"https://www.instagram.com/haythere_makes/","target":"_blank","rel":"noopener","aria-label":"Instagram","style":v["soc"]},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"1.6","aria-hidden":"true"},__h("rect",{"x":"3","y":"3","width":"18","height":"18","rx":"5"}),__h("circle",{"cx":"12","cy":"12","r":"4.2"}),__h("circle",{"cx":"17.4","cy":"6.6","r":"1","fill":"currentColor"}))),"\n",__h("a",{"href":"mailto:haydenvs3@gmail.com","aria-label":"Email Hayden","style":v["soc"]},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"1.6","aria-hidden":"true"},__h("rect",{"x":"3","y":"5.5","width":"18","height":"13","rx":"1"}),__h("path",{"d":"M3.5 6.5 12 13l8.5-6.5"}))),"\n"),"\n"),"\n"),"\n"))]};
+window.__mount(Component, T, {"arrange": "off", "crown": "purple", "dog": "A", "backdrop": "misty-tents", "freezer": "closed"});
+})();
+</script>
+<script>
+/* Phone: no kitchen, the fridge fills the screen; magnets still drag. When the
+   freezer opens, the view pulls back so the open door shelf fits too. */
+window.__M = {
+  skip: 'div[style*="width: 1180px; height:"][style*="margin-top: 10px"]',
+  after: function (app) {
+    var sc = app.querySelector('div[style*="width: 1180px; height:"][style*="margin-top: 10px"]');
+    if (!sc) return;
+    var SH = parseFloat(/height:\s*(\d+)/.exec(sc.getAttribute('style'))[1]) || 1400;
+    var open = !!app.querySelector('img[alt^="Hand-drawn inside of the open freezer door"]');
+    var x0 = 262, x1 = open ? 1222 : 902, y0 = 250;
+    var avail = sc.parentElement.clientWidth;
+    var s = avail / (x1 - x0);
+    var tf = 'translate(' + (-x0 * s).toFixed(1) + 'px,' + (-y0 * s).toFixed(1) + 'px) scale(' + s.toFixed(4) + ')';
+    if (sc.style.transform !== tf) {
+      sc.style.transformOrigin = '0 0';
+      sc.style.transition = 'transform .7s cubic-bezier(.65,0,.35,1), margin-bottom .7s cubic-bezier(.65,0,.35,1)';
+      sc.style.transform = tf;
+      sc.style.marginBottom = (-(SH - (SH - y0) * s)).toFixed(1) + 'px';
+    }
+  }
+};
+
+</script>
+<script src="/assets/mobile.js"></script>
+</body>
+</html>

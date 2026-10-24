@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art Studio — Hayden van Steyn</title>
+<meta name="description" content="Hayden van Steyn — mechanical engineer, artist and maker. Engineering projects, paintings, photography, merch and sketchbook.">
+<link rel="icon" href="/media/b2b4be51ec8370860146b30788778b07.webp">
+<link rel="stylesheet" href="/assets/site.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=IM+Fell+English:ital@0;1&amp;family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400,100&amp;family=Instrument+Serif:ital@0;1&amp;family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B2722;text-decoration:none}a:hover{color:#2B2722}
+.orn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border:1px solid #2B2722;outline:1px solid #2B2722;outline-offset:3px;border-radius:1px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2B2722;white-space:nowrap;transition:background .25s ease,color .25s ease}
+.orn:before,.orn:after{content:"";position:absolute;top:50%;width:7px;height:7px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg)}
+.orn:before{left:-9px}.orn:after{right:-9px}
+.orn:hover{background:#2B2722;color:#F2EADB}
+.orn.lt{border-color:#F2EADB;outline-color:#F2EADB;color:#F2EADB}
+.orn.lt:before,.orn.lt:after{background:#575E35;border-color:#F2EADB}
+.orn.lt:hover{background:#F2EADB;color:#575E35}
+.oval{display:flex;align-items:center;gap:10px;border:1px solid #2B2722;border-radius:999px;padding:7px 18px 7px 10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;transition:background .2s ease}
+.oval:hover{background:rgba(87,94,53,0.12)}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.fadein{animation:fadein .35s ease both}
+@keyframes rock{0%,100%{transform:rotate(0)}25%{transform:rotate(1.8deg) translateY(-4px)}60%{transform:rotate(-1.4deg) translateY(-2px)}}
+.rock{animation:rock 1.4s ease-in-out both}
+@keyframes slide{0%,12.5%{opacity:1}12.6%,100%{opacity:0}}
+.slide{animation:slide 3.6s steps(1) infinite}
+*{cursor:url(/media/f54c90d29c5c29e7cf1a0c235a261d0f.png) 3 3, auto !important}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0)}40%{opacity:1;transform:scale(1.05) rotate(25deg)}70%{opacity:.6;transform:scale(.85) rotate(35deg)}}
+.twinkle{animation:twinkle 1.3s ease-in-out infinite}
+@keyframes flutter{0%,100%{transform:rotate(0) skewY(0)}30%{transform:rotate(3deg) skewY(-2deg)}65%{transform:rotate(-2deg) skewY(1.5deg)}}
+.flutter{animation:flutter 1.1s ease-in-out infinite}
+@keyframes wind{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}
+.wind path{stroke-dasharray:900;stroke-dashoffset:900}
+.wind.on path{animation:wind 1.6s ease-out both}
+.card-img{transition:opacity .6s ease}
+</style>
+
+<style>
+/* art pages on phones */
+body.m #app > div > img[aria-hidden="true"] { display: none !important; }
+body.m #app > div { padding-top: 70px !important; padding-bottom: 30px !important; background-attachment: scroll !important; }
+body.m main { position: relative !important; left: 0 !important; top: 0 !important; margin: 0 10px !important; width: auto !important; }
+body.m main > img[aria-hidden="true"][data-o*="-16px"] { width: 46px !important; }
+body.m footer { flex-wrap: wrap; gap: 14px; justify-content: center !important; text-align: center; }
+body.m footer > div { flex-wrap: wrap; justify-content: center !important; gap: 14px !important; }
+
+/* lightboxes become full-screen sheets on phones */
+body.m .fadein[data-o*="z-index: 60"] { position: fixed !important; inset: 0 !important; z-index: 900 !important; }
+body.m .fadein[data-o*="z-index: 61"] { position: fixed !important; inset: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; overflow-y: auto !important; z-index: 901 !important; padding: 64px 16px 96px !important; box-sizing: border-box !important; display: flex; flex-direction: column; align-items: center; gap: 22px; pointer-events: auto; }
+body.m .fadein[data-o*="z-index: 61"] > div, body.m .fadein[data-o*="z-index: 61"] > div > div { position: relative !important; left: auto !important; right: auto !important; top: auto !important; width: 100% !important; height: auto !important; max-width: 100% !important; }
+body.m .fadein[data-o*="z-index: 61"] img { max-width: 100% !important; max-height: 62vh !important; width: auto !important; height: auto !important; margin: 0 auto; }
+body.m .fadein[data-o*="z-index: 61"] video { width: 100% !important; height: auto !important; aspect-ratio: 1; }
+body.m .fadein[data-o*="z-index: 61"] > button { position: fixed !important; top: 10px !important; right: 12px !important; z-index: 2; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 830px"], body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 772px"] { position: fixed !important; left: 0 !important; right: 0 !important; bottom: 0 !important; top: auto !important; padding: 14px 16px 18px; background: rgba(20,19,17,.92); box-sizing: border-box; gap: 10px; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 772px"] > a { width: auto !important; font-size: 11px !important; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="top: 830px"] > a { font-size: 11px !important; letter-spacing: .14em !important; }
+body.m .fadein[data-o*="z-index: 61"] > div > div { box-sizing: border-box !important; }
+body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height: 440px"] { aspect-ratio: 1; height: auto !important; }
+body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height: 327px"] { aspect-ratio: 440 / 327; height: auto !important; }
+body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height:"] > video, body.m .fadein[data-o*="z-index: 61"] div[data-o*="width: 440px; height:"] > img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-height: none !important; object-fit: cover; }
+body.m .fadein[data-o*="z-index: 61"] > div[data-o*="left: 600px"] { order: -1; }
+
+</style>
+<style>
+body.m main > section[data-o*="height: 640px"] { height: auto !important; overflow: visible !important; display: flex !important; flex-direction: column; gap: 34px; padding: 48px 14px 40px !important; }
+body.m main > section[data-o*="height: 640px"] > img:first-child { width: 100% !important; height: 100% !important; }
+body.m main > section[data-o*="height: 640px"] > img:nth-child(2) { display: none !important; }
+body.m main > section[data-o*="height: 640px"] > div { position: relative !important; left: auto !important; top: auto !important; width: auto !important; }
+body.m main > section[data-o*="height: 640px"] > div:first-of-type { margin: 0 16px 20px; }
+body.m main > section[data-o*="height: 640px"] div[data-o*="width: 464px"] { width: 100% !important; height: auto !important; aspect-ratio: 4 / 3; }
+body.m main > section[data-o*="height: 640px"] div[data-o*="width: 464px"] > img, body.m main > section[data-o*="height: 640px"] div[data-o*="width: 464px"] video { width: 100% !important; height: 100% !important; }
+body.m main > section[data-o*="height: 640px"] img[data-o*="left: -64px"] { left: -26px !important; width: 64px !important; }
+body.m main > section[data-o*="height: 640px"] img[data-o*="right: -44px"] { right: -18px !important; width: 50px !important; }
+body.m main > section[data-o*="height: 640px"] h1 { font-size: 40px !important; }
+body.m main section header { flex-wrap: wrap; row-gap: 12px !important; }
+body.m main section header > span[aria-hidden] { min-width: 40px; }
+body.m main section header img { height: 46px !important; }
+body.m #painting > div { display: grid !important; grid-template-columns: 1fr 1fr; gap: 24px 12px; align-items: end; }
+body.m #painting > div img { height: auto !important; width: 100% !important; max-height: 190px; object-fit: contain; }
+body.m #painting > div a > span { font-size: 13px !important; text-align: center; }
+body.m #digital > div[data-o*="repeat(4"] { grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
+
+</style>
+
+</head>
+<body data-page="ArtV2">
+<div id="stage"><div id="app"></div></div>
+<script src="/assets/preact.min.umd.js"></script>
+<script src="/assets/dc.js"></script>
+<script>
+(function(){
+const __h = preact.h, S = window.__S;
+
+class Component extends DCLogic {
+  // On phones and tablets (no hover), each section's hover animation plays once
+  // when it scrolls into view, instead of waiting for a mouse.
+  componentDidMount() {
+    if (!window.matchMedia || !window.matchMedia('(hover: none)').matches || !window.IntersectionObserver) return;
+    const play = { painting: ['paint', 2600], photography: ['photo', 3800], digital: ['dig', 2600], sketchbook: ['sk', 3200] };
+    this._io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      this._io.unobserve(e.target);
+      const pl = play[e.target.id]; if (!pl) return;
+      this.setState({ h: pl[0] });
+      setTimeout(() => { if ((this.state || {}).h === pl[0]) this.setState({ h: null }); }, pl[1]);
+    }), { threshold: 0.55 });
+    Object.keys(play).forEach((id) => { const el = document.getElementById(id); if (el) this._io.observe(el); });
+    setTimeout(() => this.setState({ hero: true }), 700);
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  renderVals() {
+    const s = this.state || {};
+    const h = s.h || null;
+    const p = this.props;
+    const INK = '#2B2722', CREAM = '#F2EADB', OLIVE = '#575E35', CLAY = '#C2462F';
+    const FONTS = {
+      editorial: { h: "'Cormorant Garamond', serif", hw: 600, b: "'EB Garamond', serif", hs: 1, ls: '-0.01em' },
+      antique: { h: "'IM Fell English', serif", hw: 400, b: "'EB Garamond', serif", hs: 0.92, ls: '-0.01em' },
+      whimsy: { h: "'Fraunces', serif", hw: 600, b: "'Fraunces', serif", hs: 0.86, ls: '-0.02em' },
+      modern: { h: "'Instrument Serif', serif", hw: 400, b: "'Space Grotesk', sans-serif", hs: 0.98, ls: '-0.015em' }
+    };
+    const F = FONTS[p.fonts] || FONTS.editorial;
+    const soft = p.fonts === 'whimsy' ? " font-variation-settings: 'SOFT' 100;" : '';
+    const BG = {
+      'idaho': '/media/6058ac16c7875b77707af7278f4d799a.jpg', 'misty-tents': '/media/38a947cb039a7e97dd2e58f5a5033ce8.jpg',
+      'alpine-lake': '/media/63f497b6a6e0ea83cf2745ca93cc0fbb.jpg', 'lakeside': '/media/488afe892e56cc3c4d69069a14a0662e.jpg',
+      'zion': '/media/185af213be782d22a3a60e336e6ea7f6.jpg'
+    };
+    const BANDS = {
+      pansies: ['/media/1c3bc77097d6939497f1c71c2cc77ba3.webp', 54], iris: ['/media/6bf596022e68e6363e4bb8009460dd54.webp', 54],
+      tulips: ['/media/dedb76346aacbb7aed79a65425c118b6.webp', 58], vines: ['/media/5c68ad7f4666d3be5a7ec2e559e1f78a.webp', 56],
+      crows: ['/media/ce54234f2077fd4f3c7ed917ee77771c.webp', 62], lake: ['/media/9b7919ff65a32a3079bfaac55e8c10a6.webp', 60]
+    };
+    const band = (k) => { const b = BANDS[k] || BANDS.pansies; return 'height: 76px; background-color: #F2EADB; background-image: url(' + b[0] + '); background-repeat: repeat-x; background-size: auto ' + b[1] + 'px; background-position: center; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722;'; };
+    const ENDS = { arch: ['/media/c63e9fadef1399eb706f52162a965f25.webp', 300], mountain: ['/media/a689dc99297f3262b2cb0c82672f3e35.webp', 460], urn: ['/media/acbd7646ca290d25667cc3c31aa9c5f6.webp', 520] };
+    const endK = ENDS[p.endStamp] || ENDS.arch;
+    const bg = BG[p.backdrop] || BG.idaho;
+    const set = (k) => () => this.setState({ h: k });
+    const bfam = 'font-family: ' + F.b + ';';
+
+    const rockCls = h === 'paint' ? 'rock' : '';
+
+    const scr = ['/media/aff19b98a95807e13a94e63b1b8b51a7.jpg', '/media/6c6596e496511527be729ce01aaf6cf3.jpg', '/media/b1519d14f84882c737c0518e5e1213c0.jpg', '/media/f193724f45dbe9902169cbadefff4920.jpg', '/media/385f4c7996e669e792d7f2aa9b5f8b97.jpg', '/media/aa8bbcbedc3a70ee9317e96d85e1c69e.jpg', '/media/559937889060aec0ec1b28efbe5fa183.jpg', '/media/de75d2a43cf02ab431279146669f5ab6.jpg'];
+    const alts = ['A stone cairn above a sea of clouds in Peru', 'A visitor studying paintings in a pale museum gallery in Marseille', 'Small boats crowded in a sunny harbor in Marseille', 'Bryce Canyon hoodoos glowing in hazy light', 'A red-roofed mountain temple in the Nanda Devi region', 'A curious cow nosing toward the camera in an Indian alpine meadow', 'Friends walking through a field backlit by a low sun', 'Snowy peaks at sunrise through a tent door in Peru'];
+    const ph = h === 'photo';
+    const screens = scr.map((src, i) => ({
+      src, alt: alts[i], cls: ph ? 'slide' : '',
+      style: 'position: absolute; inset: 0; width: 300px; height: 223px; object-fit: cover; display: block; animation-delay: ' + (i * 0.45) + 's; opacity: ' + (ph ? 0 : (i === 0 ? 1 : 0)) + ';'
+    }));
+    const st = [
+      { src: '/media/9f366695c40c6b77b1e51337132a85c8.webp', x: 140, y: 30, w: 46 },
+      { src: '/media/ffb9a3a14c7441b92ddb874f59f12260.webp', x: 900, y: 20, w: 52 },
+      { src: '/media/6d0b89734339abbfee7bc75be240eff5.webp', x: 930, y: 290, w: 72 },
+      { src: '/media/37331066cec5f1f935b542fab4a38d21.webp', x: 120, y: 320, w: 64 },
+      { src: '/media/9895c6727c2facbd4b1f512c26a7d78c.webp', x: 790, y: 432, w: 34 }
+    ];
+    const stars = st.map((t, i) => ({
+      src: t.src, cls: ph ? 'twinkle' : '',
+      style: 'position: absolute; left: ' + t.x + 'px; top: ' + t.y + 'px; width: ' + t.w + 'px; filter: invert(1) sepia(.3) brightness(1.08); animation-delay: ' + (i * 0.22) + 's; opacity: ' + (ph ? 0 : 0.35) + ';'
+    }));
+
+    // card text lives in the markup; only the hover animation is computed here
+    const dg = h === 'dig';
+    const cw = {}, cDraw = {}, cPhoto = {};
+    ['c1', 'c2', 'c3', 'c4'].forEach((k, i) => {
+      const delay = dg ? (i * 0.15) + 's' : '0s';
+      cw[k] = 'position: relative; display: block; height: 340px; background: #F6F0E3; color: ' + INK + '; transition: transform .4s cubic-bezier(.34,1.4,.64,1) ' + delay + '; transform: ' + (dg ? 'translateY(-6px)' : 'none') + ';';
+      cDraw[k] = 'position: absolute; inset: 0; width: 200px; height: 210px; object-fit: contain; display: block; transition-delay: ' + delay + '; opacity: ' + (dg ? 0 : 1) + ';';
+      cPhoto[k] = 'position: absolute; inset: 0; width: 200px; height: 210px; object-fit: cover; display: block; transition-delay: ' + delay + '; opacity: ' + (dg ? 1 : 0) + ';';
+    });
+
+    const pg = [
+      { src: '/media/ea85f16bfb2cf601bc7eef1756f2df8d.webp', alt: 'Graphite drawing of a glass swan', w: 150, h: 183, x: 60, y: 210, r: -6 },
+      { src: '/media/6289779f3ee37e67950af74fb177c45f.webp', alt: 'Pencil sketch of a tarp camp in a trail journal', w: 230, h: 150, x: 210, y: 40, r: 4 },
+      { src: '/media/45c37f5dc5fd8057c2ec6d445c864bb9.webp', alt: 'Charcoal portrait of two smiling children', w: 210, h: 150, x: 470, y: 230, r: -3 },
+      { src: '/media/9add5aa34c4056cf4c985e54f8e161c5.webp', alt: 'Charcoal portrait of a bearded man smoking', w: 140, h: 193, x: 520, y: 10, r: 7 },
+      { src: '/media/bfc418ab8bca10c4af58606aa42fe992.webp', alt: 'Journal page with a sketched bucket hat and handwriting', w: 160, h: 175, x: 760, y: 150, r: -8 },
+      { src: '/media/406a2eb3d634ceb22bdfaa7e2d3259bf.webp', alt: 'Ink stamp animals over a watercolor wash', w: 128, h: 192, x: 920, y: 30, r: 9 }
+    ];
+    const sk = h === 'sk';
+    const pages = pg.map((q, i) => {
+      const px = 70 + i * 6, py = 150 - i * 4, pr = (i % 2 ? 1 : -1) * (2 + i);
+      const x = sk ? q.x : px, y = sk ? q.y : py, r = sk ? q.r : pr;
+      return {
+        src: q.src, alt: q.alt,
+        pos: 'position: absolute; left: 0; top: 0; display: block; z-index: ' + (10 - i) + '; transition: transform ' + (1.1 + i * 0.12) + 's cubic-bezier(.22,1,.36,1) ' + (sk ? i * 0.08 : 0) + 's; transform: translate(' + x + 'px,' + y + 'px) rotate(' + r + 'deg);',
+        fl: sk ? 'flutter' : '',
+        inner: 'display: block; filter: drop-shadow(0 8px 9px rgba(43,39,34,0.35)); animation-delay: ' + (i * 0.17) + 's; transform-origin: 50% 0;',
+        img: 'width: ' + (q.w + 16) + 'px; height: auto; display: block;'
+      };
+    });
+
+    return {
+      rootStyle: 'width: 1440px; height: 3800px; position: relative; overflow: hidden; color: ' + INK + '; ' + bfam + ' background-color: #DCDCCB; background-image: url(' + bg + '); background-size: cover; background-position: center; background-attachment: fixed;',
+      bf: bfam, bfm: bfam, bfi: bfam,
+      navLabel: bfam + ' font-size: 12px; letter-spacing: .2em; text-transform: uppercase; line-height: 1.5;',
+      navLinks: bfam + ' display: flex; align-items: center; gap: 34px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase;',
+      heroHover: !!s.hero,
+      heroHint: s.hero ? 'drawing…' : 'hover to redraw',
+      heroCap: bfam + ' position: absolute; right: 14px; bottom: -30px; font-size: 14px; font-style: italic; color: #4A453E;',
+      heroOn: () => this.setState({ hero: true }),
+      heroOff: () => this.setState({ hero: false }),
+      vidRef: (el) => { if (el) { el.muted = true; const pl = el.play && el.play(); if (pl && pl.catch) pl.catch(() => {}); } },
+      eyebrow: bfam + ' font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: ' + OLIVE + ';',
+      h1: 'margin: 0; font-family: ' + F.h + '; font-weight: ' + F.hw + '; font-size: ' + Math.round(60 * F.hs) + 'px; line-height: 1.0; letter-spacing: ' + F.ls + ';' + soft,
+      lede: 'margin: 0; ' + bfam + ' font-size: 19px; line-height: 1.5; color: #3F3A33;' + soft,
+      idx: bfam + ' font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: ' + CLAY + ';',
+      idxL: bfam + ' font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: #E7C9A0;',
+      h2: 'margin: 0; font-family: ' + F.h + '; font-weight: ' + F.hw + '; font-size: ' + Math.round(56 * F.hs) + 'px; line-height: 0.95; letter-spacing: ' + F.ls + '; color: ' + INK + ';' + soft,
+      h2L: 'margin: 0; font-family: ' + F.h + '; font-weight: ' + F.hw + '; font-size: ' + Math.round(56 * F.hs) + 'px; line-height: 0.95; letter-spacing: ' + F.ls + '; color: ' + CREAM + ';' + soft,
+      on: { paint: set('paint'), photo: set('photo'), dig: set('dig'), sk: set('sk') },
+      off: () => this.setState({ h: null }),
+      rockCls, screens, stars, pages, cw, cDraw, cPhoto,
+      frCap: bfam + ' font-size: 15px; font-style: italic; color: #4A453E;',
+      cNum: bfam + ' position: absolute; left: 26px; top: 20px; font-size: 13px; letter-spacing: .08em;',
+      cName: bfam + ' position: absolute; left: 26px; bottom: 24px; width: 150px; font-size: 11.5px; line-height: 1.35; letter-spacing: .14em; text-transform: uppercase;',
+      cMeta: bfam + ' position: absolute; right: 26px; bottom: 24px; font-size: 13px; font-style: italic;',
+      bandTop: band(p.topBand || 'vines'),
+      bandBot: band(p.bottomBand || 'crows'),
+      endSrc: endK[0],
+      endStyle: 'width: ' + endK[1] + 'px; height: auto; display: block;',
+      photoCap: bfam + ' position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font-size: 18px; font-style: italic; color: ' + CREAM + ';',
+      photoHint: 'opacity: ' + (ph ? 0 : 0.75) + '; transition: opacity .3s ease;',
+      digNote: bfam + ' margin: 22px 0 0 0; text-align: center; font-size: 15px; font-style: italic; color: #4A453E;',
+      windCls: 'wind' + (sk ? ' on' : ''),
+      skHint: bfam + ' position: absolute; right: 10px; bottom: 6px; font-size: 15px; font-style: italic; color: #4A453E; transition: opacity .3s ease; opacity: ' + (sk ? 0 : 1) + ';'
+    };
+  }
+}
+
+const T = function(v){return [__h("div",{"style":v["rootStyle"]},"\n\n",__h("nav",{"style":"position: absolute; left: 0; top: 0; width: 1440px; height: 92px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; background: rgba(242,234,219,0.88); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(43,39,34,0.25); z-index: 20"},"\n",__h("a",{"href":"/","style":"display: flex; align-items: center; gap: 14px"},"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"Hayden van Steyn logo","style":"height: 54px; width: auto"}),"\n",__h("span",{"style":v["navLabel"]},"Portfolio",__h("br",{}),"HVS"),"\n"),"\n",__h("div",{"style":v["navLinks"]},"\n",__h("a",{"href":"/engineering/","style":"color: #3A5A9C"},"Engineering"),"\n",__h("a",{"href":"/art/","style":"border-bottom: 1px solid #2B2722; padding-bottom: 3px"},"Art"),"\n",__h("a",{"class":"orn","href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener","style":v["bf"]},"R\u00e9sum\u00e9 \u2726"),"\n"),"\n"),"\n\n",__h("img",{"aria-hidden":"true","src":"/media/21d48ea300abecb24e415996415ac56f.webp","alt":"","style":"position: absolute; left: 14px; top: 196px; width: 104px; z-index: 4"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/b3d7897e1105358f7a60ed41affc491a.webp","alt":"","style":"position: absolute; left: 1324px; top: 880px; width: 96px; z-index: 4"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/4e9e1c9851d903293c4ef0512e850a87.webp","alt":"","style":"position: absolute; left: 1318px; top: 1420px; width: 112px; z-index: 4"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/5bb3b625426f6749ab3c4c699d235686.webp","alt":"","style":"position: absolute; left: 8px; top: 2130px; width: 118px; z-index: 4"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/a4d51a95a45d5a81fe172815a5bede3d.webp","alt":"","style":"position: absolute; left: 1322px; top: 2690px; width: 100px; z-index: 4"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/105cf32158313c2d6705eae442e60b89.webp","alt":"","style":"position: absolute; left: 26px; top: 2780px; width: 82px; z-index: 4"}),"\n\n",__h("main",{"style":"position: absolute; left: 130px; top: 124px; width: 1180px; background: #F2EADB; box-shadow: 0 30px 70px -30px rgba(31,28,26,0.55), 0 0 0 1px rgba(43,39,34,0.35); outline: 1px solid rgba(242,234,219,0.9); outline-offset: 6px; display: flex; flex-direction: column"},"\n\n",__h("img",{"aria-hidden":"true","src":"/media/9a658ea6084666e51aba6d35d330605a.webp","alt":"","style":"position: absolute; left: -16px; top: -16px; width: 104px; z-index: 6"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/5436268ecac4b349962402d4477fd472.webp","alt":"","style":"position: absolute; right: -16px; top: -16px; width: 78px; z-index: 6"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/261a702de59a21042306289f512fde03.webp","alt":"","style":"position: absolute; left: -16px; bottom: -16px; width: 104px; z-index: 6"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/12c8df080e9368652df2ce6f2386f820.webp","alt":"","style":"position: absolute; right: -16px; bottom: -16px; width: 90px; z-index: 6"}),"\n",__h("section",{"style":"position: relative; height: 640px; overflow: hidden"},"\n",__h("img",{"aria-hidden":"true","src":"/media/8cb780c7d34621dda9b274a22c3a9f94.jpg","alt":"","style":"position: absolute; inset: 0; width: 1180px; height: 640px; object-fit: cover"}),"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"","aria-hidden":"true","style":"position: absolute; left: 545px; top: 34px; width: 90px"}),"\n",__h("div",{"onMouseEnter":v["heroOn"],"onMouseLeave":v["heroOff"],"style":"position: absolute; left: 92px; top: 150px; width: 488px; padding: 12px; background: #FBF7EE; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 4px; cursor: pointer"},"\n",__h("div",{"style":"position: relative; width: 464px; height: 348px; overflow: hidden"},"\n",__h("img",{"src":"/media/ceecc7139ac5d9af4a8c0172dd86f41f.jpg","alt":"Hayden photographing outdoors, camera to her eye","style":"position: absolute; inset: 0; width: 464px; height: 348px; object-fit: cover"}),"\n",(v["heroHover"]?["\n",__h("video",{"class":"fadein","src":"/media/e968f17dc54494e162749c82990dcdf6.mp4","poster":"/media/ceecc7139ac5d9af4a8c0172dd86f41f.jpg","ref":v["vidRef"],"muted":true,"autoPlay":true,"playsInline":true,"aria-hidden":"true","style":"position: absolute; inset: 0; width: 464px; height: 348px; object-fit: cover"}),"\n"]:null),"\n"),"\n",__h("span",{"style":v["heroCap"]},(S(v["heroHint"]))),"\n",__h("img",{"aria-hidden":"true","src":"/media/9026aaa04656b43a36cbb4c13a2a6dd7.webp","alt":"","style":"position: absolute; left: -64px; bottom: -40px; width: 96px; transform: rotate(-4deg)"}),"\n",__h("img",{"aria-hidden":"true","src":"/media/6f655b19a7cba25b2bd41cd8bf9c4a06.webp","alt":"","style":"position: absolute; right: -44px; top: -40px; width: 74px; transform: rotate(20deg)"}),"\n"),"\n",__h("div",{"style":"position: absolute; left: 650px; top: 160px; width: 440px; display: flex; flex-direction: column; gap: 20px"},"\n",__h("img",{"aria-hidden":"true","src":"/media/549b191780ba998cf598bd2f67da1a2e.webp","alt":"","style":"width: 140px; opacity: .9"}),"\n",__h("div",{"style":v["eyebrow"]},"The art studio \u00b7 night shift"),"\n",__h("h1",{"style":v["h1"]},"Hi, I'm Hayden, an artist ",__h("em",{"style":"font-style: italic; color: #575E35"},"&")," maker."),"\n",__h("p",{"style":v["lede"]},"I work across painting, photography, design and sketching. I love making tactile, visual, often playful pieces that reflect how I see the world, usually from somewhere outside."),"\n",__h("div",{"style":("display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 4px; "+S(v["bfi"]))},"\n",__h("a",{"class":"oval","href":"#painting"},__h("img",{"src":"/media/aedd85d99e0f0af02285e3a7cfaa6a19.png","alt":"","style":"height: 26px"}),"Painting"),"\n",__h("a",{"class":"oval","href":"#photography"},__h("img",{"src":"/media/e9a431cb4558cea316e4fb1ca12c55bc.png","alt":"","style":"height: 24px"}),"Photography"),"\n",__h("a",{"class":"oval","href":"#digital"},__h("img",{"src":"/media/11adc38bc214d7b02f452e7307054cc8.png","alt":"","style":"height: 22px"}),"Merch & print"),"\n",__h("a",{"class":"oval","href":"#sketchbook"},__h("img",{"src":"/media/f14f4a1f44290e8f8f768dc873fa6d32.png","alt":"","style":"height: 18px"}),"Sketchbook"),"\n"),"\n"),"\n"),"\n\n",__h("div",{"aria-hidden":"true","style":v["bandTop"]}),"\n\n",__h("section",{"id":"painting","onMouseEnter":v["on"]?.["paint"],"onMouseLeave":v["off"],"style":"padding: 46px 50px 56px 50px; background: #F2EADB"},"\n",__h("header",{"style":"display: flex; align-items: flex-end; gap: 22px"},"\n",__h("img",{"src":"/media/aedd85d99e0f0af02285e3a7cfaa6a19.png","alt":"","style":"height: 74px; width: auto"}),"\n",__h("div",{"style":"display: flex; flex-direction: column; gap: 2px"},"\n",__h("span",{"style":v["idx"]},"No. 01"),"\n",__h("h2",{"style":v["h2"]},"Painting"),"\n"),"\n",__h("span",{"aria-hidden":"true","style":"flex: 1; height: 4px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722; margin-bottom: 14px"}),"\n",__h("a",{"class":"orn","href":"/art/paintings/","style":v["bfm"]},"Enter the gallery \u27f6"),"\n"),"\n",__h("div",{"style":"display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px"},"\n","\n",__h("a",{"href":"/art/paintings/","style":"display: flex; flex-direction: column; align-items: center; gap: 14px"},"\n",__h("img",{"class":v["rockCls"],"src":"/media/8e3f659b894dfc774f19742805d2f5aa.webp","alt":"Above the Clouds, oil painting of Himalayan peaks above clouds, in an ink-engraved frame","style":"height: 212px; width: auto; display: block; transform-origin: 50% 100%; animation-delay: 0.0s; filter: drop-shadow(0 10px 12px rgba(43,39,34,0.25))"}),"\n",__h("span",{"style":v["frCap"]},__h("span",{"style":"font-style: normal"},"Above the Clouds")," \u00b7 oil on canvas"),"\n"),"\n",__h("a",{"href":"/art/paintings/","style":"display: flex; flex-direction: column; align-items: center; gap: 14px"},"\n",__h("img",{"class":v["rockCls"],"src":"/media/314e951f32c3f7755b13d13edd551d20.webp","alt":"Still life of flowers and folk-art patterns, in an ink-engraved frame","style":"height: 212px; width: auto; display: block; transform-origin: 50% 100%; animation-delay: 0.12s; filter: drop-shadow(0 10px 12px rgba(43,39,34,0.25))"}),"\n",__h("span",{"style":v["frCap"]},__h("span",{"style":"font-style: normal"},"Still Life")," \u00b7 oil on canvas"),"\n"),"\n",__h("a",{"href":"/art/paintings/","style":"display: flex; flex-direction: column; align-items: center; gap: 14px"},"\n",__h("img",{"class":v["rockCls"],"src":"/media/4d9cda8fa6ea338f3109f395d3106449.webp","alt":"Underwater figure painting in an ink-engraved frame","style":"height: 212px; width: auto; display: block; transform-origin: 50% 100%; animation-delay: 0.24s; filter: drop-shadow(0 10px 12px rgba(43,39,34,0.25))"}),"\n",__h("span",{"style":v["frCap"]},__h("span",{"style":"font-style: normal"},"Water")," \u00b7 acrylic on wood"),"\n"),"\n",__h("a",{"href":"/art/paintings/","style":"display: flex; flex-direction: column; align-items: center; gap: 14px"},"\n",__h("img",{"class":v["rockCls"],"src":"/media/faf7c3856bc0bd08d0124d3c24f65c01.webp","alt":"Deep blue ocean waves painting in an ink-engraved frame","style":"height: 212px; width: auto; display: block; transform-origin: 50% 100%; animation-delay: 0.36s; filter: drop-shadow(0 10px 12px rgba(43,39,34,0.25))"}),"\n",__h("span",{"style":v["frCap"]},__h("span",{"style":"font-style: normal"},"Ocean")," \u00b7 acrylic on canvas"),"\n"),"\n"),"\n"),"\n\n",__h("section",{"id":"photography","onMouseEnter":v["on"]?.["photo"],"onMouseLeave":v["off"],"style":"padding: 46px 50px 56px 50px; background: #575E35; color: #F2EADB"},"\n",__h("header",{"style":"display: flex; align-items: flex-end; gap: 22px"},"\n",__h("img",{"src":"/media/e9a431cb4558cea316e4fb1ca12c55bc.png","alt":"","style":"height: 66px; width: auto; filter: invert(1) sepia(.25) brightness(1.05)"}),"\n",__h("div",{"style":"display: flex; flex-direction: column; gap: 2px"},"\n",__h("span",{"style":v["idxL"]},"No. 02"),"\n",__h("h2",{"style":v["h2L"]},"Photography"),"\n"),"\n",__h("span",{"aria-hidden":"true","style":"flex: 1; height: 4px; border-top: 1px solid #F2EADB; border-bottom: 1px solid #F2EADB; margin-bottom: 14px"}),"\n",__h("a",{"class":"orn lt","href":"/art/photography/","style":v["bfm"]},"See the roll \u27f6"),"\n"),"\n",__h("a",{"href":"#","style":"position: relative; display: block; height: 520px; margin-top: 30px"},"\n",__h("span",{"style":"position: absolute; left: 230px; top: 20px; width: 620px; height: 404px; display: block"},"\n",__h("span",{"style":"position: absolute; left: 42px; top: 126px; width: 300px; height: 223px; overflow: hidden; background: #111; display: block"},"\n",(v["screens"]||[]).map((s,$index)=>["\n",__h("img",{"src":s?.["src"],"alt":s?.["alt"],"class":s?.["cls"],"style":s?.["style"]}),"\n"]),"\n"),"\n",__h("img",{"src":"/media/c9ae296740e67c24e0af8d88db11fd57.webp","alt":"Silver compact camera","style":"position: absolute; inset: 0; width: 620px; height: auto; display: block; filter: drop-shadow(0 22px 24px rgba(0,0,0,0.4))"}),"\n"),"\n",(v["stars"]||[]).map((t,$index)=>["\n",__h("img",{"src":t?.["src"],"alt":"","aria-hidden":"true","class":t?.["cls"],"style":t?.["style"]}),"\n"]),"\n",__h("span",{"style":v["photoCap"]},"mountains \u00b7 faces \u00b7 warm light ",__h("span",{"style":v["photoHint"]},"\u2014 hover to flip through")),"\n"),"\n"),"\n\n",__h("section",{"id":"digital","onMouseEnter":v["on"]?.["dig"],"onMouseLeave":v["off"],"style":"padding: 46px 50px 60px 50px; background: #ECE3CF"},"\n",__h("header",{"style":"display: flex; align-items: flex-end; gap: 22px"},"\n",__h("img",{"src":"/media/11adc38bc214d7b02f452e7307054cc8.png","alt":"","style":"height: 60px; width: auto"}),"\n",__h("div",{"style":"display: flex; flex-direction: column; gap: 2px"},"\n",__h("span",{"style":v["idx"]},"No. 03"),"\n",__h("h2",{"style":v["h2"]},"Merch & print"),"\n"),"\n",__h("span",{"aria-hidden":"true","style":"flex: 1; height: 4px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722; margin-bottom: 14px"}),"\n",__h("a",{"class":"orn","href":"/art/merch-and-print/","style":v["bfm"]},"Open the catalog \u27f6"),"\n"),"\n",__h("div",{"style":"display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: 40px"},"\n","\n",__h("a",{"href":"/art/merch-and-print/","style":v["cw"]?.["c1"]},"\n",__h("svg",{"viewBox":"0 0 250 340","preserveAspectRatio":"none","aria-hidden":"true","style":"position: absolute; inset: 0; width: 100%; height: 100%"},__h("path",{"d":"M15 1 H235 L249 15 V325 L235 339 H15 L1 325 V15 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"}),__h("path",{"d":"M19 7 H231 L243 19 V321 L231 333 H19 L7 321 V19 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"})),"\n",__h("span",{"style":v["cNum"]},"01."),"\n",__h("span",{"style":"position: absolute; left: 25px; top: 46px; width: 200px; height: 210px; display: block; overflow: hidden"},"\n",__h("img",{"class":"card-img","src":"/media/2e3bf392157b267a93e362e789ba10fe.webp","alt":"Hand-drawn skiers and snowboarders hoodie graphic in navy","style":v["cDraw"]?.["c1"]}),"\n",__h("img",{"class":"card-img","src":"/media/90d46d3c5de69561d67f14163062f71e.jpg","alt":"Tan ski club hoodie against snowy mountains","style":v["cPhoto"]?.["c1"]}),"\n"),"\n",__h("span",{"style":v["cName"]},"Lafayette Ski & Board hoodie"),"\n",__h("span",{"style":v["cMeta"]},"2025"),"\n"),"\n",__h("a",{"href":"/art/merch-and-print/","style":v["cw"]?.["c2"]},"\n",__h("svg",{"viewBox":"0 0 250 340","preserveAspectRatio":"none","aria-hidden":"true","style":"position: absolute; inset: 0; width: 100%; height: 100%"},__h("path",{"d":"M15 1 H235 L249 15 V325 L235 339 H15 L1 325 V15 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"}),__h("path",{"d":"M19 7 H231 L243 19 V321 L231 333 H19 L7 321 V19 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"})),"\n",__h("span",{"style":v["cNum"]},"02."),"\n",__h("span",{"style":"position: absolute; left: 25px; top: 46px; width: 200px; height: 210px; display: block; overflow: hidden"},"\n",__h("img",{"class":"card-img","src":"/media/28dba1a484f0b0358c9e16574a1baa1b.webp","alt":"Ink drawing of an illustrated queen of hearts","style":v["cDraw"]?.["c2"]}),"\n",__h("img",{"class":"card-img","src":"/media/aafe79f3f6e07d43eedc0a87e452c39f.jpg","alt":"Printed jack, queen and navy card back on a wood table","style":v["cPhoto"]?.["c2"]}),"\n"),"\n",__h("span",{"style":v["cName"]},"Playing card deck"),"\n",__h("span",{"style":v["cMeta"]},"2026"),"\n"),"\n",__h("a",{"href":"/art/merch-and-print/","style":v["cw"]?.["c3"]},"\n",__h("svg",{"viewBox":"0 0 250 340","preserveAspectRatio":"none","aria-hidden":"true","style":"position: absolute; inset: 0; width: 100%; height: 100%"},__h("path",{"d":"M15 1 H235 L249 15 V325 L235 339 H15 L1 325 V15 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"}),__h("path",{"d":"M19 7 H231 L243 19 V321 L231 333 H19 L7 321 V19 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"})),"\n",__h("span",{"style":v["cNum"]},"03."),"\n",__h("span",{"style":"position: absolute; left: 25px; top: 46px; width: 200px; height: 210px; display: block; overflow: hidden"},"\n",__h("img",{"class":"card-img","src":"/media/f643bdb0b890f994652c78a35b4aec55.webp","alt":"Flat drawing of the blue LOST hoodie, front and back","style":v["cDraw"]?.["c3"]}),"\n",__h("img",{"class":"card-img","src":"/media/7835df7d199e96c82d2aa25f5aa364ef.jpg","alt":"Two pale blue LOST hoodies laid on grass","style":v["cPhoto"]?.["c3"]}),"\n"),"\n",__h("span",{"style":v["cName"]},"LOST outdoor society hoodie"),"\n",__h("span",{"style":v["cMeta"]},"2024"),"\n"),"\n",__h("a",{"href":"/art/merch-and-print/","style":v["cw"]?.["c4"]},"\n",__h("svg",{"viewBox":"0 0 250 340","preserveAspectRatio":"none","aria-hidden":"true","style":"position: absolute; inset: 0; width: 100%; height: 100%"},__h("path",{"d":"M15 1 H235 L249 15 V325 L235 339 H15 L1 325 V15 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"}),__h("path",{"d":"M19 7 H231 L243 19 V321 L231 333 H19 L7 321 V19 Z","fill":"none","stroke":"#2B2722","stroke-width":"1"})),"\n",__h("span",{"style":v["cNum"]},"04."),"\n",__h("span",{"style":"position: absolute; left: 25px; top: 46px; width: 200px; height: 210px; display: block; overflow: hidden"},"\n",__h("img",{"class":"card-img","src":"/media/144e7c813b43bad78be834f358dfe253.jpg","alt":"Black and white version of the Environment poster illustration","style":v["cDraw"]?.["c4"]}),"\n",__h("img",{"class":"card-img","src":"/media/6154ae0d37e1fbf5424f5e18b9e7593a.jpg","alt":"The Environment poster hanging on a library column","style":v["cPhoto"]?.["c4"]}),"\n"),"\n",__h("span",{"style":v["cName"]},"Environment poster"),"\n",__h("span",{"style":v["cMeta"]},"2025"),"\n"),"\n"),"\n",__h("p",{"style":v["digNote"]},"hover: each drawing turns into the real thing"),"\n"),"\n\n",__h("section",{"id":"sketchbook","onMouseEnter":v["on"]?.["sk"],"onMouseLeave":v["off"],"style":"padding: 46px 50px 40px 50px; background: #DCE2DF; overflow: hidden"},"\n",__h("header",{"style":"display: flex; align-items: flex-end; gap: 22px"},"\n",__h("img",{"src":"/media/f14f4a1f44290e8f8f768dc873fa6d32.png","alt":"","style":"height: 48px; width: auto; margin-bottom: 6px"}),"\n",__h("div",{"style":"display: flex; flex-direction: column; gap: 2px"},"\n",__h("span",{"style":v["idx"]},"No. 04"),"\n",__h("h2",{"style":v["h2"]},"Sketchbook"),"\n"),"\n",__h("span",{"aria-hidden":"true","style":"flex: 1; height: 4px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722; margin-bottom: 14px"}),"\n",__h("a",{"class":"orn","href":"/art/sketchbook/","style":v["bfm"]},"Open the fridge \u27f6"),"\n"),"\n",__h("a",{"href":"#","style":"position: relative; display: block; height: 440px; margin-top: 24px"},"\n",__h("svg",{"class":v["windCls"],"viewBox":"0 0 1080 440","aria-hidden":"true","style":"position: absolute; inset: 0; width: 1080px; height: 440px"},__h("path",{"d":"M40 300 C 180 220, 300 360, 440 270 S 700 160, 820 230 S 980 300, 1060 200","fill":"none","stroke":"#2B2722","stroke-width":"1.4","stroke-linecap":"round"}),__h("path",{"d":"M120 380 C 260 330, 380 420, 520 350 S 760 280, 900 330","fill":"none","stroke":"#2B2722","stroke-width":"1","stroke-linecap":"round"}),__h("path",{"d":"M300 120 C 420 60, 520 150, 640 100 S 860 40, 980 110","fill":"none","stroke":"#2B2722","stroke-width":"1","stroke-linecap":"round"})),"\n",(v["pages"]||[]).map((p,$index)=>["\n",__h("span",{"style":p?.["pos"]},"\n",__h("span",{"class":p?.["fl"],"style":p?.["inner"]},"\n",__h("img",{"src":p?.["src"],"alt":p?.["alt"],"style":p?.["img"]}),"\n"),"\n"),"\n"]),"\n",__h("span",{"style":v["skHint"]},"hover \u2014 let the pages blow"),"\n"),"\n"),"\n\n",__h("div",{"aria-hidden":"true","style":v["bandBot"]}),"\n\n",__h("footer",{"style":"position: relative; padding: 34px 50px 34px 50px; background: #F2EADB; display: flex; flex-direction: column; align-items: center; gap: 22px"},"\n",__h("img",{"src":v["endSrc"],"alt":"","aria-hidden":"true","style":v["endStyle"]}),"\n",__h("div",{"style":("width: 100%; display: flex; justify-content: space-between; align-items: center; "+S(v["bfi"]))},"\n",__h("a",{"href":"/","style":"font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase"},"\u2190 Back to the studio"),"\n",__h("span",{"style":"font-size: 14px; font-style: italic; color: #4A453E"},"Hayden van Steyn \u00b7 HVS"),"\n",__h("div",{"style":"display: flex; gap: 12px"},"\n",__h("a",{"href":"https://www.linkedin.com/in/hayden-van-steyn","target":"_blank","rel":"noopener","aria-label":"LinkedIn","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px; font-size: 15px; font-weight: 500"},"in"),"\n",__h("a",{"href":"https://www.instagram.com/haythere_makes/","target":"_blank","rel":"noopener","aria-label":"Instagram","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"#2B2722","stroke-width":"1.6","aria-hidden":"true"},__h("rect",{"x":"3","y":"3","width":"18","height":"18","rx":"5"}),__h("circle",{"cx":"12","cy":"12","r":"4.2"}),__h("circle",{"cx":"17.4","cy":"6.6","r":"1","fill":"#2B2722"}))),"\n",__h("a",{"href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener","aria-label":"R\u00e9sum\u00e9","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"18","height":"20","viewBox":"0 0 20 24","fill":"none","stroke":"#2B2722","stroke-width":"1.6","aria-hidden":"true"},__h("path",{"d":"M3 1h10l5 5v17H3z"}),__h("path",{"d":"M13 1v5h5M6 11h8M6 15h8M6 19h5"}))),"\n",__h("a",{"href":"mailto:haydenvs3@gmail.com","aria-label":"Email Hayden","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"#2B2722","stroke-width":"1.6","aria-hidden":"true"},__h("rect",{"x":"3","y":"5.5","width":"18","height":"13","rx":"1"}),__h("path",{"d":"M3.5 6.5 12 13l8.5-6.5"}))),"\n"),"\n"),"\n"),"\n"),"\n\n")]};
+window.__mount(Component, T, {"fonts": "editorial", "backdrop": "misty-tents", "topBand": "vines", "bottomBand": "crows", "endStamp": "mountain"});
+})();
+</script>
+<script>
+window.__M = {
+  keepGrid: '[style*="repeat(2, minmax(0, 1fr))"],[style*="repeat(4, minmax(0, 1fr))"]',
+  fitW: [['#photography > a', 1080], ['#digital a[style*="height: 340px"]', 250], ['#sketchbook > a', 1080]]
+};
+
+</script>
+<script src="/assets/mobile.js"></script>
+</body>
+</html>

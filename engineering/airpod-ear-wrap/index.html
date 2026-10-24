@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AirPod Ear Wrap — Hayden van Steyn</title>
+<meta name="description" content="Hayden van Steyn — mechanical engineer, artist and maker. Engineering projects, paintings, photography, merch and sketchbook.">
+<link rel="icon" href="/media/b2b4be51ec8370860146b30788778b07.webp">
+<link rel="stylesheet" href="/assets/site.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{cursor:url(/media/a2383112dfd4f28913343266fa46f279.png) 6 6, auto !important}
+a{color:#2B2722;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.orn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border:1px solid #2B2722;outline:1px solid #2B2722;outline-offset:3px;border-radius:1px;font-family:'EB Garamond',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2B2722;white-space:nowrap;transition:background .25s ease,color .25s ease;background:#F2EADB}
+.orn:before,.orn:after{content:"";position:absolute;top:50%;width:7px;height:7px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg)}
+.orn:before{left:-9px}.orn:after{right:-9px}
+.orn:hover{background:#2B2722;color:#F2EADB}
+.navl{position:relative}
+.navl:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:currentColor;transition:right .25s ease}
+.navl:hover:after{right:0}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.plate{position:relative;background:#FBF8F1;border:1px solid rgba(43,39,34,.28);box-shadow:0 1px 0 rgba(43,39,34,.08)}
+.plate img.mx{mix-blend-mode:multiply}
+.card{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-4px)}
+.card:hover .go{background:#2B2722;color:#F2EADB}
+.row:hover{background:rgba(46,111,115,.06)}
+.hs{position:absolute;border:1px dashed transparent;background:transparent;padding:0;transition:border-color .2s ease,background .2s ease}
+.hs:hover,.hs.on{border-color:var(--acc);background:rgba(46,111,115,.07)}
+.leg:hover,.leg.on{background:rgba(46,111,115,.08)}
+
+.screw{position:absolute;width:26px;height:26px;border-radius:50%;padding:0;border:1px solid #6B655C;background:radial-gradient(circle at 35% 30%,#FFFFFF 0 12%,#D9D4CA 45%,#9C968C 100%);box-shadow:0 2px 3px rgba(43,39,34,.35);transition:transform .7s cubic-bezier(.3,1.4,.5,1);z-index:3}
+.screw:before,.screw:after{content:"";position:absolute;left:50%;top:50%;background:#5E584F;border-radius:1px}
+.screw:before{width:14px;height:2.4px;transform:translate(-50%,-50%)}
+.screw:after{width:2.4px;height:14px;transform:translate(-50%,-50%)}
+.shopplate{transition:transform .9s cubic-bezier(.3,1.5,.5,1)}
+video{display:block}
+.vtoggle{border:1px solid #2B2722;background:transparent;padding:8px 13px}
+.vtoggle.on{background:#2B2722;color:#F2EADB}
+
+.req{display:grid;grid-template-columns:1.7fr 1fr 1.3fr 90px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(43,39,34,.3)}
+.rq{font-family:'EB Garamond',serif;font-size:18px}
+.rt{font-size:12px}
+.rr{font-family:'EB Garamond',serif;font-size:17px}
+.rr.todo{color:#A39C90;font-style:italic}
+.st{justify-self:end;font-size:10px;padding:4px 8px;border:1px solid rgba(43,39,34,.3);color:#8A8378}
+.st.met{border-color:var(--acc);background:var(--acc);color:#F2EADB}
+.leg{display:flex;align-items:center;gap:16px;padding:12px;border-bottom:1px solid rgba(43,39,34,.3)}
+.ln{font-size:12px;width:22px;color:#6B655C}
+.lt{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;display:block;line-height:1.1}
+.lm{font-size:9.5px;color:#6B655C}
+.team{font-size:9.5px;padding:4px 8px;border:1px solid rgba(43,39,34,.35);color:#6B655C}
+.mineTag{font-size:9.5px;padding:4px 8px;background:var(--acc);color:#F2EADB}
+.mine{color:var(--acc)}
+.cap{margin-top:12px;display:flex;gap:12px;font-family:'EB Garamond',serif;font-size:16px;line-height:1.4;color:#3A352F}
+.acc{color:var(--acc)}
+.step{padding:0 18px 0 0}
+.sh{display:flex;align-items:center;gap:8px}
+.dia{width:9px;height:9px;transform:rotate(45deg);margin-top:-5px;background:#F2EADB;border:1px solid #2B2722}
+.dia.on{background:var(--acc)}
+.sp{height:170px;margin-top:14px;overflow:hidden}
+.stx{margin:12px 0 0;font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.4;color:#3A352F}
+.crow{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(43,39,34,.3);font-family:'EB Garamond',serif;font-size:18px}
+.lvl{font-size:9.5px;padding:5px 10px;background:var(--acc);color:#F2EADB;min-width:86px;text-align:center}
+.lvl.soft{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+.tag{border:1px solid rgba(43,39,34,.5);padding:6px 10px;font-size:10px}
+.vtoggle{border:1px solid #2B2722;background:rgba(251,248,241,.8);padding:9px 16px}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.fadein{animation:fadein .35s ease both}
+</style>
+
+<style>
+/* engineering pages on phones */
+body.m .req { grid-template-columns: minmax(0,1fr) auto !important; row-gap: 3px; padding: 12px 0 !important; }
+body.m .req .rq { grid-column: 1; grid-row: 1; font-size: 17px; }
+body.m .req .st { grid-column: 2; grid-row: 1; }
+body.m .req .rt { grid-column: 1 / 3; grid-row: 2; }
+body.m .req .rr { grid-column: 1 / 3; grid-row: 3; font-size: 15.5px; }
+body.m .mono[data-o*="grid-template-columns: 1.7fr"] { display: none !important; }
+body.m .plate > div[data-o*="position: absolute"] { display: none !important; } /* hero callout labels */
+body.m .leg { padding: 10px 4px !important; }
+body.m .crow { font-size: 16px !important; gap: 10px; }
+body.m .lvl { min-width: 0 !important; }
+/* two-value comparison tables (FEA): label + change on top, both values side by side below */
+body.m .req[data-o*="1.6fr 1fr 1fr"] { grid-template-columns: minmax(0,1fr) minmax(0,1fr) 76px !important; column-gap: 12px; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .rq { grid-column: 1 / 3; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .st { grid-column: 3; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .rt { grid-column: auto; grid-row: 2; }
+body.m .mono[data-o*="grid-template-columns: 1.6fr 1fr 1fr"] { display: grid !important; grid-template-columns: minmax(0,1fr) minmax(0,1fr) 76px !important; column-gap: 12px; }
+body.m .mono[data-o*="grid-template-columns: 1.6fr 1fr 1fr"] > span:first-child { display: none; }
+body.m .mono[data-o*="grid-template-columns: 1.6fr 1fr 1fr"] > span:last-child { visibility: hidden; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .st { justify-self: end; }
+
+</style>
+
+</head>
+<body data-page="EngEar">
+<div id="stage"><div id="app"></div></div>
+<script src="/assets/preact.min.umd.js"></script>
+<script src="/assets/dc.js"></script>
+<script>
+(function(){
+const __h = preact.h, S = window.__S;
+
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const p = this.props;
+    const H = 5200;
+    const ACC = { blue: '#3A5A9C', teal: '#2E6F73', ink: '#2B2722' }[p.accent] || '#2E6F73';
+    const BGS = { 'grid': '', 'plain': '', 'photo-idaho': '/media/6058ac16c7875b77707af7278f4d799a.jpg', 'photo-lake': '/media/63f497b6a6e0ea83cf2745ca93cc0fbb.jpg', 'photo-zion': '/media/185af213be782d22a3a60e336e6ea7f6.jpg' };
+    const bd = p.backdrop || 'grid';
+    const photo = bd.indexOf('photo') === 0;
+    const grid = 'background-color: #F2EADB; background-image: linear-gradient(rgba(38,128,190,0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(38,128,190,0.13) 1px, transparent 1px), linear-gradient(rgba(38,128,190,0.065) 1px, transparent 1px), linear-gradient(90deg, rgba(38,128,190,0.065) 1px, transparent 1px); background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;';
+    const C = {
+      root: 'width: 1440px; min-height: ' + H + 'px; position: relative; color: #2B2722; overflow: hidden; --acc: ' + ACC + '; ' + (photo ? 'background-color: #DCDCCB; background-image: url(' + BGS[bd] + '); background-size: cover; background-position: center; background-attachment: fixed; padding: 0 0 70px; box-sizing: border-box;' : bd === 'grid' ? grid : 'background: #F2EADB;'),
+      sheet: photo ? 'position: relative; margin: 124px 64px 0; ' + grid + ' box-shadow: 0 30px 70px -30px rgba(31,28,26,0.55), 0 0 0 1px rgba(43,39,34,0.35); outline: 1px solid rgba(242,234,219,0.9); outline-offset: 6px; padding-top: 1px;' : 'position: relative;',
+      navEng: 'color: ' + ACC + '; border-bottom: 1px solid ' + ACC + '; padding-bottom: 3px;',
+      accText: 'color: ' + ACC + ';',
+      accCell: 'padding: 12px 14px; border-left: 1px solid #2B2722; background: ' + ACC + '; color: #F2EADB;',
+      badge: 'position: absolute; right: 12px; top: 10px; font-size: 10px; color: ' + ACC + '; border: 1px solid ' + ACC + '; padding: 4px 8px; background: #FBF8F1;'
+    };
+    const padTop = photo ? 'padding-top: 70px;' : '';
+
+    const ear = s.ear !== false, pod = s.pod !== false, spin = s.spin !== false;
+    if (this._v) { this._v.show.ear = ear; this._v.show.pod = pod; this._v.auto = spin; if (this._v.draw) this._v.draw(); }
+    const on = (b) => b ? 'background: #2B2722; color: #F2EADB;' : '';
+    return {
+      ...C,
+      topRow: (photo ? 'padding: 40px 96px 0;' : 'padding: 128px 96px 0;') + ' display: flex; justify-content: space-between; align-items: center;',
+      ownRow: 'display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35); background: ' + ACC + '; color: #F2EADB;',
+      m1: 'flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; color: ' + ACC + ';',
+      viewRef: (el) => { if (el) setTimeout(() => this.initViewer(el, '/media/2bfacbe2473c4d7fd5910e777043ca17.txt'), 0); },
+      bEar: on(ear), bPod: 'border-left: 0;' + on(pod), bSpin: 'border-left: 0;' + on(spin),
+      tEar: () => this.setState({ ear: !ear }), tPod: () => this.setState({ pod: !pod }), tSpin: () => this.setState({ spin: !spin }),
+      tReset: () => { if (this._v) { this._v.yaw = 0.35; this._v.pitch = 0.12; if (this._v.draw) this._v.draw(); } this.setState({ spin: true }); }
+    };
+  }
+  initViewer(cv, url) {
+    if (!cv || cv._init) return; cv._init = true;
+    const gl = cv.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: false }) || cv.getContext('experimental-webgl');
+    if (!gl) return;
+    gl.getExtension('OES_element_index_uint');
+    const vs = 'attribute vec3 p;attribute vec3 n;uniform mat4 M;uniform mat4 P;varying vec3 vn;varying vec3 vp;void main(){vec4 w=M*vec4(p,1.);vp=w.xyz;vn=mat3(M)*n;gl_Position=P*w;}';
+    const fs = 'precision mediump float;varying vec3 vn;varying vec3 vp;uniform vec3 C;uniform float K;void main(){vec3 N=normalize(vn);if(!gl_FrontFacing)N=-N;vec3 V=normalize(-vp);vec3 L1=normalize(vec3(.5,.8,.6));vec3 L2=normalize(vec3(-.7,.2,.4));float d=max(dot(N,L1),0.)*.75+max(dot(N,L2),0.)*.3+.22;vec3 H=normalize(L1+V);float s=pow(max(dot(N,H),0.),K>1.5?90.:40.);vec3 c;if(K>1.5){vec3 R=reflect(-V,N);float t=R.y*.5+.5;vec3 env=mix(vec3(.12,.12,.13),vec3(.98,.97,.95),smoothstep(.42,.58,t));env=mix(env,vec3(.3,.3,.32),smoothstep(.7,.8,t)*.6);env=mix(env,vec3(.45,.44,.42),smoothstep(.85,1.,t)*.5);float fr=pow(1.-max(dot(N,V),0.),3.);c=env*(.85+.15*d)+vec3(s)*.9+fr*.25;}else{c=C*d+vec3(s)*(K>.5?.35:.06);}gl_FragColor=vec4(c,1.);}';
+    const sh = (t, src) => { const o = gl.createShader(t); gl.shaderSource(o, src); gl.compileShader(o); return o; };
+    const pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr); gl.useProgram(pr);
+    const loc = { p: gl.getAttribLocation(pr, 'p'), n: gl.getAttribLocation(pr, 'n'), M: gl.getUniformLocation(pr, 'M'), P: gl.getUniformLocation(pr, 'P'), C: gl.getUniformLocation(pr, 'C'), K: gl.getUniformLocation(pr, 'K') };
+    const V = this._v = { yaw: 0.35, pitch: 0.12, dist: 4.3, auto: true, parts: [], show: { ear: true, pod: true } };
+    const mul = (a, b) => { const o = new Float32Array(16); for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) { let s = 0; for (let k = 0; k < 4; k++) s += a[k * 4 + j] * b[i * 4 + k]; o[i * 4 + j] = s; } return o; };
+    const draw = () => {
+      const w = cv.width, h = cv.height; gl.viewport(0, 0, w, h); gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); gl.enable(gl.DEPTH_TEST);
+      const f = 1 / Math.tan(0.32), a = w / h, zn = 0.1, zf = 20;
+      const P = new Float32Array([f / a, 0, 0, 0, 0, f, 0, 0, 0, 0, (zf + zn) / (zn - zf), -1, 0, 0, 2 * zf * zn / (zn - zf), 0]);
+      const cy = Math.cos(V.yaw), sy = Math.sin(V.yaw), cp = Math.cos(V.pitch), sp = Math.sin(V.pitch);
+      const RY = new Float32Array([cy, 0, -sy, 0, 0, 1, 0, 0, sy, 0, cy, 0, 0, 0, 0, 1]);
+      const RX = new Float32Array([1, 0, 0, 0, 0, cp, sp, 0, 0, -sp, cp, 0, 0, 0, 0, 1]);
+      const UP = this._upFix || new Float32Array([1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1]);
+      const T = new Float32Array([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -V.dist, 1]);
+      const M = mul(T, mul(RX, mul(RY, UP)));
+      gl.uniformMatrix4fv(loc.P, false, P); gl.uniformMatrix4fv(loc.M, false, M);
+      V.parts.forEach((q) => {
+        if ((q.g === 'ear' && !V.show.ear) || (q.g === 'pod' && !V.show.pod)) return;
+        gl.uniform3fv(loc.C, q.c); gl.uniform1f(loc.K, q.k);
+        gl.bindBuffer(gl.ARRAY_BUFFER, q.vb); gl.enableVertexAttribArray(loc.p); gl.vertexAttribPointer(loc.p, 3, gl.FLOAT, false, 0, 0);
+        gl.bindBuffer(gl.ARRAY_BUFFER, q.nb); gl.enableVertexAttribArray(loc.n); gl.vertexAttribPointer(loc.n, 3, gl.FLOAT, false, 0, 0);
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, q.ib); gl.drawElements(gl.TRIANGLES, q.count, gl.UNSIGNED_INT, 0);
+      });
+    };
+    V.draw = draw;
+    const size = () => { const r = cv.getBoundingClientRect(); const dpr = Math.min(window.devicePixelRatio || 1, 2); cv.width = Math.max(2, Math.round(cv.clientWidth * dpr)); cv.height = Math.max(2, Math.round(cv.clientHeight * dpr)); };
+    size();
+    fetch(url).then((r) => r.text()).then((txt) => { const bin = atob(txt.trim()); const u8 = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i); const buf = u8.buffer;
+      const dv = new DataView(buf); let o = 0;
+      const mats = { ear: [[0.80, 0.77, 0.72], 0.2], wrap: [[0.9, 0.9, 0.9], 2], pod: [[0.95, 0.95, 0.94], 1] };
+      ['ear', 'wrap', 'pod'].forEach((g) => {
+        const nv = dv.getUint32(o, true), nt = dv.getUint32(o + 4, true); o += 8;
+        const P = new Float32Array(buf, o, nv * 3); o += nv * 12; const N = new Float32Array(buf, o, nv * 3); o += nv * 12; const I = new Uint32Array(buf, o, nt * 3); o += nt * 12;
+        const mk = (t, d) => { const b = gl.createBuffer(); gl.bindBuffer(t, b); gl.bufferData(t, d, gl.STATIC_DRAW); return b; };
+        V.parts.push({ g, vb: mk(gl.ARRAY_BUFFER, P), nb: mk(gl.ARRAY_BUFFER, N), ib: mk(gl.ELEMENT_ARRAY_BUFFER, I), count: nt * 3, c: mats[g][0], k: mats[g][1] });
+      });
+      this._v.loaded = true; draw();
+    });
+    let drag = null;
+    cv.addEventListener('pointerdown', (e) => { drag = [e.clientX, e.clientY, V.yaw, V.pitch]; V.auto = false; this._dragged = true; cv.setPointerCapture && cv.setPointerCapture(e.pointerId); });
+    cv.addEventListener('pointermove', (e) => { if (!drag) return; V.yaw = drag[2] + (e.clientX - drag[0]) * 0.01; V.pitch = Math.max(-1.3, Math.min(1.3, drag[3] + (e.clientY - drag[1]) * 0.01)); draw(); });
+    const end = () => { drag = null; }; cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+    const tick = () => { if (!cv.isConnected) return; if (V.auto && V.loaded) { V.yaw += 0.006; draw(); } requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+
+}
+
+const T = function(v){return [__h("div",{"style":v["root"]},"\n",__h("span",{"id":"top"}),"\n",__h("nav",{"style":"position: absolute; left: 0; top: 0; width: 1440px; height: 92px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; background: rgba(242,234,219,0.92); border-bottom: 1px solid rgba(43,39,34,0.25); z-index: 20"},"\n",__h("a",{"href":"/","style":"display: flex; align-items: center; gap: 14px"},"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"Hayden van Steyn logo","style":"height: 54px; width: auto"}),"\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; line-height: 1.5"},"Portfolio",__h("br",{}),"HVS"),"\n"),"\n",__h("div",{"style":"font-family: 'EB Garamond', serif; display: flex; align-items: center; gap: 34px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase"},"\n",__h("a",{"class":"navl","href":"/engineering/","style":v["navEng"]},"Engineering"),"\n",__h("a",{"class":"navl","href":"/art/","style":"color: #C2462F"},"Art"),"\n",__h("a",{"class":"orn","href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener"},"R\u00e9sum\u00e9 \u2726"),"\n"),"\n"),"\n\n",__h("div",{"style":v["sheet"]},"\n\n",__h("div",{"style":v["topRow"]},"\n",__h("a",{"class":"orn","href":"/engineering/"},"\u2190 Engineering index"),"\n",__h("span",{"class":"mono","style":"color: #6B655C"},"Project 02 of 04"),"\n"),"\n\n",__h("header",{"style":"padding: 46px 96px 0; display: grid; grid-template-columns: 1fr 430px; gap: 64px; align-items: end"},"\n",__h("div",{},"\n",__h("span",{"class":"mono","style":v["accText"]},"Fig. 02 \u00b7 Personal project \u00b7 2026"),"\n",__h("h1",{"style":"margin: 14px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 84px; line-height: .92; letter-spacing: -0.01em"},"AirPod Ear Wrap"),"\n",__h("p",{"style":"margin: 22px 0 0; font-family: 'EB Garamond', serif; font-size: 23px; line-height: 1.4; max-width: 720px"},"A jewelry-forward retention piece that keeps an AirPod Pro in place through running, hiking and biking \u2014 one continuous, snake-like form that wraps the helix of the ear and the AirPod housing."),"\n"),"\n",__h("div",{"style":"border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 3px; background: #FBF8F1"},"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Role"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"Solo designer")),"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35)"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Timeline"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"October 2026")),"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35)"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Tools"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"Fusion 360 Form (T-splines) \u00b7 Simulation \u00b7 Render")),"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35)"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"References"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"STEP models of an ear and an AirPod Pro")),"\n",__h("div",{"style":v["ownRow"]},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; opacity: .8"},"I owned"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"Everything \u2014 concept sketch to final render")),"\n"),"\n"),"\n\n",__h("section",{"style":"margin: 48px 96px 0; display: grid; grid-template-columns: 1fr 300px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"},"\n",__h("div",{"class":"plate","style":"height: 640px; border: 0; border-right: 1px solid #2B2722; position: relative"},"\n",__h("canvas",{"ref":v["viewRef"],"aria-label":"Interactive 3D model of the ear wrap on an ear with an AirPod; drag to rotate","style":"width: 100%; height: 100%; display: block; touch-action: none"}),"\n",__h("span",{"class":"mono","style":"position: absolute; left: 18px; top: 16px; color: #6B655C; font-size: 10px"},"Fig. 2.1 \u2014 Live model from my Fusion STEP export \u00b7 drag to rotate"),"\n",__h("div",{"style":"position: absolute; left: 18px; bottom: 16px; display: flex; gap: 0"},"\n",__h("button",{"class":"mono vtoggle","onClick":v["tEar"],"style":v["bEar"]},"Ear"),"\n",__h("button",{"class":"mono vtoggle","onClick":v["tPod"],"style":v["bPod"]},"AirPod"),"\n",__h("button",{"class":"mono vtoggle","onClick":v["tSpin"],"style":v["bSpin"]},"Spin"),"\n",__h("button",{"class":"mono vtoggle","onClick":v["tReset"],"style":"border-left: 0"},"Reset"),"\n"),"\n"),"\n",__h("div",{"style":"display: flex; flex-direction: column"},"\n",__h("div",{"style":v["m1"]},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 46px; line-height: .95"},"1 surface"),__h("div",{"class":"mono","style":"font-size: 10px; color: #4A453E; margin-top: 8px; line-height: 1.5"},"Continuous T-spline body, no joins")),"\n",__h("div",{"style":"flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid rgba(43,39,34,.35)"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 46px; line-height: .95"},"2 anchors"),__h("div",{"class":"mono","style":"font-size: 10px; color: #4A453E; margin-top: 8px; line-height: 1.5"},"Ear helix + AirPod stem")),"\n",__h("div",{"style":"flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid rgba(43,39,34,.35)"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 46px; line-height: .95"},"Zebra"),__h("div",{"class":"mono","style":"font-size: 10px; color: #4A453E; margin-top: 8px; line-height: 1.5"},"Surface continuity checked before solid")),"\n",__h("div",{"style":"flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid rgba(43,39,34,.35); color: #A39C90"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 46px; line-height: .95"},"[x] g"),__h("div",{"class":"mono","style":"font-size: 10px; margin-top: 8px; line-height: 1.5"},__h("br",{}))),"\n"),"\n"),"\n\n",__h("section",{"style":"margin: 84px 96px 0; display: grid; grid-template-columns: 340px 1fr; gap: 64px"},"\n",__h("div",{},"\n",__h("span",{"class":"mono","style":v["accText"]},"01 \u2014 Brief"),"\n",__h("h2",{"style":"margin: 10px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 44px; line-height: 1"},"Secure, but worth wearing"),"\n"),"\n",__h("div",{"style":"display: grid; grid-template-columns: 1fr 1fr; gap: 40px; font-family: 'EB Garamond', serif; font-size: 18px; line-height: 1.5; color: #3A352F"},"\n",__h("p",{"style":"margin: 0"},"Earbuds fall out on the trail. Most retention hooks are rubbery and clinical; this one should hold through high-movement activity and still read as jewelry."),"\n",__h("p",{"style":"margin: 0"},"The form had to follow the ear's real geometry, so the design started from STEP reference models of an ear and an AirPod Pro, fixed in place as grounded bodies."),"\n",__h("p",{"style":"margin: 0"},"Every ear is different, and people increasingly expect the things they wear to fit them and say something about them. Modelling on reference geometry means the wrap can be refit to one person's ear and finished to their style."),"\n",__h("div",{"style":"display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"},"\n",__h("div",{"style":"padding: 14px 16px 12px"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 42px; line-height: 1; color: var(--acc)"},"36%"),__h("div",{"class":"mono","style":"font-size: 9.5px; color: #4A453E; margin-top: 6px; line-height: 1.5"},"of consumers are interested in personalised products")),"\n",__h("div",{"style":"padding: 14px 16px 12px; border-left: 1px solid rgba(43,39,34,.35)"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 42px; line-height: 1; color: var(--acc)"},"71%"),__h("div",{"class":"mono","style":"font-size: 9.5px; color: #4A453E; margin-top: 6px; line-height: 1.5"},"of those would pay more for one")),"\n",__h("div",{"class":"mono","style":"grid-column: 1 / -1; padding: 0 16px 10px; font-size: 9px; color: #6B655C"},"Source: Deloitte UK consumer survey, 2015"),"\n"),"\n"),"\n"),"\n\n",__h("section",{"style":"margin: 96px 96px 0"},"\n",__h("span",{"class":"mono","style":v["accText"]},"02 \u2014 Process"),"\n",__h("h2",{"style":"margin: 10px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 44px; line-height: 1"},"From pencil to surface"),"\n",__h("div",{"style":"display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 30px; border-top: 1px solid #2B2722"},"\n",__h("div",{"class":"step"},__h("div",{"class":"sh"},__h("span",{"class":"dia"}),__h("span",{"class":"mono"},"01 \u00b7 Sketch")),__h("div",{"class":"plate sp","style":"height: 300px"},__h("img",{"class":"mx","src":"/media/12a67536b3d143e9124025abe15a7403.webp","alt":"Pencil sketch of the wrap around an ear","style":"width: 100%; height: 100%; object-fit: cover; display: block"})),__h("p",{"class":"stx"},"Spatial routing solved on paper first, a continuous form wrapping helix and AirPod.")),"\n",__h("div",{"class":"step"},__h("div",{"class":"sh"},__h("span",{"class":"dia on"}),__h("span",{"class":"mono"},"02 \u00b7 Model in context")),__h("div",{"class":"plate sp","style":"height: 300px"},__h("img",{"class":"mx","src":"/media/644faaa08f58ceb20a99576190220914.webp","alt":"T-spline control cage around the ear model","style":"width: 100%; height: 100%; object-fit: cover; display: block"})),__h("p",{"class":"stx"},"Wrap built in the T-spline Form environment directly on the grounded ear + AirPod.")),"\n",__h("div",{"class":"step"},__h("div",{"class":"sh"},__h("span",{"class":"dia on"}),__h("span",{"class":"mono"},"03 \u00b7 Analyse surface")),__h("div",{"class":"plate sp","style":"height: 300px"},__h("img",{"class":"mx","src":"/media/b64f09aca1aadec85ad0dff1280601cc.webp","alt":"Zebra stripe surface analysis on the wrap","style":"width: 100%; height: 100%; object-fit: cover; display: block"})),__h("p",{"class":"stx"},"Zebra analysis exposed folds and crossings; fixed by smoothing and redistributing control points.")),"\n",__h("div",{"class":"step"},__h("div",{"class":"sh"},__h("span",{"class":"dia"}),__h("span",{"class":"mono"},"04 \u00b7 Resolve")),__h("div",{"class":"plate sp","style":"height: 300px; display: flex; align-items: center; justify-content: center"},__h("img",{"class":"mx","src":"/media/44c820ba75deb8ae766559f03fb69c44.webp","alt":"Final wrap rendered on its own","style":"max-width: 90%; max-height: 90%; display: block"})),__h("p",{"class":"stx"},"Converted to a clean solid and rendered as a polished-metal piece.")),"\n"),"\n"),"\n\n",__h("section",{"style":"margin: 96px 96px 0"},"\n",__h("span",{"class":"mono","style":v["accText"]},"03 \u2014 Working sessions"),"\n",__h("h2",{"style":"margin: 10px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 44px; line-height: 1"},"Screen recordings"),"\n",__h("div",{"style":"display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 30px"},"\n",__h("figure",{"style":"margin: 0"},__h("div",{"class":"plate","style":"padding: 12px"},__h("video",{"src":"/media/e946e0c606b5fda0695e3171635e45d5.mp4","poster":"/media/1c304965e299c11931ae10e140b2cda8.jpg","controls":"","muted":"","loop":"","playsinline":"","preload":"none","style":"width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #2B2722"})),__h("figcaption",{"class":"cap"},__h("span",{"class":"mono acc"},"2.2"),__h("span",{},"Building the wrap in the T-spline Form environment, pulling edges along the helix (16\u00d7 speed)."))),"\n",__h("figure",{"style":"margin: 0"},__h("div",{"class":"plate","style":"padding: 12px"},__h("video",{"src":"/media/596f0cb4fc781b91d7c07456dbf11227.mp4","poster":"/media/9704aeff542006de04ceb2893901096b.jpg","controls":"","muted":"","loop":"","playsinline":"","preload":"none","style":"width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #2B2722"})),__h("figcaption",{"class":"cap"},__h("span",{"class":"mono acc"},"2.3"),__h("span",{},"Checking the finished form and appearance in context (4\u00d7 speed)."))),"\n"),"\n"),"\n\n",__h("section",{"style":"margin: 96px 96px 0"},"\n",__h("span",{"class":"mono","style":v["accText"]},"04 \u2014 Analysis"),"\n",__h("h2",{"style":"margin: 10px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 44px; line-height: 1"},"First-pass stress check"),"\n",__h("div",{"style":"display: grid; grid-template-columns: 1fr 380px; gap: 48px; margin-top: 30px; align-items: start"},"\n",__h("figure",{"style":"margin: 0"},"\n",__h("div",{"class":"plate","style":"height: 640px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden"},"\n",__h("img",{"class":"mx","src":"/media/3025106035bc7004d1bb3c80d47d41ed.webp","alt":"Fusion static stress result on the wrap: mostly blue, with two small red regions at thin necks","style":"height: 600px; width: auto; display: block"}),"\n",__h("img",{"src":"/media/863c866c0c33e0c190d847fb4768f244.webp","alt":"Safety factor legend: red below 2, green 2 to 4, blue above 4","style":"position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 170px; height: auto; mix-blend-mode: multiply"}),"\n"),"\n",__h("figcaption",{"class":"cap"},__h("span",{"class":"mono acc"},"2.4"),__h("span",{},"Static stress study, safety factor plot. Arrows show the retention loads on the AirPod stem section.")),"\n"),"\n",__h("div",{},"\n",__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 18px; line-height: 1.5; color: #3A352F"},"I set up a static stress study in Fusion Simulation with a safety-factor target of 2.0, loading the wrap where it grips the AirPod."),"\n",__h("p",{"style":"margin: 14px 0 0; font-family: 'EB Garamond', serif; font-size: 18px; line-height: 1.5; color: #3A352F"},"Most of the form sits well above target (blue). Two thin necks, at the top of the helix and at the mid-span twist, fall below it (red), so Fusion flagged the design as not strong enough under this load case. That tells me exactly where the next iteration needs material."),"\n",__h("div",{"class":"plate","style":"margin-top: 20px; padding: 10px"},__h("img",{"src":"/media/37bfba4f3cb069433a06d05de5ab4334.webp","alt":"Fusion result summary: not strong enough, minimum safety factor below target 2.00","style":"width: 100%; display: block"})),"\n",__h("figure",{"style":"margin: 20px 0 0"},__h("div",{"class":"plate","style":"padding: 10px"},__h("video",{"src":"/media/d41dce43bfce27a0dd71d3c9c315e3ee.mp4","poster":"/media/2cfa4cc2b55332121597463cdd4738a4.jpg","controls":"","muted":"","loop":"","playsinline":"","preload":"none","style":"width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #2B2722"})),__h("figcaption",{"class":"cap"},__h("span",{"class":"mono acc"},"2.5"),__h("span",{},"Setting up the load case (2\u00d7 speed)."))),"\n"),"\n"),"\n"),"\n\n",__h("section",{"style":"margin: 96px 96px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px"},"\n",__h("div",{},"\n",__h("span",{"class":"mono","style":v["accText"]},"05 \u2014 Result"),"\n",__h("h2",{"style":"margin: 10px 0 18px; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 40px; line-height: 1"},"Where it landed"),"\n",__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 18.5px; line-height: 1.5; color: #3A352F"},"The wrap is resolved as a complete digital prototype: one watertight T-spline solid, fit-checked against ear and AirPod reference geometry, rendered, and stress-tested. The first simulation found two weak necks below the 2.0 target, which set the brief for the next round. It hasn't been made physically yet."),"\n"),"\n",__h("div",{},"\n",__h("span",{"class":"mono","style":v["accText"]},"06 \u2014 Reflection"),"\n",__h("h2",{"style":"margin: 10px 0 18px; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 40px; line-height: 1"},"What I'd change next"),"\n",__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 18.5px; line-height: 1.5; color: #3A352F"},"First, thicken and fillet the two flagged necks and re-run the study until the whole wrap clears the 2.0 target. Then prototype it: a flexible resin or TPU print to tune how firmly it clips on, before moving to metal through lost-wax casting."),"\n",__h("p",{"style":"margin: 14px 0 0; font-family: 'EB Garamond', serif; font-size: 18.5px; line-height: 1.5; color: #3A352F"},"Longer term, I'd make the fit parametric, so a wrap can be regenerated from a phone scan or a few measurements of someone's ear, and offer a small family of finishes (polished, brushed, coloured) so it fits their style as well as their ear."),"\n",__h("div",{"style":"margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px"},"\n",__h("span",{"class":"mono tag"},"T-spline surfacing"),__h("span",{"class":"mono tag"},"Fusion 360"),__h("span",{"class":"mono tag"},"Surface analysis"),__h("span",{"class":"mono tag"},"Simulation"),__h("span",{"class":"mono tag"},"Rendering"),__h("span",{"class":"mono tag"},"Wearables"),"\n"),"\n"),"\n"),"\n\n",__h("div",{"style":"margin: 90px 96px 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #2B2722; padding-top: 22px"},"\n",__h("a",{"class":"orn","href":"/engineering/rescue-drone/"},"\u2190 Previous \u2014 Rescue Drone"),"\n",__h("a",{"class":"orn","href":"/engineering/"},"All projects \u27f6"),"\n"),"\n\n",__h("div",{"style":"display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 110px 50px 54px"},"\n",__h("img",{"src":"/media/4c364a3fbf279eb6f8d8755d932ef8e5.png","alt":"","aria-hidden":"true","style":"height: 44px; width: auto; opacity: .85"}),"\n",__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 30px"},"End of project 02"),"\n",__h("a",{"href":"#top","class":"mono","style":"color: #6B655C"},"Back to the top \u2191"),"\n"),"\n",__h("div",{"aria-hidden":"true","style":"height: 76px; background-color: #F2EADB; background-image: url(/media/5c68ad7f4666d3be5a7ec2e559e1f78a.webp); background-repeat: repeat-x; background-size: auto 56px; background-position: center; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"}),"\n",__h("footer",{"style":"position: relative; display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 34px 96px 34px; background: #F2EADB"},"\n",__h("img",{"src":"/media/a689dc99297f3262b2cb0c82672f3e35.webp","alt":"","aria-hidden":"true","style":"width: 460px; height: auto; display: block"}),"\n",__h("div",{"style":"width: 100%; display: flex; justify-content: space-between; align-items: center"},"\n",__h("a",{"class":"orn","href":"/engineering/"},"\u2190 Engineering index"),"\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic"},"Hayden van Steyn \u00b7 HVS \u00b7 haydenvs3@gmail.com"),"\n",__h("div",{"style":"display: flex; gap: 12px"},"\n",__h("a",{"href":"https://www.linkedin.com/in/hayden-van-steyn","target":"_blank","rel":"noopener","aria-label":"LinkedIn","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px; font-family: 'EB Garamond', serif; font-size: 15px; font-weight: 500"},"in"),"\n",__h("a",{"href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener","aria-label":"R\u00e9sum\u00e9 (PDF)","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"1.6","aria-hidden":"true"},__h("path",{"d":"M6 2.5h8l4.5 4.5v14.5H6z"}),__h("path",{"d":"M14 2.5V7h4.5"}),__h("path",{"d":"M9 12h6M9 15.5h6M9 19h4"}))),"\n",__h("a",{"href":"mailto:haydenvs3@gmail.com","aria-label":"Email Hayden","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"1.6","aria-hidden":"true"},__h("rect",{"x":"3","y":"5.5","width":"18","height":"13","rx":"1"}),__h("path",{"d":"M3.5 6.5 12 13l8.5-6.5"}))),"\n"),"\n"),"\n"),"\n\n"),"\n")]};
+window.__mount(Component, T, {"accent": "teal", "backdrop": "grid"});
+})();
+</script>
+<script src="/assets/mobile.js"></script>
+</body>
+</html>

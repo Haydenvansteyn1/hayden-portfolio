@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zumo Robot — Hayden van Steyn</title>
+<meta name="description" content="Hayden van Steyn — mechanical engineer, artist and maker. Engineering projects, paintings, photography, merch and sketchbook.">
+<link rel="icon" href="/media/b2b4be51ec8370860146b30788778b07.webp">
+<link rel="stylesheet" href="/assets/site.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+*{cursor:url(/media/a2383112dfd4f28913343266fa46f279.png) 6 6, auto !important}
+a{color:#2B2722;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.orn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border:1px solid #2B2722;outline:1px solid #2B2722;outline-offset:3px;border-radius:1px;font-family:'EB Garamond',serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2B2722;white-space:nowrap;transition:background .25s ease,color .25s ease;background:#F2EADB}
+.orn:before,.orn:after{content:"";position:absolute;top:50%;width:7px;height:7px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg)}
+.orn:before{left:-9px}.orn:after{right:-9px}
+.orn:hover{background:#2B2722;color:#F2EADB}
+.navl{position:relative}
+.navl:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:currentColor;transition:right .25s ease}
+.navl:hover:after{right:0}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.plate{position:relative;background:#FBF8F1;border:1px solid rgba(43,39,34,.28);box-shadow:0 1px 0 rgba(43,39,34,.08)}
+.plate img.mx{mix-blend-mode:multiply}
+.card{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.card:hover{transform:translateY(-4px)}
+.card:hover .go{background:#2B2722;color:#F2EADB}
+.row:hover{background:rgba(46,111,115,.06)}
+.hs{position:absolute;border:1px dashed transparent;background:transparent;padding:0;transition:border-color .2s ease,background .2s ease}
+.hs:hover,.hs.on{border-color:var(--acc);background:rgba(46,111,115,.07)}
+.leg:hover,.leg.on{background:rgba(46,111,115,.08)}
+
+.screw{position:absolute;width:26px;height:26px;border-radius:50%;padding:0;border:1px solid #6B655C;background:radial-gradient(circle at 35% 30%,#FFFFFF 0 12%,#D9D4CA 45%,#9C968C 100%);box-shadow:0 2px 3px rgba(43,39,34,.35);transition:transform .7s cubic-bezier(.3,1.4,.5,1);z-index:3}
+.screw:before,.screw:after{content:"";position:absolute;left:50%;top:50%;background:#5E584F;border-radius:1px}
+.screw:before{width:14px;height:2.4px;transform:translate(-50%,-50%)}
+.screw:after{width:2.4px;height:14px;transform:translate(-50%,-50%)}
+.shopplate{transition:transform .9s cubic-bezier(.3,1.5,.5,1)}
+video{display:block}
+.vtoggle{border:1px solid #2B2722;background:transparent;padding:8px 13px}
+.vtoggle.on{background:#2B2722;color:#F2EADB}
+
+.req{display:grid;grid-template-columns:1.7fr 1fr 1.3fr 90px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(43,39,34,.3)}
+.rq{font-family:'EB Garamond',serif;font-size:18px}
+.rt{font-size:12px}
+.rr{font-family:'EB Garamond',serif;font-size:17px}
+.rr.todo{color:#A39C90;font-style:italic}
+.st{justify-self:end;font-size:10px;padding:4px 8px;border:1px solid rgba(43,39,34,.3);color:#8A8378}
+.st.met{border-color:var(--acc);background:var(--acc);color:#F2EADB}
+.leg{display:flex;align-items:center;gap:16px;padding:12px;border-bottom:1px solid rgba(43,39,34,.3)}
+.ln{font-size:12px;width:22px;color:#6B655C}
+.lt{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;display:block;line-height:1.1}
+.lm{font-size:9.5px;color:#6B655C}
+.team{font-size:9.5px;padding:4px 8px;border:1px solid rgba(43,39,34,.35);color:#6B655C}
+.mineTag{font-size:9.5px;padding:4px 8px;background:var(--acc);color:#F2EADB}
+.mine{color:var(--acc)}
+.cap{margin-top:12px;display:flex;gap:12px;font-family:'EB Garamond',serif;font-size:16px;line-height:1.4;color:#3A352F}
+.acc{color:var(--acc)}
+.step{padding:0 18px 0 0}
+.sh{display:flex;align-items:center;gap:8px}
+.dia{width:9px;height:9px;transform:rotate(45deg);margin-top:-5px;background:#F2EADB;border:1px solid #2B2722}
+.dia.on{background:var(--acc)}
+.sp{height:170px;margin-top:14px;overflow:hidden}
+.stx{margin:12px 0 0;font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.4;color:#3A352F}
+.crow{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid rgba(43,39,34,.3);font-family:'EB Garamond',serif;font-size:18px}
+.lvl{font-size:9.5px;padding:5px 10px;background:var(--acc);color:#F2EADB;min-width:86px;text-align:center}
+.lvl.soft{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+.tag{border:1px solid rgba(43,39,34,.5);padding:6px 10px;font-size:10px}
+.vtoggle{border:1px solid #2B2722;background:rgba(251,248,241,.8);padding:9px 16px}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.fadein{animation:fadein .35s ease both}
+</style>
+
+<style>
+/* engineering pages on phones */
+body.m .req { grid-template-columns: minmax(0,1fr) auto !important; row-gap: 3px; padding: 12px 0 !important; }
+body.m .req .rq { grid-column: 1; grid-row: 1; font-size: 17px; }
+body.m .req .st { grid-column: 2; grid-row: 1; }
+body.m .req .rt { grid-column: 1 / 3; grid-row: 2; }
+body.m .req .rr { grid-column: 1 / 3; grid-row: 3; font-size: 15.5px; }
+body.m .mono[data-o*="grid-template-columns: 1.7fr"] { display: none !important; }
+body.m .plate > div[data-o*="position: absolute"] { display: none !important; } /* hero callout labels */
+body.m .leg { padding: 10px 4px !important; }
+body.m .crow { font-size: 16px !important; gap: 10px; }
+body.m .lvl { min-width: 0 !important; }
+/* two-value comparison tables (FEA): label + change on top, both values side by side below */
+body.m .req[data-o*="1.6fr 1fr 1fr"] { grid-template-columns: minmax(0,1fr) minmax(0,1fr) 76px !important; column-gap: 12px; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .rq { grid-column: 1 / 3; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .st { grid-column: 3; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .rt { grid-column: auto; grid-row: 2; }
+body.m .mono[data-o*="grid-template-columns: 1.6fr 1fr 1fr"] { display: grid !important; grid-template-columns: minmax(0,1fr) minmax(0,1fr) 76px !important; column-gap: 12px; }
+body.m .mono[data-o*="grid-template-columns: 1.6fr 1fr 1fr"] > span:first-child { display: none; }
+body.m .mono[data-o*="grid-template-columns: 1.6fr 1fr 1fr"] > span:last-child { visibility: hidden; }
+body.m .req[data-o*="1.6fr 1fr 1fr"] .st { justify-self: end; }
+
+</style>
+
+</head>
+<body data-page="EngZumo">
+<div id="stage"><div id="app"></div></div>
+<script src="/assets/preact.min.umd.js"></script>
+<script src="/assets/dc.js"></script>
+<script>
+(function(){
+const __h = preact.h, S = window.__S;
+
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const p = this.props;
+    const H = 2250;
+    const ACC = { blue: '#3A5A9C', teal: '#2E6F73', ink: '#2B2722' }[p.accent] || '#2E6F73';
+    const BGS = { 'grid': '', 'plain': '', 'photo-idaho': '/media/6058ac16c7875b77707af7278f4d799a.jpg', 'photo-lake': '/media/63f497b6a6e0ea83cf2745ca93cc0fbb.jpg', 'photo-zion': '/media/185af213be782d22a3a60e336e6ea7f6.jpg' };
+    const bd = p.backdrop || 'grid';
+    const photo = bd.indexOf('photo') === 0;
+    const grid = 'background-color: #F2EADB; background-image: linear-gradient(rgba(38,128,190,0.13) 1px, transparent 1px), linear-gradient(90deg, rgba(38,128,190,0.13) 1px, transparent 1px), linear-gradient(rgba(38,128,190,0.065) 1px, transparent 1px), linear-gradient(90deg, rgba(38,128,190,0.065) 1px, transparent 1px); background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;';
+    const C = {
+      root: 'width: 1440px; min-height: ' + H + 'px; position: relative; color: #2B2722; overflow: hidden; --acc: ' + ACC + '; ' + (photo ? 'background-color: #DCDCCB; background-image: url(' + BGS[bd] + '); background-size: cover; background-position: center; background-attachment: fixed; padding: 0 0 70px; box-sizing: border-box;' : bd === 'grid' ? grid : 'background: #F2EADB;'),
+      sheet: photo ? 'position: relative; margin: 124px 64px 0; ' + grid + ' box-shadow: 0 30px 70px -30px rgba(31,28,26,0.55), 0 0 0 1px rgba(43,39,34,0.35); outline: 1px solid rgba(242,234,219,0.9); outline-offset: 6px; padding-top: 1px;' : 'position: relative;',
+      navEng: 'color: ' + ACC + '; border-bottom: 1px solid ' + ACC + '; padding-bottom: 3px;',
+      accText: 'color: ' + ACC + ';',
+      accCell: 'padding: 12px 14px; border-left: 1px solid #2B2722; background: ' + ACC + '; color: #F2EADB;',
+      badge: 'position: absolute; right: 12px; top: 10px; font-size: 10px; color: ' + ACC + '; border: 1px solid ' + ACC + '; padding: 4px 8px; background: #FBF8F1;'
+    };
+    const padTop = photo ? 'padding-top: 70px;' : '';
+
+    const v = s.v || 'a';
+    const on = (b) => b ? 'background: #2B2722; color: #F2EADB;' : '';
+    return {
+      ...C,
+      topRow: (photo ? 'padding: 40px 96px 0;' : 'padding: 128px 96px 0;') + ' display: flex; justify-content: space-between; align-items: center;',
+      ownRow: 'display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35); background: ' + ACC + '; color: #F2EADB;',
+      m1: 'flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; color: ' + ACC + ';',
+      tA: on(v === 'a'), tB: 'border-left: 0;' + on(v === 'b'),
+      setA: () => this.setState({ v: 'a' }), setB: () => this.setState({ v: 'b' }),
+      showA: 'position: absolute; inset: 0; transition: opacity .5s ease; opacity: ' + (v === 'a' ? 1 : 0) + ';',
+      showB: 'position: absolute; inset: 0; transition: opacity .5s ease; opacity: ' + (v === 'b' ? 1 : 0) + ';',
+      capA: v === 'a', capB: v === 'b'
+    };
+  }
+}
+
+const T = function(v){return [__h("div",{"style":v["root"]},"\n",__h("span",{"id":"top"}),"\n",__h("nav",{"style":"position: absolute; left: 0; top: 0; width: 1440px; height: 92px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; background: rgba(242,234,219,0.92); border-bottom: 1px solid rgba(43,39,34,0.25); z-index: 20"},"\n",__h("a",{"href":"/","style":"display: flex; align-items: center; gap: 14px"},"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"Hayden van Steyn logo","style":"height: 54px; width: auto"}),"\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; line-height: 1.5"},"Portfolio",__h("br",{}),"HVS"),"\n"),"\n",__h("div",{"style":"font-family: 'EB Garamond', serif; display: flex; align-items: center; gap: 34px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase"},"\n",__h("a",{"class":"navl","href":"/engineering/","style":v["navEng"]},"Engineering"),"\n",__h("a",{"class":"navl","href":"/art/","style":"color: #C2462F"},"Art"),"\n",__h("a",{"class":"orn","href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener"},"R\u00e9sum\u00e9 \u2726"),"\n"),"\n"),"\n\n",__h("div",{"style":v["sheet"]},"\n",__h("div",{"style":v["topRow"]},"\n",__h("a",{"class":"orn","href":"/engineering/"},"\u2190 Engineering index"),"\n",__h("span",{"class":"mono","style":"color: #6B655C"},"More projects \u00b7 08"),"\n"),"\n",__h("header",{"style":"padding: 46px 96px 0; display: grid; grid-template-columns: 1fr 430px; gap: 64px; align-items: end"},"\n",__h("div",{},"\n",__h("span",{"class":"mono","style":v["accText"]},"Controls \u00b7 Lafayette College"),"\n",__h("h1",{"style":"margin: 14px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 80px; line-height: .92; letter-spacing: -0.01em"},"Zumo Sensorless Tracking"),"\n",__h("p",{"style":"margin: 22px 0 0; font-family: 'EB Garamond', serif; font-size: 22px; line-height: 1.4; max-width: 720px"},"Getting a small robot to stop exactly where you tell it, using nothing but its own wheel encoders."),"\n"),"\n",__h("div",{"style":"border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 3px; background: #FBF8F1"},"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Role"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"Modelling, control + validation")),"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35)"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Team"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"Solo project")),"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35)"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Year"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"2024")),"\n",__h("div",{"style":"display: flex; gap: 12px; padding: 11px 16px; border-top: 1px solid rgba(43,39,34,.35)"},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; color: #6B655C"},"Tools"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"Arduino \u00b7 MATLAB")),"\n",__h("div",{"style":v["ownRow"]},__h("span",{"class":"mono","style":"font-size: 9.5px; width: 104px; flex-shrink: 0; padding-top: 3px; opacity: .8"},"I owned"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.3"},"System model, control algorithm and experimental validation"))),"\n"),"\n",__h("section",{"style":"margin: 56px 96px 0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px"},"\n",__h("figure",{"style":"margin: 0; grid-column: span 1"},__h("div",{"class":"plate","style":"height: 520px; padding: 12px; box-sizing: border-box"},__h("video",{"src":"/media/0bde1157f5527343d5dba4792e97e83e.mp4","poster":"/media/b82a217c6605e4464e1b2d5376ccf330.jpg","controls":true,"muted":true,"loop":true,"playsinline":true,"preload":"none","style":"width: 100%; height: 100%; object-fit: cover; background: #2B2722"})),__h("figcaption",{"class":"cap"},__h("span",{"class":"mono acc"},"8.1"),__h("span",{},"The robot driving itself to a target distance using encoder feedback only."))),"\n",__h("div",{"style":"display: flex; flex-direction: column; justify-content: center; gap: 0"},__h("div",{"style":"display: flex; flex-direction: column"},__h("div",{"style":v["m1"]},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 50px; line-height: .95"},"5%"),__h("div",{"class":"mono","style":"font-size: 10px; color: #4A453E; margin-top: 8px; line-height: 1.5"},"Distance error, no external sensors")),"\n",__h("div",{"style":"flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid rgba(43,39,34,.35)"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 50px; line-height: .95"},"1st order"),__h("div",{"class":"mono","style":"font-size: 10px; color: #4A453E; margin-top: 8px; line-height: 1.5"},"Validated velocity model")),"\n",__h("div",{"style":"flex: 1; padding: 22px 26px; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid rgba(43,39,34,.35)"},__h("div",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 50px; line-height: .95"},"FSM"),__h("div",{"class":"mono","style":"font-size: 10px; color: #4A453E; margin-top: 8px; line-height: 1.5"},"Finite-state control logic")))),"\n"),"\n",__h("section",{"style":"margin: 72px 96px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; border-top: 1px solid #2B2722; padding-top: 30px"},"\n",__h("div",{},__h("span",{"class":"mono","style":v["accText"]},"Why"),__h("div",{"style":"margin-top: 12px"},__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 18.5px; line-height: 1.5; color: #3A352F"},"Ultrasonic and infrared sensors can be bulky, noisy or unreliable in tight spaces. The goal was a minimal, sensorless alternative."))),"\n",__h("div",{},__h("span",{"class":"mono","style":v["accText"]},"What I did"),__h("div",{"style":"margin-top: 12px"},__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 18.5px; line-height: 1.5; color: #3A352F"},"Modelled velocity response to motor voltage as a first-order system, identified the time constant and gain from test data, and turned target distances into real-time PWM commands inside a finite-state machine."))),"\n",__h("div",{},__h("span",{"class":"mono","style":v["accText"]},"Result"),__h("div",{"style":"margin-top: 12px"},__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 18.5px; line-height: 1.5; color: #3A352F"},"Distance tracking within 5% error without external sensors, a validated velocity model, and reliable autonomous motion from internal encoders alone."))),"\n"),"\n",__h("div",{"style":"margin: 0 96px"},__h("div",{"style":"margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px"},__h("span",{"class":"mono tag"},"Control systems"),__h("span",{"class":"mono tag"},"System identification"),__h("span",{"class":"mono tag"},"Arduino"),__h("span",{"class":"mono tag"},"MATLAB"),__h("span",{"class":"mono tag"},"Finite-state machines"))),"\n",__h("div",{"style":"margin: 90px 96px 0; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #2B2722; padding-top: 22px"},"\n",__h("a",{"class":"orn","href":"/engineering/microplastic-filter/"},"\u2190 Previous \u2014 Microplastic Filter"),"\n",__h("a",{"class":"orn","href":"/engineering/solar-collector/"},"Next \u2014 Solar Collector \u27f6"),"\n"),"\n",__h("div",{"style":"display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 110px 50px 54px"},"\n",__h("img",{"src":"/media/4c364a3fbf279eb6f8d8755d932ef8e5.png","alt":"","aria-hidden":"true","style":"height: 44px; width: auto; opacity: .85"}),"\n",__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 30px"},"End of the project"),"\n",__h("a",{"href":"#top","class":"mono","style":"color: #6B655C"},"Back to the top \u2191"),"\n"),"\n",__h("div",{"aria-hidden":"true","style":"height: 76px; background-color: #F2EADB; background-image: url(/media/5c68ad7f4666d3be5a7ec2e559e1f78a.webp); background-repeat: repeat-x; background-size: auto 56px; background-position: center; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"}),"\n",__h("footer",{"style":"position: relative; display: flex; flex-direction: column; align-items: center; gap: 22px; padding: 34px 96px 34px; background: #F2EADB"},"\n",__h("img",{"src":"/media/a689dc99297f3262b2cb0c82672f3e35.webp","alt":"","aria-hidden":"true","style":"width: 460px; height: auto; display: block"}),"\n",__h("div",{"style":"width: 100%; display: flex; justify-content: space-between; align-items: center"},"\n",__h("a",{"class":"orn","href":"/engineering/"},"\u2190 Engineering index"),"\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 15px; font-style: italic"},"Hayden van Steyn \u00b7 HVS \u00b7 haydenvs3@gmail.com"),"\n",__h("div",{"style":"display: flex; gap: 12px"},"\n",__h("a",{"href":"https://www.linkedin.com/in/hayden-van-steyn","target":"_blank","rel":"noopener","aria-label":"LinkedIn","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px; font-family: 'EB Garamond', serif; font-size: 15px; font-weight: 500"},"in"),"\n",__h("a",{"href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener","aria-label":"R\u00e9sum\u00e9 (PDF)","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"1.6","aria-hidden":"true"},__h("path",{"d":"M6 2.5h8l4.5 4.5v14.5H6z"}),__h("path",{"d":"M14 2.5V7h4.5"}),__h("path",{"d":"M9 12h6M9 15.5h6M9 19h4"}))),"\n",__h("a",{"href":"mailto:haydenvs3@gmail.com","aria-label":"Email Hayden","style":"width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 2px"},__h("svg",{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","stroke-width":"1.6","aria-hidden":"true"},__h("rect",{"x":"3","y":"5.5","width":"18","height":"13","rx":"1"}),__h("path",{"d":"M3.5 6.5 12 13l8.5-6.5"}))),"\n"),"\n"),"\n"),"\n\n"),"\n")]};
+window.__mount(Component, T, {"accent": "teal", "backdrop": "grid"});
+})();
+</script>
+<script src="/assets/mobile.js"></script>
+</body>
+</html>

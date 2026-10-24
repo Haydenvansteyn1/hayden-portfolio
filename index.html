@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hayden van Steyn — Engineer · Artist · Maker</title>
+<meta name="description" content="Hayden van Steyn — mechanical engineer, artist and maker. Engineering projects, paintings, photography, merch and sketchbook.">
+<link rel="icon" href="/media/b2b4be51ec8370860146b30788778b07.webp">
+<link rel="stylesheet" href="/assets/site.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2B2722;text-decoration:none}a:hover{color:#2B2722}
+.orn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border:1px solid #2B2722;outline:1px solid #2B2722;outline-offset:3px;border-radius:1px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#2B2722;white-space:nowrap;transition:background .25s ease,color .25s ease;background:rgba(242,234,219,.92)}
+.orn:before,.orn:after{content:"";position:absolute;top:50%;width:7px;height:7px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg)}
+.orn:before{left:-9px}.orn:after{right:-9px}
+.orn:hover{background:#2B2722;color:#F2EADB}
+.navl{position:relative}
+.navl:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:currentColor;transition:right .25s ease}
+.navl:hover:after{right:0}
+button{cursor:pointer}
+.lift{transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease}
+.lift:hover{transform:translate(-1px,-2px)}
+@keyframes pop{0%{opacity:0;transform:scale(.55) translateY(10px)}70%{opacity:1;transform:scale(1.05)}100%{opacity:1;transform:none}}
+.popup{transform-origin:24px 100%;animation:pop .5s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes flicker{0%,100%{opacity:1}45%{opacity:.86}50%{opacity:.95}55%{opacity:.8}}
+.flicker{animation:flicker 5s ease-in-out infinite}
+.tg-half:focus-visible{outline:1px solid #2B2722;outline-offset:6px;border-radius:999px}
+.tg-dia{position:absolute;top:50%;width:8px;height:8px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg);z-index:2}
+.tg-end{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.tg:hover .tg-end{transform:rotate(-8deg) scale(1.08)}
+</style>
+
+
+</head>
+<body data-page="Home">
+<div id="stage"><div id="app"></div></div>
+<script src="/assets/preact.min.umd.js"></script>
+<script src="/assets/dc.js"></script>
+<script>
+(function(){
+const __h = preact.h, S = window.__S;
+
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const p = this.props;
+    const mode = s.mode || p.startMode || 'both';
+    const eff = s.hover || mode;
+    const INK = '#2B2722', LIGHT = '#F2EADB';
+    const ENG = p.engColor || '#3A5A9C', ART = p.artAccent || '#C2462F', PENCIL = '#575E35', OLIVE = '#575E35';
+    const SH = Number(p.shadowStrength ?? 0.75);
+    const NS = p.nameStyle || 'framed';
+    const mixW = (h, k) => { const n = parseInt(h.slice(1, 7), 16); const c = (v) => Math.round(v + (255 - v) * k); return 'rgb(' + c(n >> 16) + ',' + c((n >> 8) & 255) + ',' + c(n & 255) + ')'; };
+    const hexA = (h, a) => { const n = parseInt(h.slice(1), 16); return 'rgba(' + (n >> 16) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')'; };
+    const BG = { both: '#EFE8DA', engineer: '#E9EBE6', artist: '#EEE4D6' };
+    const accent = { engineer: ENG, both: PENCIL, artist: ART }[eff];
+    const accentInk = eff === 'both' ? INK : accent;
+    const bStyle = p.buttonStyle || 'soft';
+    const label = 'font-family: inherit; font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;';
+
+    const btn = (fill, onFill) => {
+      const tc = fill === PENCIL ? INK : fill;
+      const common = 'position: relative; display: inline-flex; align-items: center; gap: 9px; white-space: nowrap; ' + label + ' font-size: 13px;';
+      const none = 'display: none;';
+      if (bStyle === 'tag') return { style: common + ' background: ' + fill + '; color: ' + onFill + '; border: 2px solid ' + INK + '; border-radius: 6px 16px 16px 6px; padding: 9px 17px 9px 11px; box-shadow: 2px 3px 0 ' + INK + '; transform: rotate(-2deg);', hole: 'width: 9px; height: 9px; border-radius: 50%; background: ' + BG[eff] + '; border: 2px solid ' + INK + '; flex-shrink: 0;', squig: none };
+      if (bStyle === 'stamp') return { style: common + ' background: rgba(246,244,239,0.6); color: ' + tc + '; border: 2.5px solid ' + tc + '; outline: 1.5px dashed ' + tc + '; outline-offset: -7px; border-radius: 8px; padding: 12px 19px; transform: rotate(-3deg);', hole: none, squig: none };
+      if (bStyle === 'ink') return { style: common + ' color: ' + INK + '; padding: 4px 2px 12px 2px; font-weight: 700;', hole: none, squig: 'position: absolute; left: 0; bottom: 0; width: 100%; height: 10px; display: block;' };
+      return { style: common + ' background: ' + fill + '; color: ' + onFill + '; border: 1.5px solid ' + INK + '; border-radius: 999px; padding: 10px 20px; box-shadow: 0 2px 0 ' + INK + ', 0 8px 16px -8px rgba(47,43,41,0.45);', hole: none, squig: none };
+    };
+
+    const img = (on, extra) => 'position: absolute; inset: 0; width: 1440px; height: 890px; transition: opacity .7s ease; opacity: ' + on + ';' + (extra || '');
+    const mult = '';
+    const L = {
+      engDay: img(eff === 'engineer' ? 1 : 0),
+      artNight: img(eff === 'artist' ? 1 : 0),
+      shDefault: img(eff === 'both' ? SH : 0, mult),
+      shDay: img(eff === 'artist' ? SH : 0, mult),
+      shNight: img(eff === 'engineer' ? SH : 0, mult),
+      hazeEng: img(s.hover === 'engineer' ? 0.85 : 0),
+      hazeArt: img(s.hover === 'artist' ? 0.85 : 0)
+    };
+    const glow = (on) => 'position: absolute; inset: 0; pointer-events: none; transition: opacity .8s ease; opacity: ' + (on ? 1 : 0) + ';';
+
+    const knobLeft = { engineer: 3, both: 102, artist: 201 }[mode];
+    const trackBg = {
+      both: 'linear-gradient(90deg, #C9D3E3 0%, #EDE4D3 50%, #E6C3B6 100%)',
+      engineer: 'linear-gradient(90deg, ' + mixW(ENG, 0.35) + ' 0%, ' + mixW(ENG, 0.15) + ' 40%, ' + ENG + ' 100%)',
+      artist: 'linear-gradient(90deg, ' + ART + ' 0%, ' + mixW(ART, 0.15) + ' 60%, ' + mixW(ART, 0.35) + ' 100%)'
+    };
+    const trk = {};
+    ['both', 'engineer', 'artist'].forEach((m) => {
+      trk[m] = 'position: absolute; inset: 0; background: ' + trackBg[m] + '; transition: opacity .45s ease; opacity: ' + (mode === m ? 1 : 0) + ';';
+    });
+    const end = (on, side) => 'position: absolute; top: 9px; ' + side + ': 14px; height: 42px; width: auto; transition: opacity .3s ease; opacity: ' + (on ? 0.9 : 0) + ';';
+    const tlabel = (on, side) => 'position: absolute; top: 0; height: 60px; ' + side + ' display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 1px; color: ' + LIGHT + '; transition: opacity .35s ease .1s, transform .45s cubic-bezier(.34,1.56,.64,1); opacity: ' + (on ? 1 : 0) + '; transform: translateX(' + (on ? 0 : (side.indexOf('left: 0') === 0 ? 10 : -10)) + 'px); pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.18);';
+    const kIcon = (on) => 'position: absolute; left: 50%; top: 50%; height: 38px; width: auto; transform: translate(-50%, -50%) rotate(' + (on ? 0 : -40) + 'deg) scale(' + (on ? 1 : 0.4) + '); transition: opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1); opacity: ' + (on ? 1 : 0) + ';';
+
+    const pick = (m) => () => this.setState({ mode: mode === m ? 'both' : m, hover: null });
+    const hints = {
+      engineer: 'the day shift is on, click the desk to go in',
+      both: 'pick a tool, or walk up to the desk',
+      artist: 'the night shift is on, click the desk to go in'
+    };
+
+    return {
+      rootStyle: 'width: 1440px; height: 920px; position: relative; overflow: hidden; color: ' + INK + '; font-family: "EB Garamond", serif; transition: background .6s ease; background: ' + BG[eff] + '; isolation: isolate;',
+      sceneBox: 'position: absolute; left: 0; top: 40px; width: 1440px; height: 890px; isolation: isolate; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 70px); mask-image: linear-gradient(to bottom, transparent 0, #000 70px);',
+      L,
+      dayGlow: glow(eff === 'engineer'),
+      nightGlow: glow(eff === 'artist'),
+      showEng: eff === 'engineer',
+      showArt: eff === 'artist',
+      popEng: 'font-family: "EB Garamond", serif; color: ' + ENG + '; border-color: ' + ENG + '; outline-color: ' + ENG + ';',
+      popArt: 'font-family: "EB Garamond", serif; color: ' + ART + '; border-color: ' + ART + '; outline-color: ' + ART + ';',
+      artAccent: ART,
+      engNav: 'color: ' + ENG + ';',
+      engDot: 'width: 9px; height: 9px; background: ' + ENG + '; border: 1px solid #2B2722; transform: rotate(45deg); margin-left: 21px; margin-top: -4px;',
+      artDot: 'width: 9px; height: 9px; background: ' + ART + '; border: 1px solid ' + INK + '; transform: rotate(45deg); margin-left: 21px; margin-top: -4px;',
+      resume: btn(accent, eff === 'both' ? INK : LIGHT),
+      accentInk,
+      artNav: 'color: ' + ART + ';',
+      monoStyle: 'width: 46px; height: 46px; border-radius: 6px; background: ' + INK + '; color: ' + BG[eff] + '; display: flex; align-items: center; justify-content: center; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.02em; transition: color .6s ease;',
+      dotStyle: 'color: ' + accent + '; transition: color .4s ease;',
+      framed: NS === 'framed' || NS === 'small-caps',
+      h1: 'margin: 0; font-family: "Cormorant Garamond", serif; ' + (NS === 'small-caps' ? 'font-weight: 600; font-size: 70px; line-height: 1.05; letter-spacing: 0.11em; text-transform: uppercase; margin-right: -0.12em;' : 'font-weight: 700; font-size: ' + (NS === 'framed' ? 98 : 104) + 'px; line-height: 0.95; letter-spacing: -0.015em;') + ' color: ' + INK + '; white-space: nowrap;' + (NS === 'letterpress' ? ' text-shadow: 3px 3px 0 ' + hexA(accent, 0.38) + '; transition: text-shadow .5s ease;' : ''),
+      n1: '',
+      n2: NS === 'italic-mix' ? 'font-style: italic; font-weight: 600; color: ' + (eff === 'both' ? INK : accent) + '; transition: color .5s ease;' : '',
+      trk,
+      endWrench: end(mode !== 'engineer', 'left'),
+      endBrush: end(mode !== 'artist', 'right'),
+      engLabel: tlabel(mode === 'engineer', 'left: 57px; width: 201px;'),
+      artLabel: tlabel(mode === 'artist', 'left: 0; width: 201px;'),
+      knob: 'position: absolute; top: 3px; left: ' + knobLeft + 'px; width: 54px; height: 54px; box-sizing: border-box; transition: left .55s cubic-bezier(.34,1.45,.64,1);',
+      knobWrench: kIcon(mode === 'engineer'),
+      knobBrush: kIcon(mode === 'artist'),
+      knobDot: 'position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: ' + PENCIL + '; box-shadow: 0 0 0 2px ' + INK + '; transition: opacity .25s ease; opacity: ' + (mode === 'both' ? 1 : 0) + ';',
+      pickEng: pick('engineer'),
+      pickArt: pick('artist'),
+      engPressed: mode === 'engineer' ? 'true' : 'false',
+      artPressed: mode === 'artist' ? 'true' : 'false',
+      hint: hints[mode],
+      hoverEng: () => { clearTimeout(this._t); this.setState({ hover: 'engineer' }); },
+      hoverArt: () => { clearTimeout(this._t); this.setState({ hover: 'artist' }); },
+      hoverOff: () => { clearTimeout(this._t); this._t = setTimeout(() => this.setState({ hover: null }), 220); }
+    };
+  }
+}
+
+const T = function(v){return [__h("div",{"style":v["rootStyle"]},"\n\n",__h("img",{"aria-hidden":"true","src":"/media/8cb780c7d34621dda9b274a22c3a9f94.jpg","alt":"","style":"position: absolute; left: 0; top: 0; width: 1440px; height: 920px; object-fit: cover; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.35) 110px, #000 300px); mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0.35) 110px, #000 300px)"}),"\n\n",__h("div",{"aria-hidden":"true","style":v["sceneBox"]},"\n",__h("img",{"src":"/media/1aaeb9ee821672fff997af627de4b23e.webp","alt":"","style":"position: absolute; inset: 0; width: 1440px; height: 890px"}),"\n",__h("img",{"src":"/media/055795e6341cdb1aa802ffe40718ef6e.webp","alt":"","style":v["L"]?.["hazeEng"]}),"\n",__h("img",{"src":"/media/718b721e41881c4380c8093db9dca632.webp","alt":"","style":v["L"]?.["hazeArt"]}),"\n",__h("img",{"src":"/media/9d3d2374444597d8a5f0e33a570e82aa.webp","alt":"","style":v["L"]?.["engDay"]}),"\n",__h("img",{"src":"/media/d6f0cdeeb8f0459c5e351e8866870ef8.webp","alt":"","style":v["L"]?.["artNight"]}),"\n",__h("img",{"src":"/media/2f51013535b3194f8e3661eed7626e01.webp","alt":"","style":v["L"]?.["shDefault"]}),"\n",__h("img",{"src":"/media/b2a15bf9bde95846d9a6aab582f3ee16.webp","alt":"","style":v["L"]?.["shNight"]}),"\n",__h("img",{"src":"/media/42f2a213459f76d720a28cd3c729d2fd.webp","alt":"","style":v["L"]?.["shDay"]}),"\n",__h("img",{"src":"/media/966a11a980733bf0804e3843b3a6ff33.webp","alt":"","style":"position: absolute; inset: 0; width: 1440px; height: 890px"}),"\n"),"\n\n",__h("div",{"aria-hidden":"true","style":v["dayGlow"]},"\n",__h("div",{"style":"position: absolute; inset: 0; background: radial-gradient(ellipse 220px 300px at 90px 360px, rgba(200,222,255,0.5) 0, rgba(200,222,255,0) 100%)"}),"\n",__h("div",{"style":"position: absolute; inset: 0; clip-path: polygon(190px 140px, 190px 620px, 700px 700px, 520px 260px); background: linear-gradient(105deg, rgba(212,229,255,0.38), rgba(212,229,255,0) 85%)"}),"\n"),"\n",__h("div",{"aria-hidden":"true","style":v["nightGlow"]},"\n",__h("div",{"class":"flicker","style":"position: absolute; inset: 0; background: radial-gradient(circle at 1165px 290px, rgba(255,196,110,0.42) 0, rgba(255,196,110,0.12) 110px, rgba(255,196,110,0) 270px)"}),"\n",__h("div",{"class":"flicker","style":"position: absolute; inset: 0; clip-path: polygon(1110px 295px, 1222px 295px, 1380px 660px, 950px 660px); background: linear-gradient(to bottom, rgba(255,203,125,0.26), rgba(255,203,125,0) 90%)"}),"\n"),"\n\n",__h("a",{"href":"/engineering/","aria-label":"Open the engineering portfolio","onMouseEnter":v["hoverEng"],"onMouseLeave":v["hoverOff"],"style":"position: absolute; left: 180px; top: 440px; width: 600px; height: 480px; cursor: pointer"}),"\n",__h("a",{"href":"/art/","aria-label":"Open the art portfolio","onMouseEnter":v["hoverArt"],"onMouseLeave":v["hoverOff"],"style":"position: absolute; left: 800px; top: 360px; width: 640px; height: 560px; cursor: pointer"}),"\n\n",(v["showEng"]?["\n",__h("div",{"class":"popup","onMouseEnter":v["hoverEng"],"onMouseLeave":v["hoverOff"],"style":"position: absolute; left: 360px; top: 388px; display: flex; flex-direction: column; align-items: flex-start"},"\n",__h("a",{"class":"orn","href":"/engineering/","style":v["popEng"]},"Engineering \u27f6"),"\n",__h("div",{"style":"width: 1px; height: 34px; background: #2B2722; margin-left: 26px"}),"\n",__h("div",{"style":v["engDot"]}),"\n"),"\n"]:null),"\n",(v["showArt"]?["\n",__h("div",{"class":"popup","onMouseEnter":v["hoverArt"],"onMouseLeave":v["hoverOff"],"style":"position: absolute; left: 846px; top: 392px; display: flex; flex-direction: column; align-items: flex-start"},"\n",__h("a",{"class":"orn","href":"/art/","style":v["popArt"]},"Art studio \u27f6"),"\n",__h("div",{"style":"width: 1px; height: 64px; background: #2B2722; margin-left: 26px"}),"\n",__h("div",{"style":v["artDot"]}),"\n"),"\n"]:null),"\n\n",__h("nav",{"style":"position: absolute; left: 0; top: 0; width: 1440px; height: 92px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 0 56px; background: rgba(242,234,219,0.88); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(43,39,34,0.25); z-index: 20; color: #2B2722"},"\n",__h("a",{"href":"/","style":"display: flex; align-items: center; gap: 14px"},"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"Hayden van Steyn logo","style":"height: 54px; width: auto"}),"\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; line-height: 1.5"},"Portfolio",__h("br",{}),"HVS"),"\n"),"\n",__h("div",{"style":"font-family: 'EB Garamond', serif; display: flex; align-items: center; gap: 34px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase"},"\n",__h("a",{"class":"navl","href":"/engineering/","style":v["engNav"]},"Engineering"),"\n",__h("a",{"class":"navl","href":"/art/","style":"color: #C2462F"},"Art"),"\n",__h("a",{"class":"orn","href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener"},"R\u00e9sum\u00e9 \u2726"),"\n"),"\n"),"\n\n",__h("div",{"style":"position: absolute; left: 190px; top: 108px; width: 890px; display: flex; flex-direction: column; align-items: center; z-index: 10"},"\n",(v["framed"]?["\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: #5C5753; margin-bottom: 10px"},"Engineer \u00b7 Artist \u00b7 Maker"),"\n"]:null),"\n",__h("h1",{"style":v["h1"]},__h("span",{"style":v["n1"]},"Hayden")," ",__h("span",{"style":v["n2"]},"van Steyn"),__h("span",{"style":v["dotStyle"]},".")),"\n",(v["framed"]?["\n",__h("div",{"style":"display: flex; align-items: center; gap: 10px; margin-top: 12px"},__h("span",{"style":"width: 7px; height: 7px; border: 1px solid #2B2722; transform: rotate(45deg)"}),__h("span",{"style":"width: 520px; height: 4px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"}),__h("span",{"style":"width: 7px; height: 7px; border: 1px solid #2B2722; transform: rotate(45deg)"})),"\n"]:null),"\n",__h("div",{"style":"display: flex; align-items: center; gap: 44px; margin-top: 22px"},"\n",__h("p",{"style":"margin: 0; font-family: 'EB Garamond', serif; font-size: 21px; font-style: italic; line-height: 1.3; width: 270px; text-align: right; color: #2B2722"},"Mechanical engineer & artist.",__h("br",{}),"I design, build, and draw things."),"\n",__h("div",{"style":"display: flex; flex-direction: column; align-items: center; gap: 14px"},"\n",__h("div",{"class":"tg","role":"group","aria-label":"Choose a side of the studio","style":"position: relative; width: 268px; height: 70px; box-sizing: border-box; border-radius: 999px; padding: 5px; background: #F2EADB; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 3px; box-shadow: 0 10px 20px -12px rgba(43,39,34,0.45); flex-shrink: 0"},"\n",__h("span",{"class":"tg-dia","style":"left: -9px"}),__h("span",{"class":"tg-dia","style":"right: -9px"}),"\n",__h("div",{"style":"position: relative; width: 256px; height: 58px; border-radius: 999px; overflow: hidden; border: 1px solid #2B2722; box-sizing: border-box; box-shadow: inset 0 2px 5px rgba(43,39,34,0.22)"},"\n",__h("div",{"style":v["trk"]?.["both"]}),"\n",__h("div",{"style":v["trk"]?.["engineer"]}),"\n",__h("div",{"style":v["trk"]?.["artist"]}),"\n",__h("img",{"class":"tg-end","src":"/media/70e3314aca9a180215ef58cfaf6ce2d3.png","alt":"","style":v["endWrench"]}),"\n",__h("img",{"class":"tg-end","src":"/media/617f62bdf36de42f65f21d5c65be0009.png","alt":"","style":v["endBrush"]}),"\n",__h("div",{"style":v["engLabel"]},__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; font-size: 22px; line-height: 1"},"Day shift"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 10px; letter-spacing: 0.22em; opacity: .92"},"ENGINEERING")),"\n",__h("div",{"style":v["artLabel"]},__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; font-size: 22px; line-height: 1"},"Night shift"),__h("span",{"style":"font-family: 'EB Garamond', serif; font-size: 10px; letter-spacing: 0.22em; opacity: .92"},"ART STUDIO")),"\n",__h("div",{"style":v["knob"]},"\n",__h("div",{"style":"position: absolute; inset: 4px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FBF7EE, #EADFCB 75%); border: 1px solid #2B2722; box-shadow: 0 2px 4px rgba(43,39,34,0.3), inset 0 -2px 4px rgba(43,39,34,0.1)"}),"\n",__h("img",{"src":"/media/b9b39dfc66de7d269902dc3228f20e3b.png","alt":"","style":v["knobWrench"]}),"\n",__h("img",{"src":"/media/e2ff04dde04d41db62ba7745d8fd778a.png","alt":"","style":v["knobBrush"]}),"\n",__h("div",{"style":v["knobDot"]}),"\n"),"\n"),"\n",__h("button",{"class":"tg-half","onClick":v["pickEng"],"aria-pressed":v["engPressed"],"aria-label":"Light the engineering side","style":"position: absolute; left: 0; top: 0; width: 134px; height: 70px; border: 0; background: transparent; border-radius: 999px 0 0 999px"}),"\n",__h("button",{"class":"tg-half","onClick":v["pickArt"],"aria-pressed":v["artPressed"],"aria-label":"Light the art side","style":"position: absolute; left: 134px; top: 0; width: 134px; height: 70px; border: 0; background: transparent; border-radius: 0 999px 999px 0"}),"\n"),"\n",__h("span",{"style":"font-family: 'EB Garamond', serif; font-style: italic; font-size: 17px; line-height: 1; color: #5C5753"},(S(v["hint"]))),"\n"),"\n"),"\n"),"\n\n")]};
+window.__PHONE = (function(){ const __h = preact.h, S = window.__S;
+
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.state || {};
+    const p = this.props;
+    const lay = p.layout || 'stacked';
+    const mode = s.mode || p.startMode || 'both';
+    const INK = '#2B2722', LIGHT = '#F2EADB', PENCIL = '#575E35', OLIVE = '#575E35';
+    const ENG = p.engColor || '#2E6F73', ART = p.artAccent || '#C2462F';
+    const mixW = (h, k) => { const n = parseInt(h.slice(1, 7), 16); const c = (v) => Math.round(v + (255 - v) * k); return 'rgb(' + c(n >> 16) + ',' + c((n >> 8) & 255) + ',' + c(n & 255) + ')'; };
+    const BG = { both: '#EFE8DA', engineer: '#E9EBE6', artist: '#EEE4D6' };
+    const accent = { engineer: ENG, both: PENCIL, artist: ART }[mode];
+
+    // ---- the panning camera ----
+    // scene window height per layout; the 1440 x 930 desk is scaled to fit that height
+    // and slides sideways so the chosen half of the desk is in view.
+    const W = 390;
+    // H = window height on the phone, Y0 = how much empty wall to crop off the top of the drawing
+    const CAM = { stacked: { H: 420, Y0: 150 }, thumb: { H: 380, Y0: 200 }, 'full-bleed': { H: 594, Y0: 78, sc: 0.75 } }[lay] || { H: 420, Y0: 150 };
+    const SCENE_H = CAM.H, Y0 = CAM.Y0;
+    const sc = CAM.sc || SCENE_H / (930 - Y0), vis = W / sc;
+    const CENTER = { engineer: 470, both: 720, artist: 1100 };
+    const left = Math.max(0, Math.min(1440 - vis, CENTER[mode] - vis / 2));
+    const stage = 'position: absolute; left: 0; top: 0; width: 1440px; height: 930px; transform-origin: 0 0; transform: translate(' + (-left * sc).toFixed(1) + 'px, ' + (-Y0 * sc).toFixed(1) + 'px) scale(' + sc.toFixed(4) + '); transition: transform 1.1s cubic-bezier(.65,0,.35,1);';
+
+    const img = (on) => 'position: absolute; inset: 0; width: 1440px; height: 890px; transition: opacity .7s ease; opacity: ' + on + ';';
+    const L = {
+      engDay: img(mode === 'engineer' ? 1 : 0), artNight: img(mode === 'artist' ? 1 : 0),
+      shDefault: img(mode === 'both' ? 1 : 0), shDay: img(mode === 'artist' ? 1 : 0), shNight: img(mode === 'engineer' ? 1 : 0)
+    };
+    const glow = (on) => 'position: absolute; inset: 0; pointer-events: none; transition: opacity .8s ease; opacity: ' + (on ? 1 : 0) + ';';
+
+    // ---- the toggle (same as the desktop one) ----
+    const knobLeft = { engineer: 3, both: 102, artist: 201 }[mode];
+    const trackBg = {
+      both: 'linear-gradient(90deg, #C9D3E3 0%, #EDE4D3 50%, #E6C3B6 100%)',
+      engineer: 'linear-gradient(90deg, ' + mixW(ENG, 0.35) + ' 0%, ' + mixW(ENG, 0.15) + ' 40%, ' + ENG + ' 100%)',
+      artist: 'linear-gradient(90deg, ' + ART + ' 0%, ' + mixW(ART, 0.15) + ' 60%, ' + mixW(ART, 0.35) + ' 100%)'
+    };
+    const trk = {};
+    ['both', 'engineer', 'artist'].forEach((m) => { trk[m] = 'position: absolute; inset: 0; background: ' + trackBg[m] + '; transition: opacity .45s ease; opacity: ' + (mode === m ? 1 : 0) + ';'; });
+    const end = (on, side) => 'position: absolute; top: 9px; ' + side + ': 14px; height: 42px; width: auto; transition: opacity .3s ease; opacity: ' + (on ? 0.9 : 0) + ';';
+    const tlabel = (on, side) => 'position: absolute; top: 0; height: 60px; ' + side + ' display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 1px; color: ' + LIGHT + '; transition: opacity .35s ease .1s, transform .45s cubic-bezier(.34,1.56,.64,1); opacity: ' + (on ? 1 : 0) + '; transform: translateX(' + (on ? 0 : (side.indexOf('left: 0') === 0 ? 10 : -10)) + 'px); pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.18);';
+    const kIcon = (on) => 'position: absolute; left: 50%; top: 50%; height: 38px; width: auto; transform: translate(-50%, -50%) rotate(' + (on ? 0 : -40) + 'deg) scale(' + (on ? 1 : 0.4) + '); transition: opacity .3s ease, transform .5s cubic-bezier(.34,1.56,.64,1); opacity: ' + (on ? 1 : 0) + ';';
+    const pick = (m) => () => this.setState({ mode: mode === m ? 'both' : m });
+    const hints = { engineer: 'the day shift is on', both: 'flip the switch to pick a side', artist: 'the night shift is on' };
+
+    // ---- layout ----
+    const fb = lay === 'full-bleed';
+    const ord = lay === 'thumb' ? { head: 2, scene: 3, ctrl: 4, cta: 5 } : { head: 2, ctrl: 3, scene: 4, cta: 5 };
+    const paper = 'rgba(242,234,219,';
+    return {
+      rootStyle: 'width: 390px; height: 844px; position: relative; overflow: hidden; display: flex; flex-direction: column; color: ' + INK + '; font-family: "EB Garamond", serif; transition: background-color .6s ease; background-color: ' + BG[mode] + '; background-image: url(/media/8cb780c7d34621dda9b274a22c3a9f94.jpg); background-size: 1440px 920px; background-position: center top;',
+      navS: 'order: 1; position: relative; z-index: 5; height: 60px; flex: none; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 0 18px 0 16px; background: ' + paper + '0.88); border-bottom: 1px solid rgba(43,39,34,0.25);',
+      headS: 'order: ' + ord.head + '; position: relative; z-index: 4; flex: none; display: flex; flex-direction: column; align-items: center; padding: ' + (fb ? '22px' : '20px') + ' 20px 0;',
+      ctrlS: 'order: ' + ord.ctrl + '; position: relative; z-index: 4; flex: none; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: ' + (lay === 'thumb' ? '18px' : fb ? '26px' : '20px') + ' 0 0;' + (fb ? ' margin-top: auto; background: linear-gradient(to bottom, ' + paper + '0), ' + paper + '0.9) 30px);' : ''),
+      sceneS: fb ? 'position: absolute; left: 0; bottom: 0; width: 390px; height: ' + SCENE_H + 'px; overflow: hidden; z-index: 1;'
+        : 'order: ' + ord.scene + '; position: relative; flex: none; width: 390px; height: ' + SCENE_H + 'px; overflow: hidden; margin-top: ' + (lay === 'thumb' ? 0 : -6) + 'px;',
+      ctaS: 'order: ' + ord.cta + '; position: relative; z-index: 4; flex: none; display: flex; justify-content: center; align-items: center; height: 74px; padding-bottom: 6px;' + (fb ? ' background: ' + paper + '0.9);' : lay === 'thumb' ? '' : ' margin-top: -10px;'),
+      stage, L,
+      dayGlow: glow(mode === 'engineer'), nightGlow: glow(mode === 'artist'),
+      dotStyle: 'color: ' + accent + '; transition: color .4s ease;',
+      trk,
+      endWrench: end(mode !== 'engineer', 'left'), endBrush: end(mode !== 'artist', 'right'),
+      engLabel: tlabel(mode === 'engineer', 'left: 57px; width: 201px;'),
+      artLabel: tlabel(mode === 'artist', 'left: 0; width: 201px;'),
+      knob: 'position: absolute; top: 3px; left: ' + knobLeft + 'px; width: 54px; height: 54px; box-sizing: border-box; transition: left .55s cubic-bezier(.34,1.45,.64,1);',
+      knobWrench: kIcon(mode === 'engineer'), knobBrush: kIcon(mode === 'artist'),
+      knobDot: 'position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: ' + PENCIL + '; box-shadow: 0 0 0 2px ' + INK + '; transition: opacity .25s ease; opacity: ' + (mode === 'both' ? 1 : 0) + ';',
+      pickEng: pick('engineer'), pickArt: pick('artist'),
+      engPressed: mode === 'engineer' ? 'true' : 'false', artPressed: mode === 'artist' ? 'true' : 'false',
+      hint: hints[mode],
+      isEng: mode === 'engineer', isArt: mode === 'artist', isBoth: mode === 'both',
+      ctaEng: 'color: ' + ENG + '; padding: 13px 26px; font-size: 12px;',
+      ctaArt: 'color: ' + ART + '; padding: 13px 26px; font-size: 12px;',
+      btnEng: 'color: ' + ENG + ';', btnArt: 'color: ' + ART + ';'
+    };
+  }
+}
+
+return { C: Component, T: function(v){return [__h("div",{"style":v["rootStyle"]},"\n\n",__h("nav",{"style":v["navS"]},"\n",__h("a",{"href":"/","style":"display: flex; align-items: center; gap: 10px"},"\n",__h("img",{"src":"/media/b2b4be51ec8370860146b30788778b07.webp","alt":"Hayden van Steyn logo","style":"height: 40px; width: auto"}),"\n",__h("span",{"style":"font-size: 10px; letter-spacing: .2em; text-transform: uppercase; line-height: 1.45"},"Portfolio",__h("br",{}),"HVS"),"\n"),"\n",__h("a",{"class":"orn sm","href":"/media/Hayden_Van_Steyn_Resume.pdf","target":"_blank","rel":"noopener"},"R\u00e9sum\u00e9 \u2726"),"\n"),"\n\n",__h("header",{"style":v["headS"]},"\n",__h("span",{"style":"font-size: 10.5px; letter-spacing: .32em; text-transform: uppercase; color: #5C5753"},"Engineer \u00b7 Artist \u00b7 Maker"),"\n",__h("h1",{"style":"margin: 8px 0 0; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 40px; line-height: 1.02; letter-spacing: .1em; text-transform: uppercase; margin-right: -0.1em; text-align: center"},"Hayden",__h("br",{}),"van Steyn",__h("span",{"style":v["dotStyle"]},".")),"\n",__h("div",{"aria-hidden":"true","style":"display: flex; align-items: center; gap: 8px; margin-top: 10px"},__h("span",{"style":"width: 6px; height: 6px; border: 1px solid #2B2722; transform: rotate(45deg)"}),__h("span",{"style":"width: 210px; height: 4px; border-top: 1px solid #2B2722; border-bottom: 1px solid #2B2722"}),__h("span",{"style":"width: 6px; height: 6px; border: 1px solid #2B2722; transform: rotate(45deg)"})),"\n",__h("p",{"style":"margin: 10px 0 0; font-size: 17px; font-style: italic; line-height: 1.3; text-align: center"},"Mechanical engineer & artist.",__h("br",{}),"I design, build, and draw things."),"\n"),"\n\n",__h("div",{"style":v["ctrlS"]},"\n",__h("div",{"role":"group","aria-label":"Choose a side of the studio","style":"position: relative; width: 268px; height: 70px; box-sizing: border-box; border-radius: 999px; padding: 5px; background: #F2EADB; border: 1px solid #2B2722; outline: 1px solid #2B2722; outline-offset: 3px; box-shadow: 0 10px 20px -12px rgba(43,39,34,0.45); flex-shrink: 0"},"\n",__h("span",{"class":"tg-dia","style":"left: -9px"}),__h("span",{"class":"tg-dia","style":"right: -9px"}),"\n",__h("div",{"style":"position: relative; width: 256px; height: 58px; border-radius: 999px; overflow: hidden; border: 1px solid #2B2722; box-sizing: border-box; box-shadow: inset 0 2px 5px rgba(43,39,34,0.22)"},"\n",__h("div",{"style":v["trk"]?.["both"]}),"\n",__h("div",{"style":v["trk"]?.["engineer"]}),"\n",__h("div",{"style":v["trk"]?.["artist"]}),"\n",__h("img",{"src":"/media/70e3314aca9a180215ef58cfaf6ce2d3.png","alt":"","style":v["endWrench"]}),"\n",__h("img",{"src":"/media/617f62bdf36de42f65f21d5c65be0009.png","alt":"","style":v["endBrush"]}),"\n",__h("div",{"style":v["engLabel"]},__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; font-size: 22px; line-height: 1"},"Day shift"),__h("span",{"style":"font-size: 10px; letter-spacing: 0.22em; opacity: .92"},"ENGINEERING")),"\n",__h("div",{"style":v["artLabel"]},__h("span",{"style":"font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; font-size: 22px; line-height: 1"},"Night shift"),__h("span",{"style":"font-size: 10px; letter-spacing: 0.22em; opacity: .92"},"ART STUDIO")),"\n",__h("div",{"style":v["knob"]},"\n",__h("div",{"style":"position: absolute; inset: 4px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #FBF7EE, #EADFCB 75%); border: 1px solid #2B2722; box-shadow: 0 2px 4px rgba(43,39,34,0.3), inset 0 -2px 4px rgba(43,39,34,0.1)"}),"\n",__h("img",{"src":"/media/b9b39dfc66de7d269902dc3228f20e3b.png","alt":"","style":v["knobWrench"]}),"\n",__h("img",{"src":"/media/e2ff04dde04d41db62ba7745d8fd778a.png","alt":"","style":v["knobBrush"]}),"\n",__h("div",{"style":v["knobDot"]}),"\n"),"\n"),"\n",__h("button",{"onClick":v["pickEng"],"aria-pressed":v["engPressed"],"aria-label":"Light the engineering side","style":"position: absolute; left: 0; top: 0; width: 134px; height: 70px; border: 0; background: transparent; border-radius: 999px 0 0 999px"}),"\n",__h("button",{"onClick":v["pickArt"],"aria-pressed":v["artPressed"],"aria-label":"Light the art side","style":"position: absolute; left: 134px; top: 0; width: 134px; height: 70px; border: 0; background: transparent; border-radius: 0 999px 999px 0"}),"\n"),"\n",__h("span",{"style":"font-style: italic; font-size: 15px; line-height: 1; color: #5C5753"},(S(v["hint"]))),"\n"),"\n\n",__h("div",{"aria-hidden":"true","style":v["sceneS"]},"\n",__h("div",{"style":v["stage"]},"\n",__h("div",{"style":"position: absolute; left: 0; top: 40px; width: 1440px; height: 890px; isolation: isolate; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 70px); mask-image: linear-gradient(to bottom, transparent 0, #000 70px)"},"\n",__h("img",{"src":"/media/1aaeb9ee821672fff997af627de4b23e.webp","alt":"","style":"position: absolute; inset: 0; width: 1440px; height: 890px"}),"\n",__h("img",{"src":"/media/9d3d2374444597d8a5f0e33a570e82aa.webp","alt":"","style":v["L"]?.["engDay"]}),"\n",__h("img",{"src":"/media/d6f0cdeeb8f0459c5e351e8866870ef8.webp","alt":"","style":v["L"]?.["artNight"]}),"\n",__h("img",{"src":"/media/2f51013535b3194f8e3661eed7626e01.webp","alt":"","style":v["L"]?.["shDefault"]}),"\n",__h("img",{"src":"/media/b2a15bf9bde95846d9a6aab582f3ee16.webp","alt":"","style":v["L"]?.["shNight"]}),"\n",__h("img",{"src":"/media/42f2a213459f76d720a28cd3c729d2fd.webp","alt":"","style":v["L"]?.["shDay"]}),"\n",__h("img",{"src":"/media/966a11a980733bf0804e3843b3a6ff33.webp","alt":"","style":"position: absolute; inset: 0; width: 1440px; height: 890px"}),"\n"),"\n",__h("div",{"style":v["dayGlow"]},"\n",__h("div",{"style":"position: absolute; inset: 0; background: radial-gradient(ellipse 220px 300px at 90px 360px, rgba(200,222,255,0.5) 0, rgba(200,222,255,0) 100%)"}),"\n",__h("div",{"style":"position: absolute; inset: 0; clip-path: polygon(190px 140px, 190px 620px, 700px 700px, 520px 260px); background: linear-gradient(105deg, rgba(212,229,255,0.38), rgba(212,229,255,0) 85%)"}),"\n"),"\n",__h("div",{"style":v["nightGlow"]},"\n",__h("div",{"class":"flicker","style":"position: absolute; inset: 0; background: radial-gradient(circle at 1165px 290px, rgba(255,196,110,0.42) 0, rgba(255,196,110,0.12) 110px, rgba(255,196,110,0) 270px)"}),"\n",__h("div",{"class":"flicker","style":"position: absolute; inset: 0; clip-path: polygon(1110px 295px, 1222px 295px, 1380px 660px, 950px 660px); background: linear-gradient(to bottom, rgba(255,203,125,0.26), rgba(255,203,125,0) 90%)"}),"\n"),"\n"),"\n"),"\n\n",__h("div",{"style":v["ctaS"]},"\n",(v["isEng"]?["\n",__h("a",{"class":"orn rise","href":"/engineering/","style":v["ctaEng"]},"Enter the workshop \u27f6"),"\n"]:null),"\n",(v["isArt"]?["\n",__h("a",{"class":"orn rise","href":"/art/","style":v["ctaArt"]},"Enter the studio \u27f6"),"\n"]:null),"\n",(v["isBoth"]?["\n",__h("div",{"class":"rise","style":"display: flex; gap: 26px"},"\n",__h("a",{"class":"orn","href":"/engineering/","style":v["btnEng"]},"Engineering \u27f6"),"\n",__h("a",{"class":"orn","href":"/art/","style":v["btnArt"]},"Art \u27f6"),"\n"),"\n"]:null),"\n"),"\n\n")]}, P: {"layout": "stacked", "startMode": "both", "engColor": "#2E6F73", "artAccent": "#484E2B"}, head: "\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap\" rel=\"stylesheet\">\n<style>\nbody{margin:0}\na{color:#2B2722;text-decoration:none}\nbutton{cursor:pointer;font-family:inherit}\n.orn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border:1px solid currentColor;outline:1px solid currentColor;outline-offset:3px;border-radius:1px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;background:rgba(242,234,219,.94);transition:background .25s ease,color .25s ease}\n.orn:before,.orn:after{content:\"\";position:absolute;top:50%;width:7px;height:7px;background:#F2EADB;border:1px solid currentColor;transform:translateY(-50%) rotate(45deg)}\n.orn:before{left:-9px}.orn:after{right:-9px}\n.orn.sm{padding:7px 13px;font-size:10px;letter-spacing:.18em;color:#2B2722}\n.tg-dia{position:absolute;top:50%;width:8px;height:8px;background:#F2EADB;border:1px solid #2B2722;transform:translateY(-50%) rotate(45deg);z-index:2}\n@keyframes flicker{0%,100%{opacity:1}45%{opacity:.86}50%{opacity:.95}55%{opacity:.8}}\n.flicker{animation:flicker 5s ease-in-out infinite}\n@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}\n.rise{animation:rise .45s cubic-bezier(.2,.7,.2,1) both}\n</style>\n" };
+})();
+window.__mount(Component, T, {"startMode": "artist", "artAccent": "#484E2B", "engColor": "#2E6F73", "nameStyle": "small-caps", "shadowStrength": 1});
+})();
+</script>
+<script>
+window.__M = { phoneComponent: true };
+
+</script>
+<script src="/assets/mobile.js"></script>
+</body>
+</html>
